@@ -172,6 +172,25 @@
             border-radius: 0 0.5rem 0.5rem 0;
             font-style: italic;
         }
+        pre, code, .novel-prose pre, .terminal-box, .ascii-art {
+            overflow-x: auto !important;
+            white-space: pre !important;
+            word-break: normal !important;
+            max-width: 100% !important;
+            scrollbar-width: thin;
+        }
+        pre::-webkit-scrollbar, .novel-prose pre::-webkit-scrollbar, .terminal-box::-webkit-scrollbar {
+            height: 6px;
+            background: #14171A;
+        }
+        pre::-webkit-scrollbar-thumb, .novel-prose pre::-webkit-scrollbar-thumb, .terminal-box::-webkit-scrollbar-thumb {
+            background: #7B1113;
+            border-radius: 3px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+        pre::-webkit-scrollbar-thumb:hover, .novel-prose pre::-webkit-scrollbar-thumb:hover, .terminal-box::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
         .novel-prose pre {
             background: #0a0c0e;
             border: 1px solid rgba(212, 175, 55, 0.35);
@@ -182,7 +201,6 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.875rem;
             line-height: 1.6;
-            overflow-x: auto;
             box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
         }
         .novel-prose code {
@@ -549,6 +567,12 @@
                 <p class="text-[10px] text-amber-100/70 leading-normal">
                     This is a non-commercial fan-made Universe Simulation project. <i>The Legend of Heroes: Trails of Cold Steel</i> characters belong to <b>Nihon Falcom</b>. This project is made with love and respect, not affiliated with or endorsed by Falcom. No profit intended.
                 </p>
+                <div class="pt-1.5 flex items-center justify-between border-t border-slate-800 text-[9px] font-mono">
+                    <button type="button" onclick="resetGatekeeperStorage()" class="text-amber-300 hover:text-red-400 underline transition cursor-pointer flex items-center">
+                        <i class="fa-solid fa-lock mr-1 text-[8px]"></i> ล็อกหน้าคำเตือนสติปัญญา (Re-lock)
+                    </button>
+                    <span class="text-slate-500">T-OOS V3.3</span>
+                </div>
             </div>
         </aside>
 
@@ -556,11 +580,14 @@
         <main id="center-content" class="flex-1 flex flex-col bg-[#14171A] overflow-hidden relative">
 
             <!-- Reader Controls Sub-header (When in Reader View) -->
-            <div id="reader-controls" class="px-3 sm:px-4 py-2 bg-[#1F2428]/90 backdrop-blur border-b border-[#D4AF37]/20 flex flex-wrap items-center justify-between gap-2 text-xs z-10">
-                <!-- Breadcrumbs -->
+            <div id="reader-controls" class="px-3 sm:px-4 py-2 bg-[#1F2428]/90 backdrop-blur border-b border-[#D4AF37]/20 flex flex-wrap items-center justify-between gap-2 text-xs z-20">
+                <!-- Interactive Breadcrumbs -->
                 <div class="flex items-center space-x-1.5 sm:space-x-2 truncate max-w-full">
-                    <span class="px-1.5 sm:px-2 py-0.5 rounded bg-[#7B1113] text-[#D4AF37] font-mono font-bold text-[10px] sm:text-[11px] shrink-0" id="current-chapter-badge">VOL 01 ➔ PROLOGUE</span>
-                    <h2 class="font-rajdhani font-bold text-amber-200 text-xs sm:text-sm truncate" id="current-chapter-heading">สภาอาหารเช้าทองคำ</h2>
+                    <button type="button" onclick="toggleMobileLeft()" class="px-2 py-0.5 rounded bg-[#7B1113] hover:bg-[#9B111E] text-[#D4AF37] hover:text-white border border-[#D4AF37]/50 font-mono font-bold text-[10px] sm:text-[11px] shrink-0 transition flex items-center space-x-1 cursor-pointer shadow-sm" title="คลิกเพื่อเปิดสารบัญบทและฉาก" id="current-chapter-badge">
+                        <span>VOL 01 ➔ PROLOGUE</span>
+                        <i class="fa-solid fa-folder-tree text-[9px] ml-1 text-amber-300"></i>
+                    </button>
+                    <h2 onclick="document.getElementById('main-view-container').scrollTop = 0" class="font-rajdhani font-bold text-amber-200 hover:text-white text-xs sm:text-sm truncate cursor-pointer transition hover:underline" id="current-chapter-heading" title="คลิกเพื่อเลื่อนไปด้านบนสุด">สภาอาหารเช้าทองคำ</h2>
                 </div>
 
                 <!-- Font & Display Controls + Quick Map Button -->
@@ -572,11 +599,11 @@
                     </button>
 
                     <span class="text-amber-200/60 text-xs hidden md:inline">FONT:</span>
-                    <button onclick="adjustFontSize(-1)" class="w-7 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] font-bold text-xs flex items-center justify-center">A-</button>
-                    <button onclick="resetFontSize()" class="px-2 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] text-[10px] flex items-center justify-center">100%</button>
-                    <button onclick="adjustFontSize(1)" class="w-7 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] font-bold text-xs flex items-center justify-center">A+</button>
+                    <button type="button" onclick="adjustFontSize(-1)" class="w-7 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] font-bold text-xs flex items-center justify-center cursor-pointer transition shadow-sm" title="ลดขนาดตัวอักษร">A-</button>
+                    <button type="button" id="font-size-label" onclick="resetFontSize()" class="px-2 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] text-[10px] font-bold flex items-center justify-center cursor-pointer transition shadow-sm" title="รีเซ็ตขนาดตัวอักษร (100%)">100%</button>
+                    <button type="button" onclick="adjustFontSize(1)" class="w-7 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] font-bold text-xs flex items-center justify-center cursor-pointer transition shadow-sm" title="เพิ่มขนาดตัวอักษร">A+</button>
                     
-                    <button onclick="toggleThemeLight()" id="theme-toggle-btn" class="w-7 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-amber-200 hover:bg-[#7B1113] text-xs flex items-center justify-center" title="เปลี่ยนโหมดสีอ่านสบายตา">
+                    <button type="button" onclick="toggleThemeLight()" id="theme-toggle-btn" class="w-7 h-7 rounded bg-[#14171A] border border-[#D4AF37]/40 text-amber-200 hover:bg-[#7B1113] text-xs flex items-center justify-center cursor-pointer transition shadow-sm" title="เปลี่ยนโหมดสีอ่านสบายตา">
                         <i class="fa-solid fa-moon"></i>
                     </button>
                 </div>
@@ -1036,6 +1063,12 @@
                         <span class="text-amber-200/70">Tension Level:</span>
                         <span id="hud-tension-level" class="text-amber-400 font-bold">46.4% (MODERATE)</span>
                     </div>
+                    <div class="flex justify-between text-[11px] items-center pt-1 border-t border-[#D4AF37]/20">
+                        <span class="text-amber-200/70">Zemuria Index:</span>
+                        <span class="text-emerald-400 font-bold animate-pulse flex items-center">
+                            <i class="fa-solid fa-arrow-trend-up mr-1 text-[10px]"></i> 13,850.20 <span class="text-[9px] text-emerald-300 ml-1 font-mono">(+4.8%)</span>
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -1404,9 +1437,43 @@
         let isLightMode = false;
 
         const GUARDRAILS_14 = UNIVERSE_DATA.guardrails || [];
+        const GUARDRAIL_ICONS = {
+            1: 'fa-hashtag',
+            2: 'fa-coins',
+            3: 'fa-bolt',
+            4: 'fa-crown',
+            5: 'fa-eye-slash',
+            6: 'fa-hand-fist',
+            7: 'fa-shield-virus',
+            8: 'fa-masks-theater',
+            9: 'fa-handshake',
+            10: 'fa-face-meh',
+            11: 'fa-hand-holding-heart',
+            12: 'fa-feather',
+            13: 'fa-skull',
+            14: 'fa-hospital'
+        };
 
         // Initialize UI
         document.addEventListener('DOMContentLoaded', () => {
+            // 💾 Restore Saved Font Size
+            try {
+                const savedFont = localStorage.getItem('reader_font_size');
+                if (savedFont) {
+                    setFontSize(parseInt(savedFont));
+                }
+            } catch(e) {}
+
+            // 💾 Check if Gatekeeper already passed
+            try {
+                if (localStorage.getItem('eros_gatekeeper_passed') === 'true') {
+                    const landing = document.getElementById('gatekeeper-landing');
+                    if (landing) {
+                        landing.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                    }
+                }
+            } catch(e) {}
+
             renderVolumeSelector();
             renderHierarchyTree();
             renderCurrentScene();
@@ -2329,19 +2396,23 @@
             `;
         }
 
+
         function renderGuardrails() {
             const container = document.getElementById('guardrails-list');
+            if (!container) return;
             container.innerHTML = '';
 
             GUARDRAILS_14.forEach(g => {
+                const icon = GUARDRAIL_ICONS[g.num] || 'fa-shield-halved';
                 const item = document.createElement('div');
-                item.className = 'p-3 rounded-lg bg-[#14171A] border border-[#D4AF37]/20 space-y-1';
+                item.className = 'p-3.5 rounded-xl bg-[#14171A] border border-[#D4AF37]/25 hover:border-[#D4AF37] transition-all duration-200 space-y-1.5 shadow-md group hover:bg-[#181D24]';
                 item.innerHTML = `
-                    <div class="flex items-center space-x-2">
-                        <span class="w-5 h-5 rounded-full bg-[#7B1113] text-[#D4AF37] text-xs font-mono font-bold flex items-center justify-center">${g.num}</span>
-                        <h5 class="font-bold text-amber-300 font-rajdhani">${g.title}</h5>
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-6 h-6 rounded-full bg-[#7B1113] border border-[#D4AF37]/50 text-[#D4AF37] text-xs font-mono font-bold flex items-center justify-center shrink-0 shadow">${g.num}</span>
+                        <i class="fa-solid ${icon} text-[#D4AF37] text-xs group-hover:scale-110 transition shrink-0"></i>
+                        <h5 class="font-bold text-amber-300 font-rajdhani text-sm">${g.title}</h5>
                     </div>
-                    <p class="text-[11px] text-amber-100/70 font-sarabun pl-7">${g.desc}</p>
+                    <p class="text-xs text-slate-300 font-sarabun pl-8 leading-relaxed">${g.desc}</p>
                 `;
                 container.appendChild(item);
             });
@@ -2466,14 +2537,26 @@
             closeMobileDrawers();
         }
 
+        function setFontSize(newSize) {
+            currentFontSize = Math.min(28, Math.max(14, newSize));
+            const prose = document.getElementById('prose-container');
+            if (prose) prose.style.fontSize = `${currentFontSize}px`;
+            const fontLabel = document.getElementById('font-size-label');
+            if (fontLabel) {
+                const percent = Math.round((currentFontSize / 18) * 100);
+                fontLabel.innerText = `${percent}%`;
+            }
+            try {
+                localStorage.setItem('reader_font_size', currentFontSize.toString());
+            } catch(e) {}
+        }
+
         function adjustFontSize(delta) {
-            currentFontSize = Math.min(28, Math.max(14, currentFontSize + delta * 2));
-            document.getElementById('prose-container').style.fontSize = `${currentFontSize}px`;
+            setFontSize(currentFontSize + delta * 2);
         }
 
         function resetFontSize() {
-            currentFontSize = 18;
-            document.getElementById('prose-container').style.fontSize = `${currentFontSize}px`;
+            setFontSize(18);
         }
 
         function toggleFocusMode() {
@@ -2570,6 +2653,9 @@
                     landing.classList.add('hidden');
                 }, 500);
             }
+            try {
+                localStorage.setItem('eros_gatekeeper_passed', 'true');
+            } catch(e) {}
         }
 
         function triggerTacticalRetreat() {
@@ -2584,6 +2670,13 @@
             const retreatCard = document.getElementById('gatekeeper-retreat-card');
             if (retreatCard) retreatCard.classList.add('hidden');
             if (warnCard) warnCard.classList.remove('hidden');
+        }
+
+        function resetGatekeeperStorage() {
+            try {
+                localStorage.removeItem('eros_gatekeeper_passed');
+            } catch(e) {}
+            openSanityWarningModal();
         }
 
         function openSanityWarningModal() {
