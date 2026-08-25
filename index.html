@@ -286,6 +286,89 @@
 
 <body class="h-screen flex flex-col antialiased select-text">
 
+    <!-- 🚨 FULL-SCREEN GATEKEEPER LANDING PAGE (COGNITIVE HAZARD & 18+ NSFW WARNING) 🚨 -->
+    <div id="gatekeeper-landing" class="fixed inset-0 z-[100] bg-[#07090C] text-[#ECEFF1] flex flex-col items-center justify-center p-3 sm:p-6 overflow-y-auto backdrop-blur-2xl">
+        
+        <!-- 1. WARNING CARD -->
+        <div id="gatekeeper-warning-card" class="max-w-3xl w-full bg-[#11151A] border-2 border-[#D4AF37] rounded-2xl p-5 sm:p-8 shadow-[0_0_60px_rgba(212,175,55,0.25)] space-y-6 relative overflow-hidden my-auto">
+            
+            <!-- Tactical Top Ambient Grid & Header -->
+            <div class="border-b border-[#D4AF37]/30 pb-4 text-center space-y-2">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#7B1113] border border-[#D4AF37]/60 text-amber-200 text-xs font-mono font-bold tracking-wider animate-pulse">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-400"></i>
+                    <span>CLASS-7 COGNITIVE HAZARD & 18+ NSFW WARNING</span>
+                </div>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold font-orbitron text-[#D4AF37] tracking-wider gold-glow">
+                    THE LEGEND OF REAN
+                </h1>
+                <p class="text-xs sm:text-sm font-rajdhani font-bold text-amber-200/80 tracking-widest uppercase">
+                    ASHEN ERO'S DESTINY — TACTICAL ORBAL OPERATING SYSTEM (T-OOS V3.3)
+                </p>
+            </div>
+
+            <!-- Warning Notice Prose -->
+            <div class="bg-[#181D24] p-4 sm:p-5 rounded-xl border border-[#D4AF37]/20 space-y-3.5 text-xs sm:text-sm leading-relaxed font-sarabun text-slate-200">
+                <div class="flex items-start space-x-3">
+                    <span class="px-2 py-0.5 rounded bg-red-950 text-red-300 font-mono font-bold border border-red-500/40 shrink-0">1. 🔞 NSFW 18+</span>
+                    <p>นิยายเรื่องนี้มีเนื้อหาสำหรับผู้ใหญ่ บรรยายฉากรัก สรีระศาสตร์ระดับ 8K Ultra HD, แรงดันหลั่ง 120 PSI, และพฤติกรรมทางเพศอย่างเปิดเผยและละเอียดลึกซึ้ง</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono font-bold border border-amber-500/40 shrink-0">2. 🧠 BRAIN-ROT</span>
+                    <p><strong class="text-amber-300">"นี่ไม่ใช่แฟนฟิกการเมืองที่เคร่งเครียดตามแคนอน Trails ดั้งเดิม!"</strong> แต่คือจักรวาลคู่ขนานสุดกาว: ท่านชีคเตโอแจกรถ Denza ฟรี, เพื่อนร่วมชั้นเล่นมวยปล้ำ WWE โต๊ะแตก, และคุณแม่ไอล่าคุมกองทัพเรือรบต่างดาว Ark Hyperion ยิงเลเซอร์จากอวกาศ</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-300 font-mono font-bold border border-purple-500/40 shrink-0">3. 👑 MATRIARCH</span>
+                    <p>บรรดาคุณแม่ทุกคน (ลูเซีย, ไอล่า, พริสซิลล่า, ฮันนา) เป็น <strong class="text-[#D4AF37]">"มหาปูชนียบุคคลผู้ทรงเกียรติสูงสุด"</strong> ตัดเรื่องกามารมณ์กับลูกหลานออก 100% (คุณแม่ลูเซียต้มซุปโสมหมื่นปี & ถือกระบวยไม้คุมบ้าน)</p>
+                </div>
+            </div>
+
+            <!-- Choice Action Buttons -->
+            <div class="space-y-3 pt-2 font-rajdhani">
+                <button type="button" onclick="acceptGatekeeperAndEnter()" class="w-full py-3.5 sm:py-4 px-6 rounded-xl bg-gradient-to-r from-[#7B1113] via-[#9B111E] to-[#D4AF37] hover:brightness-125 text-white font-extrabold text-sm sm:text-base md:text-lg border-2 border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all transform hover:scale-[1.01] active:scale-98 flex items-center justify-center space-x-2 cursor-pointer">
+                    <i class="fa-solid fa-brain text-amber-300 text-base sm:text-xl"></i>
+                    <span>ข้าพเจ้ายินดีสละสติปัญญา & เข้าสู่จักรวาล Eros (ENTER DASHBOARD)</span>
+                </button>
+                <button type="button" onclick="triggerTacticalRetreat()" class="w-full py-2.5 sm:py-3 px-6 rounded-xl bg-[#181D24] hover:bg-slate-800 text-amber-200/70 hover:text-white font-bold text-xs sm:text-sm border border-slate-700 hover:border-red-500/40 transition-all flex items-center justify-center space-x-2 cursor-pointer">
+                    <i class="fa-solid fa-person-running text-red-400 text-sm"></i>
+                    <span>ขอยกธงขาว! สติปัญญายังมีค่า ขอหนีเอาชีวิตรอด (TACTICAL RETREAT)</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. TACTICAL RETREAT SCREEN (เมื่อกดยกธงขาว) -->
+        <div id="gatekeeper-retreat-card" class="max-w-2xl w-full bg-[#11151A] border-2 border-slate-700 rounded-2xl p-6 sm:p-10 shadow-2xl text-center space-y-6 hidden my-auto">
+            <div class="w-16 h-16 rounded-full bg-emerald-950/80 border-2 border-emerald-500/50 flex items-center justify-center mx-auto text-emerald-400 text-2xl shadow-lg">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            
+            <div class="space-y-2">
+                <h2 class="text-xl sm:text-2xl font-bold font-orbitron text-emerald-400 tracking-wide">
+                    🛡️ TACTICAL RETREAT SUCCESSFUL
+                </h2>
+                <p class="text-xs sm:text-sm font-mono text-slate-400 uppercase tracking-wider">
+                    (ท่านได้ทำการถอนกำลังทางยุทธวิธีสำเร็จ — สติปัญญาปลอดภัย 100%)
+                </p>
+            </div>
+
+            <div class="bg-[#181D24] p-5 sm:p-6 rounded-xl border border-slate-800 text-slate-300 text-xs sm:text-sm leading-relaxed font-sarabun space-y-3">
+                <p class="text-emerald-300 font-semibold">ขอแสดงความยินดีด้วย! เซลล์สมองและสติปัญญาอันมีค่าของท่านยังคงปลอดภัย...</p>
+                <p>โลกภายนอกยังมีแฟนฟิกใสๆ บทวิเคราะห์เนื้อเรื่องแคนอน และสาระความรู้รอท่านอยู่อีกมากมาย</p>
+                <p class="text-amber-200/90 pt-2 border-t border-slate-800">
+                    แต่ถ้าวันใดที่ท่านเหนื่อยล้าจากชีวิตจริง และพร้อมจะ <strong>"ทิ้งสมอง"</strong> มาร่วมดื่มด่ำกับความกาวระดับมัลติเวิร์สและซุปโสมหมื่นปี... ประตูสู่จักรวาล Eros แห่งนี้ ยินดีต้อนรับท่านเสมอ!
+                </p>
+                <div class="text-lg pt-2 tracking-widest">☕ 🚗 🍲 🛸 👑</div>
+            </div>
+
+            <div>
+                <button type="button" onclick="resetGatekeeperView()" class="py-3 px-6 rounded-xl bg-[#7B1113] hover:bg-[#9B111E] text-amber-200 hover:text-white font-rajdhani font-bold text-sm border border-[#D4AF37]/50 shadow-md transition flex items-center justify-center space-x-2 mx-auto cursor-pointer">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>เปลี่ยนใจแล้ว! พร้อมทำลายสติปัญญา (TRY AGAIN)</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
     <!-- ⚜️ APEX STATUS BAR & HEADER ⚜️ -->
     <header id="top-nav" class="bg-[#14171A] border-b-2 border-[#7B1113] px-3 sm:px-4 py-2 flex items-center justify-between shadow-2xl relative z-30 shrink-0">
         <!-- Left: Mobile Menu Toggle + Emblem & Title -->
@@ -2266,6 +2349,39 @@
             a.download = `universe_state_snapshot.json`;
             a.click();
             URL.revokeObjectURL(url);
+        }
+
+        // 🚨 GATEKEEPER & COGNITIVE HAZARD CONTROLLERS 🚨
+        function acceptGatekeeperAndEnter() {
+            const landing = document.getElementById('gatekeeper-landing');
+            if (landing) {
+                landing.classList.add('transition-opacity', 'duration-500', 'opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    landing.classList.add('hidden');
+                }, 500);
+            }
+        }
+
+        function triggerTacticalRetreat() {
+            const warnCard = document.getElementById('gatekeeper-warning-card');
+            const retreatCard = document.getElementById('gatekeeper-retreat-card');
+            if (warnCard) warnCard.classList.add('hidden');
+            if (retreatCard) retreatCard.classList.remove('hidden');
+        }
+
+        function resetGatekeeperView() {
+            const warnCard = document.getElementById('gatekeeper-warning-card');
+            const retreatCard = document.getElementById('gatekeeper-retreat-card');
+            if (retreatCard) retreatCard.classList.add('hidden');
+            if (warnCard) warnCard.classList.remove('hidden');
+        }
+
+        function openSanityWarningModal() {
+            const landing = document.getElementById('gatekeeper-landing');
+            if (landing) {
+                landing.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+                resetGatekeeperView();
+            }
         }
     </script>
 </body>
