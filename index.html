@@ -387,78 +387,68 @@
 
     </div>
 
-    <!-- ⚜️ APEX STATUS BAR & HEADER ⚜️ -->
-    <header id="top-nav" class="bg-[#14171A] border-b-2 border-[#7B1113] px-3 sm:px-4 py-2 flex items-center justify-between shadow-2xl relative z-30 shrink-0">
+    <!-- ⚜️ APEX STATUS BAR & HEADER (CLEAN & NON-OVERLAPPING) ⚜️ -->
+    <header id="top-nav" class="bg-[#111417] border-b-2 border-[#7B1113] px-3 sm:px-4 py-2 flex items-center justify-between shadow-2xl relative z-30 shrink-0 gap-2">
         <!-- Left: Mobile Menu Toggle + Emblem & Title -->
-        <div class="flex items-center space-x-2 sm:space-x-3 overflow-hidden shrink-0">
+        <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
             <!-- Mobile Left Sidebar Toggle Button -->
-            <button onclick="toggleMobileLeft()" class="xl:hidden w-8 h-8 rounded-lg bg-[#1F2428] text-[#D4AF37] border border-[#D4AF37]/40 hover:bg-[#7B1113] active:scale-95 transition-all flex items-center justify-center shrink-0" title="เปิดเมนูบทและระบบ">
+            <button type="button" onclick="toggleMobileLeft()" class="xl:hidden w-8 h-8 rounded-lg bg-[#1F2428] text-[#D4AF37] border border-[#D4AF37]/40 hover:bg-[#7B1113] active:scale-95 transition-all flex items-center justify-center shrink-0 cursor-pointer" title="เปิดเมนูสารบัญบท">
                 <i class="fa-solid fa-bars text-sm"></i>
             </button>
 
-            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded bg-gradient-to-br from-[#7B1113] to-[#1F2428] border border-[#D4AF37] flex items-center justify-center shadow-lg shrink-0">
-                <i class="fa-solid fa-shield-halved text-[#D4AF37] text-base sm:text-xl"></i>
-            </div>
-            <div class="truncate">
-                <div class="flex items-center space-x-1.5 sm:space-x-2 truncate">
-                    <span class="text-[9px] sm:text-xs px-1.5 py-0.5 rounded bg-[#7B1113] text-[#D4AF37] font-mono font-bold tracking-wider shrink-0">T-OOS V3.3</span>
-                    <h1 class="font-orbitron font-extrabold text-[#D4AF37] text-xs sm:text-base md:text-lg tracking-wider gold-glow truncate">TACTICAL ORBAL OS</h1>
+            <!-- Brand Emblem & Title -->
+            <div class="flex items-center space-x-2 cursor-pointer select-none" onclick="switchMainTab('reader')" title="กลับสู่หน้าอ่านนิยาย">
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-[#7B1113] to-[#1F2428] border border-[#D4AF37] flex items-center justify-center shadow-lg shrink-0">
+                    <i class="fa-solid fa-shield-halved text-[#D4AF37] text-sm"></i>
                 </div>
-                <p class="text-[10px] sm:text-xs text-amber-200/70 font-rajdhani tracking-widest hidden 2xl:block truncate">MILITARY ACADEMY RECORD & MASTER UNIVERSE HUB — EROS DIVISION</p>
+                <div class="flex items-center space-x-1.5">
+                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-[#7B1113] text-[#D4AF37] font-mono font-bold tracking-wider shrink-0 hidden sm:inline">V3.3</span>
+                    <span class="font-orbitron font-extrabold text-[#D4AF37] text-sm sm:text-base tracking-wider gold-glow whitespace-nowrap">T-OOS</span>
+                </div>
             </div>
         </div>
 
-        <!-- Center: 5 Master Navigation Tabs (Accessible on Top Bar) -->
-        <nav class="flex items-center space-x-1 sm:space-x-1.5 overflow-x-auto py-1 max-w-full font-rajdhani font-bold text-xs sm:text-sm">
-            <button onclick="switchMainTab('reader')" id="top-nav-reader" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1.5 bg-[#7B1113] text-[#D4AF37] border border-[#D4AF37] shadow-md shrink-0">
+        <!-- Center: 5 Master Navigation Tabs (Sleek Segmented Pill Controller) -->
+        <nav class="flex items-center bg-[#181D24] p-1 rounded-xl border border-[#D4AF37]/30 shadow-inner font-rajdhani font-bold text-xs sm:text-sm space-x-0.5 sm:space-x-1 overflow-x-auto max-w-[55vw] sm:max-w-none scrollbar-none">
+            <button type="button" onclick="switchMainTab('reader')" id="top-nav-reader" class="px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 bg-[#7B1113] text-[#D4AF37] border border-[#D4AF37] shadow shrink-0 cursor-pointer">
                 <i class="fa-solid fa-book-open text-xs"></i>
                 <span>READER</span>
             </button>
-            <button onclick="switchMainTab('characters')" id="top-nav-characters" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1.5 bg-[#1F2428] text-amber-200/80 hover:bg-[#2A3036] hover:text-white border border-[#D4AF37]/20 shrink-0">
+            <button type="button" onclick="switchMainTab('characters')" id="top-nav-characters" class="px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 text-amber-200/70 hover:text-white hover:bg-[#2A3036] border border-transparent shrink-0 cursor-pointer">
                 <i class="fa-solid fa-users text-xs"></i>
                 <span>DOSSIER</span>
             </button>
-            <button onclick="switchMainTab('map')" id="top-nav-map" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1.5 bg-gradient-to-r from-amber-950 to-amber-900 text-amber-300 hover:brightness-125 border border-amber-400/80 shadow-md shrink-0 animate-pulse">
+            <button type="button" onclick="switchMainTab('map')" id="top-nav-map" class="px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 text-amber-300 hover:text-white hover:bg-amber-950/80 border border-transparent shrink-0 cursor-pointer animate-pulse">
                 <i class="fa-solid fa-map-location-dot text-amber-300 text-xs"></i>
                 <span>ATLAS MAP 🗺️</span>
             </button>
-            <button onclick="switchMainTab('world')" id="top-nav-world" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1.5 bg-[#1F2428] text-amber-200/80 hover:bg-[#2A3036] hover:text-white border border-[#D4AF37]/20 shrink-0">
+            <button type="button" onclick="switchMainTab('world')" id="top-nav-world" class="px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 text-amber-200/70 hover:text-white hover:bg-[#2A3036] border border-transparent shrink-0 cursor-pointer">
                 <i class="fa-solid fa-globe text-xs"></i>
                 <span>WORLD</span>
             </button>
-            <button onclick="switchMainTab('guardrails')" id="top-nav-guardrails" class="px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1.5 bg-[#1F2428] text-amber-200/80 hover:bg-[#2A3036] hover:text-white border border-[#D4AF37]/20 shrink-0">
+            <button type="button" onclick="switchMainTab('guardrails')" id="top-nav-guardrails" class="px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 text-amber-200/70 hover:text-white hover:bg-[#2A3036] border border-transparent shrink-0 cursor-pointer">
                 <i class="fa-solid fa-gavel text-xs"></i>
                 <span>RULES</span>
             </button>
         </nav>
 
         <!-- Right: Telemetry + Focus / HUD Toggle -->
-        <div class="flex items-center space-x-1.5 sm:space-x-2 text-xs font-mono shrink-0 ml-auto">
-            <div class="hidden sm:flex items-center space-x-1.5 bg-[#1F2428] px-2.5 py-1 rounded border border-[#D4AF37]/30">
-                <i class="fa-regular fa-clock text-[#D4AF37]"></i>
-                <span class="text-amber-100 font-semibold" id="top-clock">30 มี.ค. S.1204</span>
-                <span class="px-2 py-0.5 rounded bg-emerald-900/80 text-emerald-300 text-xs font-semibold hidden lg:inline" id="top-slot-badge">Slot 1: Morning (06:00 - 12:00 น.)</span>
-            </div>
-
-            <div class="hidden 2xl:flex items-center space-x-1.5 bg-[#1F2428] px-2.5 py-1 rounded border border-[#D4AF37]/30">
-                <i class="fa-solid fa-coins text-[#D4AF37]"></i>
-                <span class="text-[#D4AF37] font-bold" id="top-money">8.5E+14 MIRA</span>
-            </div>
-
+        <div class="flex items-center space-x-1.5 sm:space-x-2 text-xs font-mono shrink-0">
             <!-- 🧠 DYNAMIC SANITY DECAY TELEMETRY BUTTON -->
-            <button id="sanity-tracker-btn" onclick="openSanityReportModal()" class="px-2.5 py-1 rounded bg-gradient-to-r from-emerald-950 to-slate-900 border border-emerald-500/60 text-emerald-300 text-xs font-mono font-bold tracking-wider flex items-center space-x-1.5 shadow-md cursor-pointer transition-all hover:scale-105" title="ตรวจวัดระดับการสลายตัวของสติปัญญา (Live Brain-Rot Telemetry)">
-                <i id="sanity-icon" class="fa-solid fa-brain text-emerald-400"></i>
-                <span id="sanity-label">SANITY: 100%</span>
+            <button type="button" id="sanity-tracker-btn" onclick="openSanityReportModal()" class="px-2 sm:px-2.5 py-1 rounded-lg bg-gradient-to-r from-emerald-950 to-slate-900 border border-emerald-500/60 text-emerald-300 text-xs font-mono font-bold tracking-wider flex items-center space-x-1.5 shadow-md cursor-pointer transition-all hover:scale-105" title="ตรวจวัดระดับสติปัญญา (Live Brain-Rot Telemetry)">
+                <i id="sanity-icon" class="fa-solid fa-brain text-emerald-400 text-xs"></i>
+                <span id="sanity-label" class="hidden sm:inline">SANITY: 100%</span>
+                <span id="sanity-label-sm" class="sm:hidden font-mono">100%</span>
             </button>
 
             <!-- Focus Mode Button (Desktop) -->
-            <button onclick="toggleFocusMode()" class="hidden xl:flex px-2.5 py-1 rounded bg-[#7B1113] hover:bg-[#a1181b] text-amber-200 border border-[#D4AF37] transition-all items-center space-x-1 shadow-md" title="สลับโหมด Focus (ซ่อน/แสดง Sidebar)">
-                <i class="fa-solid fa-expand" id="focus-icon"></i>
+            <button type="button" onclick="toggleFocusMode()" class="hidden xl:flex px-2.5 py-1 rounded-lg bg-[#7B1113] hover:bg-[#9B111E] text-[#D4AF37] hover:text-white border border-[#D4AF37]/50 transition-all items-center space-x-1 shadow cursor-pointer" title="สลับโหมด Focus (ซ่อน/แสดง Sidebar)">
+                <i class="fa-solid fa-expand text-xs" id="focus-icon"></i>
                 <span class="text-xs font-rajdhani font-bold">FOCUS</span>
             </button>
 
             <!-- Mobile Right Sidebar (Tactical HUD) Toggle Button -->
-            <button onclick="toggleMobileRight()" class="xl:hidden w-8 h-8 rounded-lg bg-[#1F2428] text-[#D4AF37] border border-[#D4AF37]/40 hover:bg-[#7B1113] active:scale-95 transition-all flex items-center justify-center shrink-0" title="เปิดแผงสเตตัสและข้อมูลยุทธวิธี (HUD)">
+            <button type="button" onclick="toggleMobileRight()" class="xl:hidden w-8 h-8 rounded-lg bg-[#1F2428] text-[#D4AF37] border border-[#D4AF37]/40 hover:bg-[#7B1113] active:scale-95 transition-all flex items-center justify-center shrink-0 cursor-pointer" title="เปิดแผงสเตตัสและข้อมูลยุทธวิธี (HUD)">
                 <i class="fa-solid fa-sliders text-sm"></i>
             </button>
         </div>
@@ -478,32 +468,8 @@
                 <span class="text-xs font-orbitron font-bold text-[#D4AF37] flex items-center">
                     <i class="fa-solid fa-folder-tree mr-2"></i> ARCHIVE & NAVIGATION
                 </span>
-                <button onclick="closeMobileDrawers()" class="w-7 h-7 rounded bg-[#1F2428] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] flex items-center justify-center">
+                <button type="button" onclick="closeMobileDrawers()" class="w-7 h-7 rounded bg-[#1F2428] border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#7B1113] flex items-center justify-center cursor-pointer">
                     <i class="fa-solid fa-xmark text-sm"></i>
-                </button>
-            </div>
-
-            <!-- View Selector Tabs (5 Tabs) -->
-            <div class="p-2 sm:p-2.5 bg-[#1F2428] border-b border-[#D4AF37]/20 grid grid-cols-5 gap-1">
-                <button onclick="switchMainTab('reader')" id="nav-btn-reader" class="nav-tab-btn py-1.5 px-1 rounded font-rajdhani font-bold text-[10px] sm:text-xs flex flex-col items-center justify-center transition-all bg-[#7B1113] text-[#D4AF37] border border-[#D4AF37]">
-                    <i class="fa-solid fa-book-open mb-0.5 text-xs"></i>
-                    <span>READER</span>
-                </button>
-                <button onclick="switchMainTab('characters')" id="nav-btn-characters" class="nav-tab-btn py-1.5 px-1 rounded font-rajdhani font-bold text-[10px] sm:text-xs flex flex-col items-center justify-center transition-all bg-[#14171A] text-amber-200/70 hover:bg-[#2A3036]">
-                    <i class="fa-solid fa-users mb-0.5 text-xs"></i>
-                    <span>DOSSIER</span>
-                </button>
-                <button onclick="switchMainTab('map')" id="nav-btn-map" class="nav-tab-btn py-1.5 px-1 rounded font-rajdhani font-bold text-[10px] sm:text-xs flex flex-col items-center justify-center transition-all bg-[#14171A] text-amber-200/70 hover:bg-[#2A3036]">
-                    <i class="fa-solid fa-map-location-dot mb-0.5 text-xs"></i>
-                    <span>MAP 🗺️</span>
-                </button>
-                <button onclick="switchMainTab('world')" id="nav-btn-world" class="nav-tab-btn py-1.5 px-1 rounded font-rajdhani font-bold text-[10px] sm:text-xs flex flex-col items-center justify-center transition-all bg-[#14171A] text-amber-200/70 hover:bg-[#2A3036]">
-                    <i class="fa-solid fa-globe mb-0.5 text-xs"></i>
-                    <span>WORLD</span>
-                </button>
-                <button onclick="switchMainTab('guardrails')" id="nav-btn-guardrails" class="nav-tab-btn py-1.5 px-1 rounded font-rajdhani font-bold text-[10px] sm:text-xs flex flex-col items-center justify-center transition-all bg-[#14171A] text-amber-200/70 hover:bg-[#2A3036]">
-                    <i class="fa-solid fa-gavel mb-0.5 text-xs"></i>
-                    <span>RULES</span>
                 </button>
             </div>
 
@@ -2486,24 +2452,21 @@
             const views = ['reader', 'characters', 'map', 'world', 'guardrails'];
             views.forEach(t => {
                 const el = document.getElementById(`view-${t}`);
-                const btn = document.getElementById(`nav-btn-${t}`);
                 const topBtn = document.getElementById(`top-nav-${t}`);
                 
                 if (t === tabName) {
                     if (el) el.classList.remove('hidden');
-                    if (btn) {
-                        btn.className = "nav-tab-btn py-1.5 px-1 rounded font-rajdhani font-bold text-[10px] sm:text-xs flex flex-col items-center justify-center transition-all bg-[#7B1113] text-[#D4AF37] border border-[#D4AF37]";
-                    }
                     if (topBtn) {
-                        topBtn.className = "px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1.5 bg-[#7B1113] text-[#D4AF37] border border-[#D4AF37] shadow-md shrink-0 font-bold";
+                        topBtn.className = "px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 bg-[#7B1113] text-[#D4AF37] border border-[#D4AF37] shadow shrink-0 cursor-pointer font-bold";
                     }
                 } else {
                     if (el) el.classList.add('hidden');
-                    if (btn) {
-                        btn.className = "nav-tab-btn py-1.5 px-1 rounded font-rajdhani font-bold text-[10px] sm:text-xs flex flex-col items-center justify-center transition-all bg-[#14171A] text-amber-200/70 hover:bg-[#2A3036]";
-                    }
                     if (topBtn) {
-                        topBtn.className = "px-2.5 sm:px-3 py-1.5 rounded-lg transition-all flex items-center space-x-1.5 bg-[#1F2428] text-amber-200/80 hover:bg-[#2A3036] hover:text-white border border-[#D4AF37]/20 shrink-0 font-bold";
+                        if (t === 'map') {
+                            topBtn.className = "px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 text-amber-300 hover:text-white hover:bg-amber-950/80 border border-transparent shrink-0 cursor-pointer animate-pulse";
+                        } else {
+                            topBtn.className = "px-2.5 sm:px-3 py-1 rounded-lg transition-all flex items-center space-x-1.5 text-amber-200/70 hover:text-white hover:bg-[#2A3036] border border-transparent shrink-0 cursor-pointer";
+                        }
                     }
                 }
             });
