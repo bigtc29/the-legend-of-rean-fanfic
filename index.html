@@ -403,10 +403,10 @@
                 <span class="text-[#D4AF37] font-bold" id="top-money">8.5E+14 MIRA</span>
             </div>
 
-            <!-- 🚨 BRAIN REMOVAL PROTOCOL BUTTON (Flashing Sanity Warning Modal Trigger) -->
-            <button onclick="openSanityWarningModal()" class="px-2.5 py-1 rounded bg-gradient-to-r from-red-900 to-[#7B1113] hover:from-red-800 hover:to-red-950 text-amber-200 border border-amber-400/80 transition-all flex items-center space-x-1.5 shadow-lg animate-pulse cursor-pointer" title="คำเตือนระดับภัยพิบัติทางปัญญา: มาตรา 1204/กาว">
-                <i class="fa-solid fa-triangle-exclamation text-amber-300 text-xs"></i>
-                <span class="text-xs font-rajdhani font-bold tracking-wide">SANITY WARNING</span>
+            <!-- 🧠 DYNAMIC SANITY DECAY TELEMETRY BUTTON -->
+            <button id="sanity-tracker-btn" onclick="openSanityReportModal()" class="px-2.5 py-1 rounded bg-gradient-to-r from-emerald-950 to-slate-900 border border-emerald-500/60 text-emerald-300 text-xs font-mono font-bold tracking-wider flex items-center space-x-1.5 shadow-md cursor-pointer transition-all hover:scale-105" title="ตรวจวัดระดับการสลายตัวของสติปัญญา (Live Brain-Rot Telemetry)">
+                <i id="sanity-icon" class="fa-solid fa-brain text-emerald-400"></i>
+                <span id="sanity-label">SANITY: 100%</span>
             </button>
 
             <!-- Focus Mode Button (Desktop) -->
@@ -1255,6 +1255,7 @@
             initDossierView();
             initWorldView();
             renderGuardrails();
+            startSanityDecayTimer();
 
             window.addEventListener('resize', () => {
                 if (window.innerWidth >= 1280) {
@@ -2383,6 +2384,179 @@
                 resetGatekeeperView();
             }
         }
+
+        // 🧠 DYNAMIC SANITY DECAY TELEMETRY SYSTEM 🧠
+        let readingSeconds = 0;
+        let sanityDecayPhase = 0; // 0: <1min, 1: 1-3min, 2: 3-5min, 3: >=5min
+
+        function startSanityDecayTimer() {
+            setInterval(() => {
+                readingSeconds++;
+                updateSanityTelemetry();
+            }, 1000);
+        }
+
+        function updateSanityTelemetry() {
+            const btn = document.getElementById('sanity-tracker-btn');
+            const label = document.getElementById('sanity-label');
+            const icon = document.getElementById('sanity-icon');
+            if (!btn || !label || !icon) return;
+
+            // Phase 1: 1 min (60s)
+            if (readingSeconds >= 60 && sanityDecayPhase === 0) {
+                sanityDecayPhase = 1;
+                btn.className = "px-2.5 py-1 rounded bg-gradient-to-r from-amber-950 to-amber-900 border border-amber-500/70 text-amber-300 text-xs font-mono font-bold tracking-wider flex items-center space-x-1.5 shadow-md cursor-pointer transition-all animate-pulse hover:scale-105";
+                icon.className = "fa-solid fa-triangle-exclamation text-amber-400";
+                label.innerText = "IQ: 70% ⚠️";
+                showSanityToast("⚠️ คำเตือนยุทธวิธี", "ตรวจพบระดับ IQ กำลังลดลงอย่างต่อเนื่อง... กรุณาอย่าพยายามคิดตามตรรกะ!", "amber");
+            }
+            // Phase 2: 3 mins (180s)
+            else if (readingSeconds >= 180 && sanityDecayPhase === 1) {
+                sanityDecayPhase = 2;
+                btn.className = "px-2.5 py-1 rounded bg-gradient-to-r from-red-950 to-red-900 border border-red-500/80 text-red-300 text-xs font-mono font-bold tracking-wider flex items-center space-x-1.5 shadow-md cursor-pointer transition-all animate-pulse hover:scale-105";
+                icon.className = "fa-solid fa-skull-crossbones text-red-400";
+                label.innerText = "SANITY: 25% 🚨";
+                showSanityToast("🚨 เตือนภัยระดับวิกฤต", "ระดับสติปัญญาของท่านกำลังเข้าสู่ภาวะล่มสลาย! เซลล์สมองหยุดประมวลผล 75%", "red");
+            }
+            // Phase 3: 5 mins (300s)
+            else if (readingSeconds >= 300 && sanityDecayPhase === 2) {
+                sanityDecayPhase = 3;
+                btn.className = "px-2.5 py-1 rounded bg-gradient-to-r from-[#7B1113] via-amber-900 to-purple-900 border-2 border-[#D4AF37] text-amber-200 text-xs font-mono font-bold tracking-wider flex items-center space-x-1.5 shadow-[0_0_15px_rgba(212,175,55,0.5)] cursor-pointer transition-all animate-bounce hover:scale-105";
+                icon.className = "fa-solid fa-crown text-[#D4AF37]";
+                label.innerText = "👑 EROS CITIZEN";
+                showSanityToast("🎉 ยินดีต้อนรับสู่จักรวาล Eros", "คุณไม่เหลือสติปัญญาใดๆ อีกแล้ว! ได้รับสิทธิ์เป็นพลเมืองกาวเต็มตัว + นั่งรถ Denza D9 ฟรีตลอดชีพ 🚗", "purple");
+            }
+        }
+
+        function showSanityToast(title, message, color = "amber") {
+            const container = document.getElementById('sanity-toast-container');
+            if (!container) return;
+
+            const borderCol = color === "red" ? "border-red-500/60 bg-[#1F1214]" : (color === "purple" ? "border-purple-500/80 bg-[#1A1224]" : "border-amber-500/60 bg-[#1F1B14]");
+            const textCol = color === "red" ? "text-red-300" : (color === "purple" ? "text-purple-300" : "text-amber-300");
+
+            const toast = document.createElement('div');
+            toast.className = `p-3.5 rounded-xl border ${borderCol} shadow-2xl backdrop-blur-xl pointer-events-auto transform transition-all duration-300 translate-y-2 opacity-0 flex items-start space-x-3`;
+            toast.innerHTML = `
+                <div class="mt-0.5"><i class="fa-solid fa-bell ${textCol} text-base"></i></div>
+                <div class="flex-1 space-y-1">
+                    <h4 class="text-xs font-bold font-orbitron ${textCol}">${title}</h4>
+                    <p class="text-xs text-slate-200 font-sarabun leading-relaxed">${message}</p>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-white text-xs cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            `;
+
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => {
+                    if (toast && typeof toast.remove === 'function') {
+                        toast.remove();
+                    } else if (toast && toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 400);
+            }, 8000);
+        }
+
+        function openSanityReportModal() {
+            const modal = document.getElementById('sanity-report-modal');
+            if (!modal) return;
+
+            const mins = Math.floor(readingSeconds / 60);
+            const secs = readingSeconds % 60;
+            document.getElementById('modal-reading-time').innerText = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')} นาที`;
+
+            const valSpan = document.getElementById('modal-sanity-val');
+            const denzaSpan = document.getElementById('modal-denza-status');
+            const doctorNote = document.getElementById('modal-doctor-note');
+            const diagBox = document.getElementById('modal-diagnosis-box');
+
+            if (sanityDecayPhase === 0) {
+                valSpan.innerText = "100% (STABLE)";
+                valSpan.className = "text-emerald-400 font-bold text-sm";
+                denzaSpan.innerText = "รอการประเมิน";
+                denzaSpan.className = "text-slate-400 font-bold";
+                doctorNote.innerText = "สติปัญญายังคงอยู่ในเกณฑ์มนุษย์ปกติ หากอ่านนิยายเรื่องนี้ต่อไป เซลล์สมองจะเริ่มสลายตัวอย่างมีความสุข";
+                diagBox.className = "p-3.5 rounded-xl bg-[#181D24] border border-emerald-500/30 text-slate-300 text-xs leading-relaxed font-sarabun";
+            } else if (sanityDecayPhase === 1) {
+                valSpan.innerText = "70% (DECAYING)";
+                valSpan.className = "text-amber-400 font-bold text-sm";
+                denzaSpan.innerText = "กำลังดำเนินการ";
+                denzaSpan.className = "text-amber-300 font-bold";
+                doctorNote.innerText = "เริ่มมีอาการหลงลืมตรรกะความเป็นจริง มองเห็นรีน 120 PSI และชีคดูไบแจกรถเป็นเรื่องสมเหตุสมผล กรุณาอย่าต่อต้านความกาว";
+                diagBox.className = "p-3.5 rounded-xl bg-[#181D24] border border-amber-500/40 text-slate-300 text-xs leading-relaxed font-sarabun";
+            } else if (sanityDecayPhase === 2) {
+                valSpan.innerText = "25% (CRITICAL)";
+                valSpan.className = "text-red-400 font-bold text-sm";
+                denzaSpan.innerText = "อนุมัติกุญแจรถชั่วคราว 🔑";
+                denzaSpan.className = "text-red-300 font-bold";
+                doctorNote.innerText = "สัญญาณชีพจรทางปัญญาเข้าสู่ภาวะวิกฤต! ขณะนี้ท่านสามารถเข้าใจทฤษฎีมวยปล้ำ WWE และยาน Ark Hyperion ได้อย่างถ่องแท้";
+                diagBox.className = "p-3.5 rounded-xl bg-[#181D24] border border-red-500/50 text-slate-300 text-xs leading-relaxed font-sarabun";
+            } else {
+                valSpan.innerText = "0% (ABSOLUTE BRAIN-ROT 👑)";
+                valSpan.className = "text-purple-400 font-bold text-sm";
+                denzaSpan.innerText = "อนุมัติ Denza D9 ฟรีตลอดชีพ 🚗";
+                denzaSpan.className = "text-[#D4AF37] font-bold";
+                doctorNote.innerText = "ขอแสดงความยินดีด้วย! ท่านได้ละทิ้งสติปัญญาของมนุษย์โลกอย่างสมบูรณ์ และได้เลื่อนขั้นเป็น 'พลเมืองกาวเกียรติยศแห่งจักรวาล Eros' พร้อมรับซุปโสมหมื่นปีจากคุณแม่ลูเซีย";
+                diagBox.className = "p-3.5 rounded-xl bg-[#181D24] border border-[#D4AF37]/50 text-slate-300 text-xs leading-relaxed font-sarabun";
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeSanityReportModal() {
+            const modal = document.getElementById('sanity-report-modal');
+            if (modal) modal.classList.add('hidden');
+        }
     </script>
+
+    <!-- 🍞 TACTICAL IQ DECAY TOAST NOTIFICATIONS 🍞 -->
+    <div id="sanity-toast-container" class="fixed top-16 right-4 z-50 flex flex-col space-y-2 pointer-events-none max-w-sm w-full"></div>
+
+    <!-- 🧠 NEUROLOGICAL BRAIN SCAN REPORT MODAL 🧠 -->
+    <div id="sanity-report-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="max-w-md w-full bg-[#11151A] border-2 border-[#D4AF37] rounded-2xl p-6 shadow-2xl space-y-5 relative">
+            <div class="flex items-center justify-between border-b border-[#D4AF37]/30 pb-3">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-microchip text-[#D4AF37] text-lg"></i>
+                    <h3 class="text-base font-bold font-orbitron text-[#D4AF37]">BRAIN-ROT TELEMETRY</h3>
+                </div>
+                <button onclick="closeSanityReportModal()" class="w-7 h-7 rounded bg-[#1F2428] text-[#D4AF37] hover:bg-[#7B1113] flex items-center justify-center border border-[#D4AF37]/40 cursor-pointer">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+                <div class="flex justify-between items-center bg-[#181D24] p-3 rounded-lg border border-[#D4AF37]/20">
+                    <span class="text-amber-200/70">⏱️ เวลาที่ใช้อ่าน:</span>
+                    <span id="modal-reading-time" class="text-white font-bold text-sm">00:00</span>
+                </div>
+                <div class="flex justify-between items-center bg-[#181D24] p-3 rounded-lg border border-[#D4AF37]/20">
+                    <span class="text-amber-200/70">🧠 ระดับสติปัญญา (IQ):</span>
+                    <span id="modal-sanity-val" class="text-emerald-400 font-bold text-sm">100% (STABLE)</span>
+                </div>
+                <div class="flex justify-between items-center bg-[#181D24] p-3 rounded-lg border border-[#D4AF37]/20">
+                    <span class="text-amber-200/70">🚗 สิทธิ์รถตู้ Denza D9:</span>
+                    <span id="modal-denza-status" class="text-amber-300 font-bold">รอการประเมิน</span>
+                </div>
+            </div>
+
+            <div id="modal-diagnosis-box" class="p-3.5 rounded-xl bg-[#181D24] border border-emerald-500/30 text-slate-300 text-xs leading-relaxed font-sarabun">
+                <div class="text-emerald-400 font-bold mb-1 flex items-center">
+                    <i class="fa-solid fa-stethoscope mr-1.5"></i> คำวินิจฉัยจากสภาเอลิเซียม:
+                </div>
+                <p id="modal-doctor-note">สติปัญญายังคงอยู่ในเกณฑ์มนุษย์ปกติ หากอ่านนิยายเรื่องนี้ต่อไป เซลล์สมองจะเริ่มถูกย่อยสลายอย่างมีความสุข</p>
+            </div>
+
+            <button onclick="closeSanityReportModal()" class="w-full py-2.5 rounded-xl bg-[#7B1113] hover:bg-[#9B111E] text-amber-200 font-rajdhani font-bold text-sm border border-[#D4AF37]/50 shadow-md transition cursor-pointer">
+                รับทราบ & อ่านต่อ (RESUME READING)
+            </button>
+        </div>
+    </div>
 </body>
 </html>
