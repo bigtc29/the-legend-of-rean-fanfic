@@ -1814,6 +1814,28 @@
             } else {
                 proseEl.innerHTML = scene.html_content;
             }
+            
+            // 🌐 UNIVERSE STAT / TELEMETRY QUICK ACCESS
+            if (scene.state_snapshot) {
+                proseEl.innerHTML += `
+                    <div class="mt-12 mb-8 p-6 rounded-xl bg-gradient-to-r from-[#14171A] to-[#1F2428] border border-[#D4AF37]/30 text-center shadow-lg transition-transform hover:shadow-2xl">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-[#14171A] border border-[#D4AF37]/50 flex items-center justify-center mb-3 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                            <i class="fa-solid fa-satellite-dish text-2xl text-emerald-400 animate-pulse"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold font-orbitron text-[#D4AF37] mb-2">
+                            UNIVERSE STAT & TELEMETRY
+                        </h3>
+                        <p class="text-sm font-sarabun text-amber-200/70 mb-5 max-w-lg mx-auto leading-relaxed">
+                            สำรวจสถานะจักรวาล ดัชนีเศรษฐกิจ ค่าความตึงเครียด และความเคลื่อนไหวบนโซเชียลมีเดียที่เกิดขึ้น ณ ช่วงเวลาของเนื้อหานี้
+                        </p>
+                        <button onclick="switchMainTab('telemetry')" class="px-6 md:px-8 py-3 rounded-lg bg-gradient-to-r from-[#7B1113] to-red-950 hover:from-red-900 hover:to-black text-[#D4AF37] hover:text-white font-bold font-rajdhani border border-[#D4AF37]/50 shadow-lg transition-all hover:scale-105 mx-auto flex items-center space-x-2 cursor-pointer group">
+                            <i class="fa-solid fa-chart-pie group-hover:rotate-180 transition-transform duration-500"></i>
+                            <span class="tracking-wide">ตรวจสอบสถานะจักรวาล (OPEN TELEMETRY)</span>
+                        </button>
+                    </div>
+                `;
+            }
+
             document.getElementById('main-view-container').scrollTop = 0;
 
             // ⚙️ Reactive Dynamic Tactical HUD Update
