@@ -1,0 +1,265 @@
+/* 
+ * The Legend of Rean - Erebonian Aesthetics 
+ * Anti-AI Slop, bespoke human-crafted details.
+ * The "Aristocratic Manuscript" (The Deceptive Luxury)
+ */
+
+body {
+    background-color: #0D1117;
+    color: #F9F6EE;
+}
+
+/* 
+ * 1. Typography & Readability (The Monocle Reader)
+ * Deliberate pacing, generous line-height, elegant kerning.
+ */
+.novel-prose {
+    font-size: 1.15rem;
+    line-height: 2.1;
+    letter-spacing: 0.02em;
+    color: rgba(249, 246, 238, 0.92);
+}
+
+.novel-prose p {
+    margin-bottom: 2rem;
+    text-indent: 2.5rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.novel-prose h1, .novel-prose h2, .novel-prose h3, .novel-prose h4 {
+    font-family: 'Cinzel', 'Chonburi', serif;
+    color: #C5A059;
+    font-weight: 400;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-indent: 0;
+    text-align: center;
+}
+
+.novel-prose h1 { 
+    font-size: 2.5rem; 
+    letter-spacing: 0.05em; 
+    text-transform: uppercase;
+}
+
+.novel-prose h2 { 
+    font-size: 1.85rem; 
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2); 
+    padding-bottom: 0.75rem; 
+    display: inline-block;
+    width: 100%;
+}
+
+.novel-prose h3 { 
+    font-size: 1.45rem; 
+}
+
+/* The Erebonian Blockquote (Scholarly annotations) */
+.novel-prose blockquote {
+    border-left: 1px solid #C5A059;
+    padding-left: 2rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: rgba(249, 246, 238, 0.75);
+    background: linear-gradient(90deg, rgba(123, 17, 19, 0.08) 0%, transparent 100%);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    text-indent: 0;
+}
+
+.novel-prose blockquote::before {
+    content: "❝";
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: serif;
+    font-size: 1.5rem;
+    color: #0D1117;
+    background-color: #C5A059;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.novel-prose blockquote p {
+    text-indent: 0;
+    margin-bottom: 0;
+}
+
+/* Highlighting the Contrast: Erotic/Absurd terms in elegant formatting */
+.novel-prose strong {
+    color: #F9F6EE;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.novel-prose em {
+    color: #C5A059;
+}
+
+/* Ornamental Dividers */
+.novel-prose hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.3), transparent);
+    margin: 4rem 0;
+    position: relative;
+    overflow: visible;
+}
+
+.novel-prose hr::after {
+    content: "✦";
+    position: absolute;
+    top: -0.85rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #C5A059;
+    font-size: 1.2rem;
+    background-color: #0D1117;
+    padding: 0 1rem;
+}
+
+/* Refined Terminal / Code Blocks (For World Mechanics in Archive) */
+.novel-prose pre {
+    background: #0A0C0E;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+    font-family: 'Inter', 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(249, 246, 238, 0.6);
+    line-height: 1.7;
+    text-indent: 0;
+    border-radius: 2px;
+}
+
+.novel-prose code {
+    font-family: 'Inter', 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    color: #C5A059;
+    padding: 0.15rem 0.3rem;
+    background: rgba(123, 17, 19, 0.15);
+    border-radius: 2px;
+    border: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.novel-prose pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Lists */
+.novel-prose ul {
+    list-style-type: none;
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+.novel-prose ul li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    color: rgba(249, 246, 238, 0.85);
+    text-indent: 0;
+}
+
+.novel-prose ul li::before {
+    content: "❖";
+    position: absolute;
+    left: -1.75rem;
+    top: 0.1rem;
+    color: rgba(197, 160, 89, 0.6);
+    font-size: 0.85em;
+}
+
+/* Tables (Erebonian Census Style) */
+.novel-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3rem 0;
+    font-size: 0.95rem;
+    text-indent: 0;
+}
+
+.novel-prose th {
+    background: rgba(197, 160, 89, 0.05);
+    color: #C5A059;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    text-align: left;
+}
+
+.novel-prose td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    color: rgba(249, 246, 238, 0.8);
+}
+
+.novel-prose tr:hover td {
+    background: rgba(123, 17, 19, 0.1);
+}
+
+/* 
+ * 2. Elegant scrollbar (Hairline)
+ */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #0D1117;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(123, 17, 19, 0.5); /* Faded Imperial Crimson */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(197, 160, 89, 0.8); /* Muted gold hover */
+}
+
+/* 
+ * 3. Human-Crafted Utilities (Bespoke Borders, Shadow, Vibe)
+ */
+.border-hairline-gold {
+    border: 1px solid rgba(197, 160, 89, 0.2);
+}
+.border-hairline-gold-t {
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+}
+.border-hairline-gold-b {
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+/* Animate link underlines in a bespoke way */
+.erebonian-link {
+    position: relative;
+    text-decoration: none;
+}
+.erebonian-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #C5A059;
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.erebonian-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
