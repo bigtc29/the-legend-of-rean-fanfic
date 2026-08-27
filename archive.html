@@ -13,31 +13,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'crimson': '#7B1113',
-                        'obsidian': '#0D1117',
-                        'ivory': '#F9F6EE',
-                        'muted-gold': '#C5A059'
-                    },
-                    fontFamily: {
-                        'cinzel': ['Cinzel', 'serif'],
-                        'cormorant': ['Cormorant Garamond', 'serif'],
-                        'chonburi': ['Chonburi', 'serif'],
-                        'inter': ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
+    <!-- Custom CSS (Now Compiled via Tailwind CLI) -->
     <link rel="stylesheet" href="assets/css/style.css">
     
     
@@ -54,25 +30,27 @@
     </div>
 </header>
 
-<main class="flex-grow flex justify-center py-12 px-6">
-    <div class="w-full max-w-5xl">
-        <header class="text-center mb-12">
-            <h1 class="font-cinzel text-3xl md:text-4xl text-muted-gold tracking-wider mb-2">Imperial Archive</h1>
-            <p class="font-cormorant italic text-lg text-ivory/60">ฐานข้อมูลลับ หอจดหมายเหตุ และสนธิสัญญาแห่งเอเรโบเนีย</p>
-        </header>
+<main class="flex-grow py-12 px-4 sm:px-8 max-w-7xl mx-auto w-full">
+    
+    <div class="mb-12 border-b border-muted-gold/20 pb-4">
+        <h1 class="font-cinzel text-3xl sm:text-4xl text-ivory drop-shadow-sm uppercase tracking-wider">Imperial Archive</h1>
+        <p class="font-inter text-xs text-muted-gold/70 tracking-widest mt-2 uppercase">The Erebonian Records</p>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-10">
         
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Sidebar Navigation -->
-            <div class="md:col-span-1 border-r border-white/10 pr-4">
-                <nav class="space-y-2 font-cinzel text-sm tracking-wider">
-                    <a href="#titans" class="block py-2 px-3 text-muted-gold bg-white/5 border-l-2 border-muted-gold">Titans & Locations</a>
-                    <a href="#worldbuilding" class="block py-2 px-3 text-ivory/60 hover:text-ivory hover:bg-white/5 transition-colors">Worldbuilding</a>
-                    <a href="#characters" class="block py-2 px-3 text-ivory/60 hover:text-ivory hover:bg-white/5 transition-colors">Characters</a>
-                </nav>
-            </div>
+        <!-- Sidebar Navigation (Horizontal on mobile, vertical on desktop) -->
+        <aside class="w-full lg:w-64 flex-shrink-0 lg:sticky lg:top-24 h-auto lg:self-start z-30 bg-obsidian/95 backdrop-blur">
+            <div class="font-cinzel text-xs text-muted-gold/40 uppercase tracking-[0.2em] mb-4 pl-2">Categories</div>
+            <nav class="flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide border-b lg:border-none border-white/5">
+                <a href="#titans" class="flex-shrink-0 lg:flex-shrink block py-2 px-4 lg:px-3 text-muted-gold bg-white/5 lg:border-l-2 lg:border-b-0 border-b-2 border-muted-gold whitespace-nowrap">Titans & Locations</a>
+                <a href="#worldbuilding" class="flex-shrink-0 lg:flex-shrink block py-2 px-4 lg:px-3 text-ivory/60 hover:text-ivory hover:bg-white/5 transition-colors whitespace-nowrap">Worldbuilding</a>
+                <a href="#characters" class="flex-shrink-0 lg:flex-shrink block py-2 px-4 lg:px-3 text-ivory/60 hover:text-ivory hover:bg-white/5 transition-colors whitespace-nowrap">Characters</a>
+            </nav>
+        </aside>
             
             <!-- Content Area -->
-            <div class="md:col-span-3 space-y-16">
+            <div class="flex-grow space-y-16 lg:w-[calc(100%-18rem)]">
                 <!-- Example section for Titans -->
                 <section id="titans">
                     <h2 class="font-cinzel text-2xl text-ivory border-b border-muted-gold/20 pb-4 mb-8">Titans & Locations</h2>
