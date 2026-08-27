@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="th" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สถาปัตยกรรมหน่วยความจำระยะยาว (5-Tier LTM Engine) | Imperial Archive</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;600;700&family=Chonburi&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS (Now Compiled via Tailwind CLI) -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    
+</head>
+<body class="bg-obsidian text-ivory antialiased min-h-screen flex flex-col font-cormorant selection:bg-muted-gold/30 selection:text-ivory">
+    
+<!-- Minimalist, Hairline Header -->
+<header class="w-full py-4 px-6 sm:px-8 sticky top-0 bg-obsidian/95 backdrop-blur-md z-40 flex justify-between items-center border-hairline-gold-b transition-all duration-500">
+    <div class="font-cinzel text-muted-gold/80 tracking-widest text-xs uppercase flex items-center gap-4 sm:gap-6">
+        <a href="../archive.html" class="erebonian-link hover:text-muted-gold transition-colors flex items-center gap-2">
+            <i class="fa-solid fa-arrow-left text-[11px]"></i>
+            <span>คลังจดหมายเหตุ (Archive)</span>
+        </a>
+        <span class="hidden md:inline border-l border-muted-gold/20 pl-6 text-ivory/40 text-[11px]">ตารางชีวิตไดนามิก</span>
+    </div>
+    <div class="font-inter text-[11px] text-ivory/50 uppercase tracking-widest flex items-center gap-4">
+        <a href="../toc.html" class="erebonian-link hover:text-muted-gold transition-colors hidden sm:inline">
+            <i class="fa-solid fa-book-open mr-1"></i> สารบัญนิยาย
+        </a>
+    </div>
+</header>
+
+<!-- Lore Reading Layout (Max 840px width for rich encyclopedic tables & diagrams) -->
+<main class="flex-grow flex justify-center py-12 sm:py-20 px-4 sm:px-6">
+    <article class="w-full max-w-[840px] relative">
+        
+        <!-- Document Header -->
+        <header class="text-center mb-16 relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1 border border-muted-gold/30 bg-crimson/10 text-muted-gold text-[10px] sm:text-xs font-cinzel uppercase tracking-widest rounded-full mb-6">
+                <i class="fa-solid fa-brain text-[10px]"></i>
+                <span>ตารางชีวิตไดนามิก</span>
+            </div>
+
+            <h1 class="font-chonburi text-2xl sm:text-3xl md:text-4xl text-ivory leading-snug mb-4 drop-shadow-sm">
+                สถาปัตยกรรมหน่วยความจำระยะยาว (5-Tier LTM Engine)
+            </h1>
+            
+            
+            <p class="font-cormorant italic text-base sm:text-lg text-ivory/70 max-w-xl mx-auto mb-8">
+                ระบบคลังความทรงจำ 5 ลำดับชั้น ป้องกัน AI หลอน & คุมประวัติศาสตร์นิยาย 100%
+            </p>
+            
+
+            <!-- Decorative Divider -->
+            <div class="flex items-center justify-center gap-4 opacity-70 mb-8">
+                <div class="h-px w-20 bg-gradient-to-r from-transparent to-muted-gold/50"></div>
+                <i class="fa-solid fa-diamond text-[6px] text-muted-gold"></i>
+                <div class="h-px w-20 bg-gradient-to-l from-transparent to-muted-gold/50"></div>
+            </div>
+
+            <!-- Tags -->
+            
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                
+                <span class="font-inter text-[10px] uppercase tracking-wider text-ivory/40 border border-white/10 px-2.5 py-0.5 rounded-sm bg-white/5">
+                    #LTM
+                </span>
+                
+                <span class="font-inter text-[10px] uppercase tracking-wider text-ivory/40 border border-white/10 px-2.5 py-0.5 rounded-sm bg-white/5">
+                    #Memory
+                </span>
+                
+                <span class="font-inter text-[10px] uppercase tracking-wider text-ivory/40 border border-white/10 px-2.5 py-0.5 rounded-sm bg-white/5">
+                    #Anti-Hallucination
+                </span>
+                
+                <span class="font-inter text-[10px] uppercase tracking-wider text-ivory/40 border border-white/10 px-2.5 py-0.5 rounded-sm bg-white/5">
+                    #5-Tier
+                </span>
+                
+            </div>
+            
+        </header>
+        
+        <!-- The Rich Converted Markdown Content -->
+        <div class="novel-prose">
+            <h2><strong>(คู่มือสถาปัตยกรรมระบบความจำระยะยาว 5 ลำดับชั้น, การแยกพาร์ทิชันความจำคู่ขนาน Tri-Partition Sandbox, กลไกเชื่อมต่อความจำ JIT Context Injection, ระบบรหัสสายโซ่ Path Chain Tracking, และโปรโตคอลป้องกันข้อมูลรั่วไหล Zero-Leakage Protocol)</strong></h2>
+<hr />
+<h2><strong>1. บทนำและปรัชญาการออกแบบ (Introduction &amp; Architectural Philosophy)</strong></h2>
+<ul>
+<li><strong>ปัญหาคลาสสิกของนิยายมหากาพย์ (The Problem):</strong><br />
+  ในนิยายขนาดยาวระดับ 100+ ตอน ที่มีเควสต์ 100,000 คน, 11 มหาไททัน, ตัวละครหลายสิบตัว และ <strong>"ทางเลือกสองขั้ว Clean vs Taboo ระหว่างรีนกับ 3 คุณแม่"</strong>... ระบบ AI มักเผชิญกับปัญหา <strong>"Context Drift (ความจำเสื่อม/จำสลับ/ข้อมูลปนเปื้อนข้ามสาย)"</strong></li>
+<li><strong>เป้าหมายของระบบนี้ (The Goal):</strong><br />
+  สร้างสถาปัตยกรรมความจำที่เหมือน <strong>"ฐานข้อมูลเซฟเกม RPG ระดับ AAA"</strong> ที่แยก <strong>กฎถาวร (Constants)</strong>, <strong>กระดานสถานะปัจจุบัน (Master State)</strong>, และ <strong>บันทึกประวัติศาสตร์รายตอน (Chronicle Logs)</strong> ออกจากกันอย่างเด็ดขาด รับประกัน <strong>"ความถูกต้อง 100% / ไม่มีการปนเปื้อนข้ามสาย / ประหยัด Token สูงสุด"</strong></li>
+</ul>
+<pre><code class="language-text">══════════════════════════════════════════════════════════════════════════════════════════════
+                                MASTER 5-TIER MEMORY HIERARCHY
+══════════════════════════════════════════════════════════════════════════════════════════════
+
+ ┌──────────────────────────────────────────────────────────────────────────────────────────┐
+ │ 🔒 LAYER 1: IMMUTABLE TRUTH CORE (คลังความจริงถาวร — ห้ามแก้ไข 100%)                    │
+ │ 📁 01_Characters/  |  📁 02_Locations/  |  📁 03_World_building/                         │
+ │ • สรีระถาวร (รีน 7.5&quot;, อลิซ่าคัพ E)  • สายเลือด (เตโอ+ลูเซีย 100%)  • กฎสายฟ้า Anti-NTR    │
+ └────────────────────────────────────────────┬─────────────────────────────────────────────┘
+                                              │
+ ┌────────────────────────────────────────────┴─────────────────────────────────────────────┐
+ │ 📊 LAYER 2: MODULAR &amp; HIERARCHICAL LIVING STATE (ระบบกระดานสถานะความจำแบบแยกชั้นโมดูลาร์) │
+ │ 📄 04_Manuscripts/Global_Master_Summary.md          (🌐 ระดับจักรวาล: สถิติรวม/กองทัพ/ทรัพย์สิน) │
+ │ 📄 04_Manuscripts/Harem_Registry_and_Relationship_Ledger.md (💃 ทะเบียนสาวๆ/สลัก 8K/ไซส์)   │
+ │ 📄 04_Manuscripts/Volume_XX/Volume_XX_Summary.md    (📌 ระดับเล่ม: สรุปสถานะเฉพาะเล่ม)     │
+ │ 📄 04_Manuscripts/Volume_XX/Chapter_XX/Chapter_XX_Summary.md (📝 ระดับบท: สรุป 1 หน้าจบ)     │
+ │ 🧬 PATH CHAIN TRACKER: `[Ch01:🔴] ➡️ [Ch02:🟢] ➡️ [Ch03:🔴] ... (คำนวณ State อัตโนมัติ)`   │
+ └────────────────────────────────────────────┬─────────────────────────────────────────────┘
+                                              │
+ ┌────────────────────────────────────────────┴─────────────────────────────────────────────┐
+ │ 📜 LAYER 3: ROLLING EPISODIC CHRONICLE (สมุดประวัติศาสตร์รายตอนย่อ — โหลดแค่ 2 ตอนล่าสุด)│
+ │ 📄 04_Manuscripts/Chronicle_History_Log.md                                               │
+ │ • บันทึก Telemetry สรุปย่อ 5 บรรทัดต่อตอน (ประหยัด Token / ทบทวนความจำก่อนเริ่มตอนใหม่)  │
+ └────────────────────────────────────────────┬─────────────────────────────────────────────┘
+                                              │
+ ┌────────────────────────────────────────────┴─────────────────────────────────────────────┐
+ │ 🎯 LAYER 4: JIT CONTEXT INJECTION ENGINE (ท่อส่งข้อมูลอัจฉริยะเข้าหัว AI ตาม Blueprint)   │
+ │ 📄 05_Templates_and_Prompts/Generate_Chapter_Prompt.md                                   │
+ │ • ถ้าเลือกสาย 🟢 Clean ➡️ Mount เฉพาะ [COMMON] + [CLEAN SANDBOX] (ตัดเรื่อง 18+ ทิ้ง 100%)│
+ │ • ถ้าเลือกสาย 🔴 Taboo ➡️ Mount เฉพาะ [COMMON] + [TABOO SANDBOX] (ดึงความฟิน 8K เต็มที่)   │
+ └────────────────────────────────────────────┬─────────────────────────────────────────────┘
+                                              │
+ ┌────────────────────────────────────────────┴─────────────────────────────────────────────┐
+ │ 🛡️ LAYER 5: MEMORY INTEGRITY &amp; QC GATEKEEPER (ด่านตรวจจับความจำหลุดและบันทึกเซฟอัตโนมัติ) │
+ │ 📄 05_Templates_and_Prompts/QC_Check_Prompt.md                                           │
+ │ • ตรวจสอบ OOC / ตรวจจับคำต้องห้ามข้ามสาย / ยืนยันการคุมกำเนิดของตัวแม่ 0.00%             │
+ │ • เมื่อผ่าน QC ➡️ Auto-Sync บันทึกข้อมูลใหม่อัปเดตทับลง L2 และ L3 ทันที!                  │
+ └──────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2><strong>2. โครงสร้างและหน้าที่ของ 5 ลำดับชั้นความจำ (The 5 Memory Layers)</strong></h2>
+<h3><strong>🔒 LAYER 1: ฐานข้อมูลความจริงสัมบูรณ์ (Immutable Truth Core — L1)</strong></h3>
+<ul>
+<li><strong>ขอบเขต:</strong> แฟ้มตัวละคร <code>01_Characters/</code>, แฟ้มสถานที่ <code>02_Locations/</code>, และโลกทัศน์ <code>03_World_building/</code></li>
+<li><strong>สถานะการทำงาน:</strong> <strong>Read-Only (อ่านอย่างเดียว 100% ห้ามเขียนทับระหว่างแต่งนิยาย)</strong></li>
+<li><strong>เนื้อหาที่บรรจุ:</strong></li>
+<li>กายวิภาคถาวร: รีน 7.5 นิ้ว Hardcoded, อลิซ่าคัพ E, ลูเซียคัพ E, เลาร่าคัพ D</li>
+<li>กฎฟิสิกส์และจักรวาล: สายฟ้า Anti-NTR ทำงานเฉพาะเจตนาทางเพศ, ตรรกะ "ความผิดปกติคือความปกติ"</li>
+<li>สายเลือดและระบบครอบครัว: เตโอ+ลูเซียเป็นพ่อแม่แท้ๆ 100% / ออสบอร์นเป็นคู่แข่งการเมือง</li>
+</ul>
+<hr />
+<h3><strong>📊 LAYER 2: ระบบกระดานสถานะความจำแบบแยกชั้นโมดูลาร์ (Modular &amp; Hierarchical Master State — L2)</strong></h3>
+<ul>
+<li><strong>ไฟล์ประจำชั้น (4 โมดูลหลัก):</strong></li>
+<li>🌐 <strong><code>04_Manuscripts/Global_Master_Summary.md</code>:</strong> สถานะภาพรวมมัลติเวิร์ส (เควสต์ 100k, สงคราม EOF, ทรัพย์สินมหาเศรษฐี)</li>
+<li>💃 <strong><code>04_Manuscripts/Harem_Registry_and_Relationship_Ledger.md</code>:</strong> ฐานข้อมูลตัวละครรายบุคคล (พรหมจรรย์, ไซส์คัพ, สลัก DNA 8K, เบ๊)</li>
+<li>📌 <strong><code>04_Manuscripts/Volume_XX/Volume_XX_Summary.md</code>:</strong> สรุปสถานะและความคืบหน้าระดับเล่ม</li>
+<li>📝 <strong><code>04_Manuscripts/Volume_XX/Chapter_XX/Chapter_XX_Summary.md</code>:</strong> สรุปสาระสำคัญระดับบท (1 หน้าจบหลังแต่งจบ Chapter)</li>
+<li><strong>สถานะการทำงาน:</strong> <strong>Read/Write (อ่านเฉพาะโมดูลที่เกี่ยวข้องก่อนเริ่มตอน และอัปเดตทับหลังจบตอน)</strong></li>
+<li><strong>การแบ่งพาร์ทิชันความจำ (Partition Isolation):</strong></li>
+<li>🌐 <strong><code>[COMMON_MAINLINE_PARTITION]</code>:</strong> ข้อมูลแกนกลางร่วมกันทุกสาย</li>
+<li>🟢 <strong><code>[CLEAN_SANDBOX_PARTITION]</code>:</strong> ข้อมูลความสัมพันธ์ตัวแม่สายสว่าง (ความกตัญญู, มุกตลกกระบวยไม้, ปลอดเซ็กส์ 100%)</li>
+<li>🔴 <strong><code>[TABOO_SANDBOX_PARTITION]</code>:</strong> ข้อมูลความสัมพันธ์ตัวแม่สายมืด (จำนวนครั้งสด 2 รู, สลัก DNA 8K, ระดับความเสพติด, รหัสเซฟ Level S)</li>
+</ul>
+<hr />
+<h3><strong>📜 LAYER 3: สมุดประวัติศาสตร์รายตอนย่อ (Rolling Episodic Chronicle — L3)</strong></h3>
+<ul>
+<li><strong>ไฟล์ประจำชั้น:</strong> <code>04_Manuscripts/Chronicle_History_Log.md</code></li>
+<li><strong>สถานะการทำงาน:</strong> <strong>Append-Only (บันทึกเพิ่มทีละบท ห้ามลบของเก่า)</strong></li>
+<li><strong>หลักการ Rolling Window:</strong> เวลาเริ่มแต่งตอนที่ $N$ ระบบจะ <strong>โหลดเฉพาะบันทึกของ 2 ตอนล่าสุด ($N-1$ และ $N-2$)</strong> เข้า Context เพื่อให้รู้ว่าเกิดอะไรขึ้นสดๆ ร้อนๆ โดยไม่เปลือง Token เกิน 500 Tokens!</li>
+</ul>
+<hr />
+<h3><strong>🎯 LAYER 4: ท่อส่งข้อมูลอัจฉริยะ (Just-In-Time Context Injection — L4)</strong></h3>
+<ul>
+<li><strong>กลไกการทำงาน:</strong> ทำงานผ่าน <code>Scene Blueprint</code> และ <code>Generate_Chapter_Prompt.md</code></li>
+<li><strong>กฎการ Mount ข้อมูล (Mounting Rules):</strong></li>
+<li><strong>กรณีแต่ง <code>[บทที่ NA: สายสว่าง (Clean Track)]</code>:</strong><ul>
+<li>📥 Mount: <code>[COMMON_ZONE]</code> + <code>[CLEAN_SANDBOX]</code> + <code>[L3 Log ล่าสุด 2 ตอน]</code> + <code>[L1 Bibles เฉพาะตัวละครในฉาก]</code></li>
+<li>🚫 Unmount: <code>[TABOO_SANDBOX]</code> จะถูกตัดทิ้ง 100% ทำให้ AI ไม่มีทางเผลอดึงเรื่อง 18+ แม่ลูกมาเขียนเด็ดขาด!</li>
+</ul>
+</li>
+<li><strong>กรณีแต่ง <code>[บทที่ NB: สายมืด (Taboo Track)]</code>:</strong><ul>
+<li>📥 Mount: <code>[COMMON_ZONE]</code> + <code>[TABOO_SANDBOX]</code> + <code>[L3 Log ล่าสุด 2 ตอน]</code> + <code>[L1 Bibles เฉพาะตัวละครในฉาก]</code></li>
+<li>⚡ AI จะรู้ประวัติการสด 2 รู และระดับความเสพติดอย่างต่อเนื่องและแม่นยำ 100%!</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3><strong>🛡️ LAYER 5: ด่านตรวจจับความจำหลุดและซิงก์ข้อมูล (Memory QC &amp; Auto-Sync — L5)</strong></h3>
+<ul>
+<li><strong>ไฟล์ประจำชั้น:</strong> <code>05_Templates_and_Prompts/QC_Check_Prompt.md</code></li>
+<li><strong>การตรวจจับก่อนและหลังการเขียน (Pre/Post-Flight Audit):</strong></li>
+<li><strong>Zero-Leakage Test:</strong> ตรวจสอบว่ามีคำต้องห้ามของสายตรงข้ามหลุดรอดมาหรือไม่</li>
+<li><strong>Continuity Test:</strong> ตรวจสอบว่าสถานะพรหมจรรย์ของสาวๆ สอดคล้องกับตาราง L2 หรือไม่</li>
+<li><strong>Contraceptive Verification:</strong> ยืนยันว่าเมื่อตัวแม่เข้าสู่สาย Taboo ได้ใช้ระบบคุมกำเนิดด้วยตนเอง 100%</li>
+<li><strong>Auto-Sync:</strong> เมื่อผ่าน QC ระบบจะคำนวณคะแนนใหม่ อัปเดตทับลงใน L2 (<code>Summary_Progress.md</code>) และเขียนบันทึกย่อเพิ่มลงใน L3 (<code>Chronicle_History_Log.md</code>) ทันที</li>
+</ul>
+<hr />
+<h2><strong>3. ตรรกะการคำนวณสถานะรหัสสายโซ่ (Path Chain State Engine)</strong></h2>
+<p>เพื่อรองรับการเลือกสลับสายไปมาได้หลายสิบรอบ ระบบใช้สูตรคำนวณ 1 บรรทัดจาก <code>PATH_CHAIN</code>:</p>
+<pre><code class="language-text">ตัวอย่าง: PATH_CHAIN = [Act01:🔴] ➡️ [Act02:🟢] ➡️ [Act03:🔴] ➡️ [Act04:🔴] ➡️ [Act05:🟢]
+
+1. คำนวณ Ever_Taboo_Unlocked:
+   - ตรวจหา 🔴 ในสายโซ่ ➡️ ถ้าพบอย่างน้อย 1 ครั้ง = TRUE (สลัก DNA 8K ถาวรแล้ว)
+
+2. คำนวณ Last_Act_Choice:
+   - ดูค่าสุดท้ายในสายโซ่ ➡️ [Act05: 🟢 Clean]
+
+3. คำนวณ Transition Mode สำหรับ Act06:
+   - ถ้าคนอ่านเลือก [🟢 Clean] ➡️ โหมด [🟢 ➡️ 🟢] (สายฮาบริสุทธิ์ต่อเนื่อง)
+   - ถ้าคนอ่านเลือก [🔴 Taboo] ➡️ โหมด [🟢 ➡️ 🔴] (ตบะแตกซ้ำ! อั้นไม่อยู่หลังจากพยายามดึงสติตอน Act05)
+</code></pre>
+<hr />
+<h2><strong>4. วงจรการทำงานครบวงจรในแต่ละตอน (Full Lifecycle Workflow)</strong></h2>
+<pre><code class="language-text">┌───────────────────────────────────────────────────────────────────────────────┐
+│ 1. [BLUEPRINT PHASE]  : กำหนดสถานที่, ตัวละคร, และเลือก Route [Clean / Taboo]   │
+│ 2. [MOUNT PHASE]      : โหลด L1 (เฉพาะตัวละคร) + L2 (State) + L3 (2 ตอนล่าสุด)  │
+│                         (สลับ Mount เฉพาะ Sandbox ที่ตรงกับ Route ที่เลือก)     │
+│ 3. [GENERATE PHASE]   : AI แต่งเนื้อหาตาม Blueprint ละเอียด ลุ่มลึก Full 4K   │
+│ 4. [QC AUDIT PHASE]   : รัน L5 ตรวจสอบ Zero-Leakage และความถูกต้องของสถานะ     │
+│ 5. [AUTO-SYNC PHASE]  : อัปเดตทับ L2 (Summary_Progress) และบันทึกต่อท้ายใน L3  │
+└───────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2><strong>5. สรุปผลสัมฤทธิ์ของสถาปัตยกรรม (Architectural Achievements)</strong></h2>
+<ol>
+<li><strong>🛡️ Zero Cross-Contamination:</strong> ข้อมูลสาย Clean และ Taboo ถูกกักบริเวณแยกห้อง 100% ไม่มีวันปนเปื้อน</li>
+<li><strong>📈 Unbounded Scalability:</strong> รองรับนิยายยาว 100+ ตอน โดยจำนวนความซับซ้อนคงที่แบบเชิงเส้น ($2 \times N$)</li>
+<li><strong>⚡ 85%+ Token Optimization:</strong> ประหยัด Token ต่อรอบการเจน เหลือพื้นที่บรรยายมากกว่า 90%</li>
+<li><strong>🎮 Seamless Readability:</strong> คนอ่านและผู้แต่งสามารถตรวจสอบเซฟเกมและประวัติศาสตร์ทั้งจักรวาลได้ใน 1 วินาที!</li>
+</ol>
+<hr />
+<p><em>— จบเอกสาร System Architecture Manual: 5-Tier Long-Term Memory Engine —</em></p>
+        </div>
+        
+        <!-- Footer Navigation -->
+        <footer class="mt-24 pt-10 border-hairline-gold-t flex flex-col sm:flex-row justify-between items-center gap-6 px-2 text-center sm:text-left">
+            <a href="../archive.html" class="erebonian-link font-cinzel text-xs uppercase tracking-widest text-muted-gold/80 hover:text-muted-gold transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>กลับสู่หน้ารวม Imperial Archive</span>
+            </a>
+            
+            <a href="../toc.html" class="font-cinzel text-xs uppercase tracking-widest text-ivory/40 hover:text-muted-gold transition-colors">
+                [ เข้าสู่สารบัญอ่านนิยาย ]
+            </a>
+        </footer>
+    </article>
+</main>
+
+    
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
