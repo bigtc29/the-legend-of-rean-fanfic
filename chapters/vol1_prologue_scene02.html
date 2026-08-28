@@ -28,6 +28,7 @@
     </div>
     <div class="font-inter text-xs text-ivory/50 uppercase tracking-widest flex gap-4">
         <a href="../telemetry.html?scene=vol1_prologue_scene02" class="erebonian-link hover:text-muted-gold transition-colors"><i class="fa-solid fa-satellite-dish mr-1"></i> Universe Stat</a>
+        <a href="../dynamic_living.html?chapter=" class="erebonian-link hover:text-muted-gold transition-colors"><i class="fa-solid fa-users mr-1"></i> Dynamic Living</a>
         <a href="../archive.html" class="erebonian-link hover:text-muted-gold transition-colors"><i class="fa-solid fa-scroll mr-1"></i> Archive</a>
     </div>
 </header>
@@ -185,25 +186,54 @@
 </code></pre>
         </div>
         
-        <!-- 🌐 UNIVERSE STAT / TELEMETRY QUICK ACCESS -->
-        <div class="mt-16 mb-8 p-8 rounded-sm bg-obsidian border border-muted-gold/20 text-center shadow-lg relative">
-            <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-muted-gold/40"></div>
-            <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-muted-gold/40"></div>
+        
+        <!-- 🌐 UNIVERSE MODULES QUICK ACCESS -->
+        <div class="mt-16 mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <div class="w-12 h-12 mx-auto rounded-full bg-white/5 border border-muted-gold/30 flex items-center justify-center mb-4">
-                <i class="fa-solid fa-satellite-dish text-xl text-emerald-400/80 animate-pulse"></i>
+            <!-- Telemetry Card -->
+            <div class="p-8 rounded-sm bg-obsidian border border-muted-gold/20 text-center shadow-lg relative h-full flex flex-col justify-between">
+                <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-muted-gold/40"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-muted-gold/40"></div>
+                
+                <div>
+                    <div class="w-12 h-12 mx-auto rounded-full bg-white/5 border border-muted-gold/30 flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-satellite-dish text-xl text-emerald-400/80 animate-pulse"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-cinzel text-muted-gold mb-3 tracking-widest">
+                        TELEMETRY
+                    </h3>
+                    <p class="text-sm font-sarabun text-ivory/60 mb-6 leading-relaxed">
+                        สำรวจสถานะจักรวาล ดัชนีเศรษฐกิจ ค่าความตึงเครียด ณ ช่วงเวลาของบทนี้
+                    </p>
+                </div>
+                <a href="../telemetry.html?scene=vol1_prologue_scene02" class="inline-flex px-6 py-3 bg-white/5 hover:bg-muted-gold/10 text-muted-gold font-cinzel text-[10px] tracking-[0.1em] uppercase border border-muted-gold/40 transition-all duration-300 items-center justify-center cursor-pointer w-full mt-auto">
+                    <i class="fa-solid fa-chart-pie mr-2"></i> ดู Universe Stat
+                </a>
             </div>
-            <h3 class="text-xl md:text-2xl font-cinzel text-muted-gold mb-3 tracking-widest">
-                UNIVERSE TELEMETRY
-            </h3>
-            <p class="text-sm font-sarabun text-ivory/60 mb-6 max-w-lg mx-auto leading-relaxed">
-                สำรวจสถานะจักรวาล ดัชนีเศรษฐกิจ ค่าความตึงเครียด และความเคลื่อนไหวบนโซเชียลมีเดียที่เกิดขึ้น ณ ช่วงเวลาของบทนี้
-            </p>
-            <a href="../telemetry.html?scene=vol1_prologue_scene02" class="inline-flex px-8 py-3 bg-white/5 hover:bg-muted-gold/10 text-muted-gold font-cinzel text-xs tracking-[0.2em] uppercase border border-muted-gold/40 transition-all duration-300 items-center justify-center cursor-pointer">
-                <i class="fa-solid fa-chart-pie mr-2"></i>
-                ตรวจสอบสถานะจักรวาล
-            </a>
+
+            <!-- Dynamic Living Card -->
+            <div class="p-8 rounded-sm bg-obsidian border border-muted-gold/20 text-center shadow-lg relative h-full flex flex-col justify-between">
+                <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-muted-gold/40"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-muted-gold/40"></div>
+                
+                <div>
+                    <div class="w-12 h-12 mx-auto rounded-full bg-white/5 border border-muted-gold/30 flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-users text-xl text-blue-400/80"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-cinzel text-muted-gold mb-3 tracking-widest">
+                        DYNAMIC LIVING
+                    </h3>
+                    <p class="text-sm font-sarabun text-ivory/60 mb-6 leading-relaxed">
+                        เจาะลึกตารางกิจวัตรประจำวันของตัวละครอื่นๆ ทั่วจักรวาล (NPC Master Matrix)
+                    </p>
+                </div>
+                <a href="../dynamic_living.html?scene=vol1_prologue_scene02" class="inline-flex px-6 py-3 bg-white/5 hover:bg-muted-gold/10 text-muted-gold font-cinzel text-[10px] tracking-[0.1em] uppercase border border-muted-gold/40 transition-all duration-300 items-center justify-center cursor-pointer w-full mt-auto">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i> สำรวจวิถีชีวิต
+                </a>
+            </div>
+            
         </div>
+
         
         <!-- Refined Footer Navigation -->
         <footer class="mt-28 pt-12 border-hairline-gold-t flex justify-between items-center px-2">
