@@ -1,0 +1,67 @@
+{
+  "macro": {
+    "world_clock": "31 มีนาคม S.1204 | 12:55 – 13:08 น. (Pre-Orientation)",
+    "active_sector": "loc:titan_trista:thors_main_auditorium (หอประชุมใหญ่สถาบันทอร์ส)",
+    "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)",
+    "rean_spec": "7.5\" Hardcoded (100% Satiated / Scent Radar Active / VIP Velvet Mode)"
+  },
+  "economy": {
+    "septium_price": {
+      "value": "644.20 Mira",
+      "trend": "+0.4%",
+      "status": "Auditorium Opening Peak",
+      "up": true
+    },
+    "rf_stock": {
+      "value": "13,980.00 Mira",
+      "trend": "+0.4%",
+      "status": "Class VII Hype Rally",
+      "up": true
+    },
+    "land_price": {
+      "value": "18,000 ล้าน Mira",
+      "status": "เขตหอประชุมใหญ่และปราสาทหินโบราณสถาบันการทหารทอร์ส"
+    },
+    "cash_flow": {
+      "value": "5 พันล้าน Mira",
+      "status": "พร้อมประมูลหรือซื้อลิขสิทธิ์ถ่ายทอดสดศึกปฐมนิเทศ"
+    },
+    "active_deal": "- ทิ้งตัวนั่งโซฟาหลุยส์ VIP ทองคำ 24K แถวหน้าสุดด้วยสัญชาตญาณชีคดูไบ\n- สแกนเรดาร์กลิ่นสาปสาวพรหมจรรย์คลุ้งสถาบัน 99.8% (ยกเว้นเฟอร์ริส เมียลับ 2 ปี)\n- กำแพงควอนตัมสวรรค์ผลักนักเรียนสูทแดง 8 คนมานั่งรวมพลรอบตัวรีน\n- มหาปรากฏการณ์ไฟดับพรึ่บ, จอภาพ Orbal TitanTron 16K สว่างวาบ & พลุไฟระเบิดสนั่น"
+  },
+  "tension": {
+    "index_percent": 75.5,
+    "level_text": "CRITICAL HYPE / SMACKDOWN READY (เวทีระเบิดเพลิง)",
+    "noble_status": "ยูซิส อัลบาเรอา โดนกำแพงสวรรค์เด้งมานั่งเบียดกับมาเคียสจนตาแทบพ่นไฟ",
+    "reformist_status": "มาเคียส เร็กนิทซ์ โวยวายลั่นโซฟา VIP หลังโดนล็อกเป้าหมายด้วยพลังลึกลับ",
+    "guard_status": "ทีมงาน TWF และระบบเสียง 500,000 วัตต์ ปล่อยพลังเสียงเบสระดับแผ่นดินไหว 8 ริกเตอร์"
+  },
+  "social": {
+    "trending_tags": [
+      "#VIPCrimsonLounge",
+      "#VirginScentAlert",
+      "#WinterSonataSpark",
+      "#TitanTron16KIgnition"
+    ],
+    "posts": [
+      {
+        "user": "@Alisa_Reinford_Official",
+        "time": "3 นาทีที่แล้ว",
+        "content": "หัวใจฉันเต้น 165 BPM... เด็กชายชีคคนนั้นในม่านหิมะยูมีร์... มานั่งอยู่ข้างๆ ฉันแล้วในชุดสูทแดง! ❄️💛 #รักแรกไม่เคยลืม",
+        "likes": "245.8K"
+      },
+      {
+        "user": "@TWF_Live_Broadcast",
+        "time": "1 นาทีที่แล้ว",
+        "content": "BLACKOUT ENGAGED! จอ TitanTron 16K จุดชนวนแล้ว! พลุไฟ Pyro Cannons ถล่มเพดานหอประชุมทอร์ส! ARE YOU READY TO RUMBLE?! 💥🔥",
+        "likes": "310.5K"
+      }
+    ],
+    "wire_headline": "🔥 [หอประชุมสะเทือน] ไฟดับทั้งหลัง! มหาจอภาพ TitanTron 16K สว่างวาบพร้อมพลุไฟระเบิดต้อนรับนักเรียนสูทแดงบนโซฟา VIP",
+    "wire_reports": [
+      "12:55 - รีน ชวาเซอร์ ก้าวสู่หอประชุมใหญ่ ทิ้งตัวนั่งโซฟาหลุยส์ VIP ทองคำ 24K ชิลๆ",
+      "13:00 - ตรวจพบกลิ่นสาปสาวพรหมจรรย์หนาแน่น 99.8% ทั่วทั้งสถาบัน ยกเว้นคุณหนูเฟอร์ริส",
+      "13:03 - กำแพงควอนตัมสวรรค์เด้งผลักนักเรียนสูทแดง 8 คนมานั่งอัดแน่นบนโซฟา VIP",
+      "13:08 - ไฟดับพรึ่บ จอ TitanTron 16K เลื่อนลงมา พลุไฟระเบิดสนั่นเปิดฉากพิธีปฐมนิเทศ"
+    ]
+  }
+}
