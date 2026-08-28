@@ -42,10 +42,10 @@
             <p class="font-sarabun italic text-lg text-ivory/60">ศูนย์ตรวจวัดสภาวะจักรวาลและข่าวกรองสด (Master Deterministic DAG Edition)</p>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-3 border-b border-muted-gold/20">
-            <div class="flex items-center space-x-3 w-full sm:w-auto">
-                <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/70 shrink-0"><i class="fa-solid fa-layer-group mr-1"></i> SELECT SCENE:</span>
-                <div class="relative w-full sm:w-auto">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-3 border-b border-muted-gold/20">
+            <div class="flex items-center space-x-3 w-full md:w-auto">
+                <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/70 shrink-0 hidden sm:inline-block"><i class="fa-solid fa-layer-group mr-1"></i> SELECT SCENE:</span>
+                <div class="relative w-full sm:w-auto flex-grow">
                     <select id="scene-selector" onchange="loadTelemetry(this.value)" class="appearance-none w-full sm:w-[350px] bg-obsidian border border-muted-gold/40 text-ivory text-sm py-2 px-4 pr-10 font-sarabun focus:outline-none focus:border-muted-gold rounded cursor-pointer shadow-[0_0_15px_rgba(197,160,89,0.1)] hover:border-muted-gold/70 transition-colors">
                         <optgroup label="📖 Volume I: Prologue (30 มี.ค. S.1204 - ยูมีร์ดูไบ)">
                             <option value="vol1_prologue_scene01">Scene 01: เช้าตรู่ — สภาอาหารเช้าทองคำแปดแสนล้าน</option>
@@ -65,6 +65,13 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="flex gap-2 w-full md:w-auto mt-4 md:mt-0">
+                <a href="index.html" class="flex-1 md:flex-none px-4 py-2 border border-white/10 bg-white/5 rounded text-ivory/80 text-xs font-cinzel tracking-widest uppercase hover:bg-white/10 transition-colors text-center shadow-sm whitespace-nowrap"><i class="fa-solid fa-home mr-1"></i> หน้าแรก</a>
+                <a id="backToStoryBtnTop" href="toc.html" class="flex-1 md:flex-none px-4 py-2 bg-muted-gold/10 border border-muted-gold/50 rounded text-muted-gold text-xs font-cinzel tracking-widest uppercase hover:bg-muted-gold/20 transition-colors shadow-[0_0_10px_rgba(197,160,89,0.1)] text-center whitespace-nowrap"><i class="fa-solid fa-book-open mr-1"></i> กลับเนื้อเรื่อง</a>
+            </div>
+        </div>
+            </div>
             <div class="text-xs font-inter text-emerald-400/80 uppercase tracking-widest flex items-center self-end sm:self-center">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span>
                 <span>Active Telemetry Matrix</span>
@@ -83,7 +90,12 @@
 
     function loadTelemetry(sceneId) {
         const container = document.getElementById('telemetry-content');
+        
+        const backBtnTop = document.getElementById('backToStoryBtnTop');
+        if (backBtnTop) backBtnTop.href = 'chapters/' + sceneId + '.html';
+        
         container.style.opacity = 0;
+
         
         setTimeout(() => {
             const data = REAL_TELEMETRY_DATA[sceneId];
@@ -242,7 +254,16 @@
             </div>`;
         }
 
+        
+        // --- BOTTOM NAVIGATION ---
+        html += `
+        <div class="col-span-1 lg:col-span-2 flex justify-center gap-4 mt-8 pb-8">
+            <a href="index.html" class="px-6 py-3 border border-white/10 bg-white/5 rounded text-ivory/80 text-sm font-cinzel tracking-widest uppercase hover:bg-white/10 transition-colors shadow-sm"><i class="fa-solid fa-home mr-2"></i> หน้าแรก</a>
+            <a href="chapters/${data.scene_id || sceneId}.html" class="px-6 py-3 bg-muted-gold/10 border border-muted-gold/50 rounded text-muted-gold text-sm font-cinzel tracking-widest uppercase hover:bg-muted-gold/20 transition-colors shadow-[0_0_10px_rgba(197,160,89,0.1)]"><i class="fa-solid fa-book-open mr-2"></i> กลับเนื้อเรื่อง</a>
+        </div>`;
+
         container.innerHTML = html;
+
     }
 
     // Auto-load scene from URL parameter or default
