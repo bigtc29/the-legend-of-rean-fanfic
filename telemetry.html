@@ -45,23 +45,25 @@
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-3 border-b border-muted-gold/20">
             <div class="flex items-center space-x-3 w-full sm:w-auto">
                 <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/70 shrink-0"><i class="fa-solid fa-layer-group mr-1"></i> SELECT SCENE:</span>
-                <select id="scene-selector" onchange="loadTelemetry(this.value)" class="bg-obsidian border border-muted-gold/40 text-ivory text-sm py-1.5 px-3 font-sarabun focus:outline-none focus:border-muted-gold rounded w-full sm:w-auto cursor-pointer shadow-sm">
-                    <optgroup label="📖 Volume I: Prologue (30 มี.ค. S.1204 - ยูมีร์ดูไบ)">
-                        <option value="vol1_prologue_scene01">Scene 01: เช้าตรู่ — สภาอาหารเช้าทองคำแปดแสนล้าน</option>
-                        <option value="vol1_prologue_scene02">Scene 02: บ่ายวัน — ลิฟต์แก้วสู่ตึก Burj-Orbal & ดีล 3 แสนล้าน</option>
-                        <option value="vol1_prologue_scene03">Scene 03: ค่ำ — สภาส่งตัวรอบค่ำ, วากิวทองคำ & 14 กฎเหล็ก</option>
-                        <option value="vol1_prologue_scene04">Scene 04: กลางคืน — ออนเซนทองคำส่องดาว & บทส่งท้าย</option>
-                    </optgroup>
-                    <optgroup label="🏛️ Volume I: Chapter 01 (31 มี.ค. S.1204 - สู่ทริสต้า)">
-                        <option value="vol1_c1_scene01">Scene 01: เช้าตรู่ — บิดหมดปลอก ลั่นมิดไมล์ สู่ซูเปอร์ไฮเวย์</option>
-                        <option value="vol1_c1_scene02">Scene 02: สายๆ — พญาเหยี่ยว Hayabusa & แชมป์โลก 500cc</option>
-                        <option value="vol1_c1_scene03">Scene 03: สายโด่ง — กองทัพ EV ขวางเลน & เงาไททันทริสต้า</option>
-                        <option value="vol1_c1_scene04">Scene 04: ปลายสาย — ถึงสถานีหัวลำโพงทริสต้า & สดุดี 2T</option>
-                    </optgroup>
-                    <optgroup label="⚔️ Volume I: Chapter 02 (31 มี.ค. S.1204 - สถาบันทอร์ส)">
-                        <option value="vol1_c2_scene01">Scene 01: เที่ยงวัน — วิมานม่านรูด 45 นาที & สูทแดงเข้าทอร์ส</option>
-                    </optgroup>
-                </select>
+                <div class="relative w-full sm:w-auto">
+                    <select id="scene-selector" onchange="loadTelemetry(this.value)" class="appearance-none w-full sm:w-[350px] bg-obsidian border border-muted-gold/40 text-ivory text-sm py-2 px-4 pr-10 font-sarabun focus:outline-none focus:border-muted-gold rounded cursor-pointer shadow-[0_0_15px_rgba(197,160,89,0.1)] hover:border-muted-gold/70 transition-colors">
+                        <optgroup label="📖 Volume I: Prologue (30 มี.ค. S.1204 - ยูมีร์ดูไบ)">
+                            <option value="vol1_prologue_scene01">Scene 01: เช้าตรู่ — สภาอาหารเช้าทองคำแปดแสนล้าน</option>
+                            <option value="vol1_prologue_scene02">Scene 02: บ่ายวัน — ลิฟต์แก้วสู่ตึก Burj-Orbal & ดีล 3 แสนล้าน</option>
+                            <option value="vol1_prologue_scene03">Scene 03: ค่ำ — สภาส่งตัวรอบค่ำ, วากิวทองคำ & 14 กฎเหล็ก</option>
+                            <option value="vol1_prologue_scene04">Scene 04: กลางคืน — ออนเซนทองคำส่องดาว & บทส่งท้าย</option>
+                        </optgroup>
+                        <optgroup label="🏛️ Volume I: Chapter 01 (31 มี.ค. S.1204 - สู่ทริสต้า)">
+                            <option value="vol1_c1_scene01">Scene 01: เช้าตรู่ — บิดหมดปลอก ลั่นมิดไมล์ สู่ซูเปอร์ไฮเวย์</option>
+                            <option value="vol1_c1_scene02">Scene 02: สายๆ — พญาเหยี่ยว Hayabusa & แชมป์โลก 500cc</option>
+                            <option value="vol1_c1_scene03">Scene 03: สายโด่ง — กองทัพ EV ขวางเลน & เงาไททันทริสต้า</option>
+                            <option value="vol1_c1_scene04">Scene 04: เที่ยง — ปะทะคารมขุนนาง & จุดสิ้นสุดบทที่ 1</option>
+                        </optgroup>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-muted-gold/70">
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
             </div>
             <div class="text-xs font-inter text-emerald-400/80 uppercase tracking-widest flex items-center self-end sm:self-center">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span>
@@ -104,19 +106,19 @@
         if (data.macro) {
             html += `
             <div class="col-span-1 lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
-                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
+                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md hover:bg-white/10 transition-colors duration-300">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-regular fa-clock mr-1"></i> World Clock</div>
                     <div class="font-sarabun font-semibold text-ivory text-sm">${data.macro.world_clock}</div>
                 </div>
-                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
+                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md hover:bg-white/10 transition-colors duration-300">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> Active Sector</div>
                     <div class="font-sarabun font-semibold text-cyan-200/90 text-sm">${data.macro.active_sector}</div>
                 </div>
-                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
+                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md hover:bg-white/10 transition-colors duration-300">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-solid fa-coins mr-1"></i> Clan Vault</div>
                     <div class="font-sarabun font-semibold text-muted-gold text-sm">${data.macro.clan_vault}</div>
                 </div>
-                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
+                <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md hover:bg-white/10 transition-colors duration-300">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-solid fa-bolt mr-1"></i> Rean Spec / PSI</div>
                     <div class="font-sarabun font-semibold text-amber-200/90 text-sm">${data.macro.rean_spec}</div>
                 </div>
@@ -205,7 +207,7 @@
                         <div class="flex flex-wrap gap-2 mb-6">
                             ${data.social.trending_tags.map(t => `<span class="px-2 py-1 bg-[#1F2428] border border-cyan-500/30 text-cyan-300 text-xs font-inter rounded hover:border-cyan-400 cursor-pointer transition-colors shadow-sm">${t}</span>`).join('')}
                         </div>
-                        <div class="space-y-3 max-h-[300px] overflow-y-auto pr-2">
+                        <div class="space-y-3 max-h-[300px] overflow-y-auto pr-2 overscroll-contain custom-scrollbar">
                             ${data.social.posts.map(p => `
                             <div class="p-4 bg-[#0F1318] border border-cyan-900/30 hover:border-cyan-500/30 rounded-lg transition-colors">
                                 <div class="flex justify-between items-center mb-2 border-b border-white/5 pb-2">
