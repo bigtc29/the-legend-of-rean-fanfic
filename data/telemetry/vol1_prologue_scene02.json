@@ -1,66 +1,66 @@
 {
   "macro": {
-    "world_clock": "30 มีนาคม S.1204 (บ่าย)",
-    "active_sector": "Titan Ymir Dubai (Burj-Orbal)",
-    "clan_vault": "8.5E+14 MIRA",
-    "rean_spec": "7.5\" (120 PSI)"
+    "world_clock": "30 มีนาคม S.1204 | 13:30 น. (บ่ายวัน)",
+    "active_sector": "loc:titan_ymir:burj_orbal_apex (ยอดตึก Burj-Orbal 2,000 ม.)",
+    "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)",
+    "rean_spec": "7.5\" Hardcoded (120 PSI)"
   },
   "economy": {
     "septium_price": {
-      "value": "642.10 Mira",
-      "trend": "+1.5%",
-      "status": "High Demand",
+      "value": "645.50 Mira",
+      "trend": "+5.9%",
+      "status": "All-Time High",
       "up": true
     },
     "rf_stock": {
-      "value": "1,418.20 Mira",
-      "trend": "-0.1%",
-      "status": "Correction",
-      "up": false
+      "value": "13,850.20 Mira",
+      "trend": "+11.0%",
+      "status": "Thessia & Volus Rally",
+      "up": true
     },
     "land_price": {
-      "value": "5,500 ล้าน Mira",
-      "status": "ราคาดีดตัวจากข่าวลิฟต์แก้ว"
+      "value": "6,500 ล้าน Mira",
+      "status": "ตึกระฟ้าและสกายเลานจ์ Burj-Orbal ชั้นพรีเมียม"
     },
     "cash_flow": {
-      "value": "4,700 ล้าน Mira",
-      "status": "หักค่าอะไหล่ทองคำ 24K"
+      "value": "+300,000,000,000 Mira",
+      "status": "สัญญาพลังงานเซปเทียมที่เอลิเซ่กวาดมาจากทูตต่างดาว"
     },
-    "active_deal": "- ดีลลับ 3 แสนล้าน Mira กับ IBC\n- สั่งทำแว่นตาดำชวาเซอร์ลอตใหม่"
+    "active_deal": "- สัญญาพลังงานเซปเทียม 3 แสนล้านมิรากับทูตสหพันธ์ Volus & Citadel\n- ดีลส่งออกเซรั่ม H-Factor ชะลอวัยให้เผ่าพันธุ์ Asari\n- ตรวจรับอะไหล่แต่ง Serpico SS ชุบทองคำ 24K บนยอดตึก 2,000 เมตร"
   },
   "tension": {
-    "index_percent": 52.1,
-    "level_text": "ELEVATED",
-    "noble_status": "ดยุคไคเอนจัดงานเลี้ยงรวมพลลับๆ ใน Ordis",
-    "reformist_status": "หน่วยข่าวกรอง RMP ตรวจสอบเส้นทางการเงินกลุ่มทุนปริศนา",
-    "guard_status": "เพิ่มมาตรการ รปภ. ระดับ 5 รอบตึก Burj-Orbal"
+    "index_percent": 46.4,
+    "level_text": "MODERATE (เฝ้าระวังปกติ)",
+    "noble_status": "ดยุคไคเอนส่งสายสืบติดตามการทำสัญญาพลังงาน 3 แสนล้านของตระกูลชวาเซอร์",
+    "reformist_status": "กลุ่มทุนไอแอลไอเอสและ RMP วิเคราะห์ผลกระทบสภาพคล่องมหาศาลต่อระบบการเงินเอเรโบเนีย",
+    "guard_status": "ยานแม่ Ark Hyperion ในวงโคจรล็อกเป้าหมายคุ้มครองครอบครัวชวาเซอร์ 24 ชม."
   },
   "social": {
     "trending_tags": [
-      "#BurjOrbal",
-      "#ลิฟต์แก้ววิวหลักล้าน",
-      "#ดีลลับ3แสนล้าน",
-      "#YmirDubai"
+      "#Elise300BillionDeal",
+      "#BurjOrbal2000M",
+      "#VintageS1150Champagne",
+      "#สะใภ้เอกเบอร์1"
     ],
     "posts": [
       {
-        "user": "@CrossbellTrader",
-        "time": "2 นาทีที่แล้ว",
-        "content": "ใครพอจะรู้บ้างว่าดีล 3 แสนล้านที่เพิ่งเซ็นกันมันคืออะไร!? กราฟพุ่งแปลกๆ 📈",
-        "likes": "45.2K"
+        "user": "@ImperialFinancial_Live",
+        "time": "18 นาทีที่แล้ว",
+        "content": "ดีลประวัติศาสตร์ 3 แสนล้านมิรา! คุณหนูเอลิเซ่ปิดจ็อบกับทูต Citadel บนยอดตึก Burj-Orbal หุ้นพุ่งทั้งจักรวาล! 📈🚀",
+        "likes": "125.4K"
       },
       {
-        "user": "@Tourist_099",
-        "time": "1 ชั่วโมงที่แล้ว",
-        "content": "เพิ่งได้ขึ้นลิฟต์แก้วของ Ymir Dubai สวยจนน้ำตาไหล 😭✨ #BurjOrbal",
-        "likes": "120K"
+        "user": "@NobleWatch_Erebonia",
+        "time": "50 นาทีที่แล้ว",
+        "content": "เปิดแชมเปญ Grand Cuvée Vintage S.1150 ทองคำขวดละล้านมิราฉลองผลกำไร... นี่มันบารมีระดับมหาเศรษฐีดาราจักร!",
+        "likes": "89.2K"
       }
     ],
-    "wire_headline": "🟡 [รายงาน] การเคลื่อนไหวของกองทุน IBC ในพื้นที่ Ymir",
+    "wire_headline": "🟡 [ข่าวด่วนดาราจักร] คุณหนูเอลิเซ่กวาดดีลพลังงาน 300 พันล้านมิรา สภา Citadel รับรองสัมปทาน",
     "wire_reports": [
-      "13:00 - ประธาน IBC เดินทางถึง Ymir Dubai อย่างเป็นทางการ",
-      "13:45 - พบการโอนเซปเทียมเหลวมูลค่ามหาศาลผ่านเครือข่าย Orbal Network",
-      "14:30 - ตลาดหลักทรัพย์ปรับตัวตอบรับกระแสข่าวการลงทุนใหม่"
+      "13:30 - ลิฟต์แก้วความเร็วสูงทะยานสู่ยอดตึก Burj-Orbal 2,000 ม. ครอบครัวชวาเซอร์พร้อมหน้า",
+      "14:15 - พิธีลงนามสัญญาพลังงานร่วมกับทูตสหพันธ์ Volus และการส่งมอบอะไหล่ทองคำ 24K",
+      "15:00 - สัญญาณยานแม่ Ark Hyperion ยืนยันการคุ้มครองน่านฟ้ายูมีร์ดูไบ 100%"
     ]
   }
 }

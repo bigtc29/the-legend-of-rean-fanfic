@@ -38,118 +38,57 @@
             <h1 class="font-cinzel text-3xl md:text-4xl text-muted-gold mb-3">
                 <i class="fa-solid fa-satellite-dish mr-2"></i> Universe Telemetry
             </h1>
-            <p class="font-sarabun italic text-lg text-ivory/60">ศูนย์ตรวจวัดสภาวะจักรวาลและข่าวกรองสด (Mockup)</p>
+            <p class="font-sarabun italic text-lg text-ivory/60">ศูนย์ตรวจวัดสภาวะจักรวาลและข่าวกรองสด (Master Deterministic DAG Edition)</p>
         </div>
 
-        <div class="flex items-center justify-between mb-6 pb-2 border-b border-muted-gold/20">
-            <div class="flex items-center space-x-2">
-                <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/70">SELECT SCENE:</span>
-                <select id="mock-scene-selector" onchange="loadTelemetry(this.value)" class="bg-obsidian border border-muted-gold/40 text-ivory text-sm py-1 px-2 font-inter focus:outline-none focus:border-muted-gold">
-                    <option value="vol1_prologue_scene01">Prologue: Scene 01 (เช้า)</option>
-                    <option value="vol1_prologue_scene02">Prologue: Scene 02 (บ่าย)</option>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-3 border-b border-muted-gold/20">
+            <div class="flex items-center space-x-3 w-full sm:w-auto">
+                <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/70 shrink-0"><i class="fa-solid fa-layer-group mr-1"></i> SELECT SCENE:</span>
+                <select id="scene-selector" onchange="loadTelemetry(this.value)" class="bg-obsidian border border-muted-gold/40 text-ivory text-sm py-1.5 px-3 font-sarabun focus:outline-none focus:border-muted-gold rounded w-full sm:w-auto cursor-pointer shadow-sm">
+                    <optgroup label="📖 Volume I: Prologue (30 มี.ค. S.1204 - ยูมีร์ดูไบ)">
+                        <option value="vol1_prologue_scene01">Scene 01: เช้าตรู่ — สภาอาหารเช้าทองคำแปดแสนล้าน</option>
+                        <option value="vol1_prologue_scene02">Scene 02: บ่ายวัน — ลิฟต์แก้วสู่ตึก Burj-Orbal & ดีล 3 แสนล้าน</option>
+                        <option value="vol1_prologue_scene03">Scene 03: ค่ำ — สภาส่งตัวรอบค่ำ, วากิวทองคำ & 14 กฎเหล็ก</option>
+                        <option value="vol1_prologue_scene04">Scene 04: กลางคืน — ออนเซนทองคำส่องดาว & บทส่งท้าย</option>
+                    </optgroup>
+                    <optgroup label="🏛️ Volume I: Chapter 01 (31 มี.ค. S.1204 - สู่ทริสต้า)">
+                        <option value="vol1_c1_scene01">Scene 01: เช้าตรู่ — บิดหมดปลอก ลั่นมิดไมล์ สู่ซูเปอร์ไฮเวย์</option>
+                        <option value="vol1_c1_scene02">Scene 02: สายๆ — พญาเหยี่ยว Hayabusa & แชมป์โลก 500cc</option>
+                        <option value="vol1_c1_scene03">Scene 03: สายโด่ง — กองทัพ EV ขวางเลน & เงาไททันทริสต้า</option>
+                        <option value="vol1_c1_scene04">Scene 04: ปลายสาย — ถึงสถานีหัวลำโพงทริสต้า & สดุดี 2T</option>
+                    </optgroup>
                 </select>
             </div>
-            <div class="text-xs font-inter text-emerald-400/80 uppercase tracking-widest flex items-center">
+            <div class="text-xs font-inter text-emerald-400/80 uppercase tracking-widest flex items-center self-end sm:self-center">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span>
-                Live Link
+                <span>Active Telemetry Matrix</span>
             </div>
         </div>
 
-        <div id="telemetry-content" class="grid grid-cols-1 lg:grid-cols-2 gap-6 opacity-0 transition-opacity duration-500">
-            <!-- Loading State handled by JS -->
+        <div id="telemetry-content" class="grid grid-cols-1 lg:grid-cols-2 gap-6 opacity-0 transition-opacity duration-300">
+            <!-- Rendered dynamically by JS -->
         </div>
     </div>
 </main>
 
 <script>
-    // 💾 MOCK DATA EMBEDDED (Bypass Local file:// CORS block)
-    const MOCK_DATA = {
-        "vol1_prologue_scene01": {
-          "macro": {
-            "world_clock": "30 มีนาคม S.1204 (เช้า)",
-            "active_sector": "Titan Ymir Dubai",
-            "clan_vault": "8.5E+14 MIRA",
-            "rean_spec": "7.5\" (120 PSI)"
-          },
-          "economy": {
-            "septium_price": { "value": "640.04 Mira", "trend": "+1.2%", "status": "High Demand", "up": true },
-            "rf_stock": { "value": "1,420.50 Mira", "trend": "+0.4%", "status": "Bullish", "up": true },
-            "land_price": { "value": "5,000 ล้าน Mira", "status": "ยอดจองเต็ม 100%" },
-            "cash_flow": { "value": "5,000 ล้าน Mira", "status": "เช็คเงินสดชีคเตโอ" },
-            "active_deal": "- เซ็นสัญญาซื้อขายกิจการออนเซนทองคำ 30,000 ล้าน Mira<br>- สัมปทานเหมืองเซปเทียม 99 ปี"
-          },
-          "tension": {
-            "index_percent": 46.4,
-            "level_text": "MODERATE",
-            "noble_status": "ดยุคอัลเบเรียเริ่มสะสมกองกำลังเตรียมประกาศเอกราชลุ่มแม่น้ำ",
-            "reformist_status": "นายกฯ ออสบอร์นอนุมัติงบฉุกเฉินสร้างทางรถไฟทะลวงทวีป",
-            "guard_status": "หน่วย T-800 ทองคำ 24K สแตนด์บายพร้อมรบ 100% ปกป้องวาฬหิมะ"
-          },
-          "social": {
-            "trending_tags": ["#YmirDubai", "#ชีคเตโอรวยจัด", "#รถตู้DenzaD9", "#ทอร์สเปิดเทอม"],
-            "posts": [
-              { "user": "@Reinfan_01", "time": "10 นาทีที่แล้ว", "content": "ได้ข่าวว่าตระกูลชวาเซอร์ซื้อภูเขาทั้งลูกสร้างสปา จริงดิ!? 😱 #YmirDubai", "likes": "12.5K" },
-              { "user": "@ImperialWatch", "time": "45 นาทีที่แล้ว", "content": "จับตาการเคลื่อนไหวของดยุคอัลเบเรีย การสะสมอาวุธอาจนำไปสู่สงครามกลางเมือง ⚔️", "likes": "5,420" }
-            ],
-            "wire_headline": "🔴 [ด่วน] การประกาศระดมทุนฉุกเฉินของสถาบันทอร์ส",
-            "wire_reports": [
-              "08:00 - ตรวจพบสัญญาณคลื่นออร์บัลผิดปกติบริเวณชายแดนตะวันออก",
-              "08:30 - ขบวนรถไฟหุ้มเกราะสายพิเศษเดินทางออกจาก Heimdallr มุ่งหน้า Trista",
-              "09:15 - ยืนยันการสั่งซื้อรถตู้ VIP Denza D9 จำนวน 5 คันเข้าประจำการในคฤหาสน์ชวาเซอร์"
-            ]
-          }
-        },
-        "vol1_prologue_scene02": {
-          "macro": {
-            "world_clock": "30 มีนาคม S.1204 (บ่าย)",
-            "active_sector": "Titan Ymir Dubai (Burj-Orbal)",
-            "clan_vault": "8.5E+14 MIRA",
-            "rean_spec": "7.5\" (120 PSI)"
-          },
-          "economy": {
-            "septium_price": { "value": "642.10 Mira", "trend": "+1.5%", "status": "High Demand", "up": true },
-            "rf_stock": { "value": "1,418.20 Mira", "trend": "-0.1%", "status": "Correction", "up": false },
-            "land_price": { "value": "5,500 ล้าน Mira", "status": "ราคาดีดตัวจากข่าวลิฟต์แก้ว" },
-            "cash_flow": { "value": "4,700 ล้าน Mira", "status": "หักค่าอะไหล่ทองคำ 24K" },
-            "active_deal": "- ดีลลับ 3 แสนล้าน Mira กับ IBC<br>- สั่งทำแว่นตาดำชวาเซอร์ลอตใหม่"
-          },
-          "tension": {
-            "index_percent": 52.1,
-            "level_text": "ELEVATED",
-            "noble_status": "ดยุคไคเอนจัดงานเลี้ยงรวมพลลับๆ ใน Ordis",
-            "reformist_status": "หน่วยข่าวกรอง RMP ตรวจสอบเส้นทางการเงินกลุ่มทุนปริศนา",
-            "guard_status": "เพิ่มมาตรการ รปภ. ระดับ 5 รอบตึก Burj-Orbal"
-          },
-          "social": {
-            "trending_tags": ["#BurjOrbal", "#ลิฟต์แก้ววิวหลักล้าน", "#ดีลลับ3แสนล้าน", "#YmirDubai"],
-            "posts": [
-              { "user": "@CrossbellTrader", "time": "2 นาทีที่แล้ว", "content": "ใครพอจะรู้บ้างว่าดีล 3 แสนล้านที่เพิ่งเซ็นกันมันคืออะไร!? กราฟพุ่งแปลกๆ 📈", "likes": "45.2K" },
-              { "user": "@Tourist_099", "time": "1 ชั่วโมงที่แล้ว", "content": "เพิ่งได้ขึ้นลิฟต์แก้วของ Ymir Dubai สวยจนน้ำตาไหล 😭✨ #BurjOrbal", "likes": "120K" }
-            ],
-            "wire_headline": "🟡 [รายงาน] การเคลื่อนไหวของกองทุน IBC ในพื้นที่ Ymir",
-            "wire_reports": [
-              "13:00 - ประธาน IBC เดินทางถึง Ymir Dubai อย่างเป็นทางการ",
-              "13:45 - พบการโอนเซปเทียมเหลวมูลค่ามหาศาลผ่านเครือข่าย Orbal Network",
-              "14:30 - ตลาดหลักทรัพย์ปรับตัวตอบรับกระแสข่าวการลงทุนใหม่"
-            ]
-          }
-        }
-    };
+    // 🌌 Real Telemetry Data (Compiled statically from /data/telemetry/*.json)
+    const REAL_TELEMETRY_DATA = {"vol1_c1_scene01": {"macro": {"world_clock": "31 มีนาคม S.1204 | 07:30 AM (เช้าตรู่)", "active_sector": "loc:trans_titan_highway:route_01 (ซูเปอร์ไฮเวย์ลอยฟ้า Route 1)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI) / Serpico SS: 124.8 km/h GPS"}, "economy": {"septium_price": {"value": "638.99 Mira", "trend": "-1.5%", "status": "Trista Market Open", "up": false}, "rf_stock": {"value": "13,810.00 Mira", "trend": "-0.3%", "status": "Morning Fluctuation", "up": false}, "land_price": {"value": "1,200 Mira / km", "status": "อัตราค่าผ่านทางซูเปอร์ไฮเวย์ลอยฟ้าข้ามไททัน"}, "cash_flow": {"value": "5 พันล้าน Mira", "status": "เช็คเงินสดในกระเป๋าเสื้อชีค พร้อมเติมน้ำมัน 2T"}, "active_deal": "- ชำระค่าผ่านทางด่านศุลกากรไททันยูมีร์-ทริสต้า 120 มิรา\n- จัดซื้อ Castrol 2T กลิ่นสตรอว์เบอร์รี 12 กระป๋องสำหรับเดินทางเดี่ยว\n- พันธสัญญาการเดินทาง 300 กิโลเมตรสู่นครทริสต้า"}, "tension": {"index_percent": 51.2, "level_text": "ELEVATED (ประลองความเร็ว)", "noble_status": "รถไฟขบวนพิเศษของนักเรียนชนชั้นขุนนางแล่นบนรางคู่ขนาน มุ่งหน้าสู่ทริสต้า", "reformist_status": "กระทรวงคมนาคมโปรโมตนโยบายรถยนต์ไฟฟ้า EV และเข้มงวดมลพิษควันสองจังหวะ", "guard_status": "Aries AI / Love-chan Tactical HUD สแกนสภาพถนนและลมปะทะ 125 km/h แบบเรียลไทม์"}, "social": {"trending_tags": ["#Serpico2TKawasaki", "#ควันขาวกลิ่นสตรอว์เบอร์รี", "#ด่านตรวจโนพอน", "#บิดหมดปลอก"], "posts": [{"user": "@HighwayExpress_Driver", "time": "12 นาทีที่แล้ว", "content": "ใครขี่ Serpico SS สองจังหวะบนทางด่วนลอยฟ้าวะ!? พ่นควันสตรอว์เบอร์รีกลบกระจกรถไฟด่วนหมดแล้ว 55555 🏍️💨🍓", "likes": "73.2K"}, {"user": "@EV_Lover_Zemuria", "time": "35 นาทีที่แล้ว", "content": "เห็นมอไซค์สองจังหวะหมอบมิดไมล์ เข็มชี้ 240 แต่โดน BYD Dolphin ป้าขับแซงแบบนิ่มๆ สงสารจัด 😭⚡", "likes": "95.1K"}], "wire_headline": "⚡ [จราจรด่วน] รายงานการจราจรหนาแน่นบนไฮเวย์ลอยฟ้าข้ามไททัน รถไฟฟ้าและมอเตอร์ไซค์มุ่งหน้าทริสต้า", "wire_reports": ["07:30 - ชีครีนควบ Kawasaki Serpico SS ทะยานออกจากด่านศุลกากรยูมีร์ดูไบ", "08:00 - ตรวจพบกระแสลมต้านปะทะ 125 km/h เหนือสะพานแขวนลอยฟ้าเชื่อมมณฑล", "08:15 - ระบบ Love-chan HUD แจ้งเตือนความเร็วแท้จริง 124.8 km/h สวนทางเข็มไมล์ที่ค้าง 240"]}}, "vol1_c1_scene02": {"macro": {"world_clock": "31 มีนาคม S.1204 | 08:45 AM (สายๆ)", "active_sector": "loc:trans_titan_highway:mid_span (กึ่งกลางสะพานแขวนลอยฟ้า)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI) / คอเคล็ดจากการหมอบทรง 2T"}, "economy": {"septium_price": {"value": "641.10 Mira", "trend": "+0.3%", "status": "Active Trading", "up": true}, "rf_stock": {"value": "13,845.00 Mira", "trend": "+0.2%", "status": "Motor Industry Focus", "up": true}, "land_price": {"value": "2,500 ล้าน Mira", "status": "สัมปทานจุดพักรถลอยฟ้า Mid-Span Oasis"}, "cash_flow": {"value": "5 พันล้าน Mira", "status": "ข้อเสนอประเมินมูลค่า Hayabusa 1300cc"}, "active_deal": "- สถิติการประลองความเร็วฉีกมิติกับ Hayabusa 1300cc ของ Mick Doohan\n- อัปเกรดระบบหล่อเย็นเครื่องยนต์ Serpico SS หลังหมอบแช่เรดไลน์\n- การยอมรับจิตวิญญาณสิงห์นักบิดจากอดีตแชมป์โลก 500cc"}, "tension": {"index_percent": 54.0, "level_text": "ELEVATED (ประชันความเร็วตำนาน)", "noble_status": "หน่วยสอดแนมขุนนางประจำป้อมสะพานสังเกตการณ์ความเร็วระดับไฮเปอร์โซนิก", "reformist_status": "กล้องตรวจจับความเร็วออร์บัลเรดาร์บันทึกภาพรถจักรยานยนต์ความเร็วทะลุ 300 km/h", "guard_status": "Aries AI ทำการคำนวณเวกเตอร์แอโรไดนามิกส์และพยุงคอชีครีนด้วยสนามพลังอ่อน"}, "social": {"trending_tags": ["#Hayabusa1300cc", "#MickDoohan500cc", "#พญาเหยี่ยวฉีกมิติ", "#สายตาเวทนา"], "posts": [{"user": "@BikerChampionship_Fan", "time": "8 นาทีที่แล้ว", "content": "นั่นมันคุณดูฮาน แชมป์โลก 500cc ขี่ Hayabusa บนสะพานแขวนลอยฟ้านี่หว่า! แซงสองจังหวะไปแบบมองตามไม่ทัน 🚀🦅", "likes": "112.3K"}, {"user": "@HighwayPatrol_Orbal", "time": "22 นาทีที่แล้ว", "content": "เตือนผู้ขับขี่ 2T ทุกท่าน กรุณาอย่ายกแขนท้าทายพญาเหยี่ยว ลมตีหมวกกันน็อกเกือบหลุดนะพ่อหนุ่ม 💨😅", "likes": "84.7K"}], "wire_headline": "🦅 [ตำนานบนถนน] อดีตแชมป์โลกมอเตอร์ไซค์ 500cc ปรากฏตัวบนสะพานแขวนลอยฟ้า ฉีกทุกขีดจำกัดความเร็ว", "wire_reports": ["08:45 - พญาเหยี่ยว Suzuki Hayabusa 1300cc ทะยานผ่านจุดตรวจกึ่งกลางสะพานด้วยความเร็ว 300+ km/h", "09:00 - รีนรักษาทรงหมอบ Keep Look แม้เครื่องยนต์ 150cc จะสั่นสะท้านสะเทือนถึงก้านสมอง", "09:15 - แชมป์โลกหันมาส่งสายตาเวทนาพร้อมยกนิ้วโป้งสดุดีจิตวิญญาณสองจังหวะ"]}}, "vol1_c1_scene03": {"macro": {"world_clock": "31 มีนาคม S.1204 | 09:45 AM (สายโด่ง)", "active_sector": "loc:trans_titan_highway:approach_span (ปลายสะพานเชื่อมมณฑลทริสต้า)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI) / สมาธิระดับเทพฝ่าดง EV"}, "economy": {"septium_price": {"value": "639.50 Mira", "trend": "-0.2%", "status": "Midday Consolidation", "up": false}, "rf_stock": {"value": "13,820.00 Mira", "trend": "-0.1%", "status": "EV Market Dominance", "up": false}, "land_price": {"value": "8,000 ล้าน Mira", "status": "ที่ดินเขตเศรษฐกิจพิเศษชุมทางไททันทริสต้า"}, "cash_flow": {"value": "5 พันล้าน Mira", "status": "เตรียมงบช็อปปิ้งและจัดตั้งฐานทัพ Class VII"}, "active_deal": "- นโยบายอุดหนุนรถยนต์ไฟฟ้า EV ของสภาบริหารเอเรโบเนีย\n- ตลาดสัมปทานจุดชาร์จไฟด่วน Orbal Fast Charge 800V รอบชานเมืองทริสต้า\n- แผนการจัดซื้อที่ดิน 50 ไร่เพื่อสร้างค่ายเดียนเบียนฟูหลังโรงเรียน Thors"}, "tension": {"index_percent": 58.5, "level_text": "GUARDED (การจราจรติดขัดรุนแรง)", "noble_status": "ขบวนรถหรูของตระกูลขุนนางติดแหง็กในเลน VIP ถูกรถกระบะชาวบ้านขวางทาง", "reformist_status": "ตำรวจจราจรนครทริสต้าเร่งระบายรถยนต์ไฟฟ้า EV ที่ต่อคิวเข้าสู่สถานีชาร์จ", "guard_status": "เรดาร์ตรวจพบกองกำลังนักเรียนนายร้อย Thors เริ่มรวมพล ณ ประตูใหญ่ทริสต้า"}, "social": {"trending_tags": ["#NetaVดูดตูด120", "#ดงEVขวางเลน", "#ฝันร้ายสองจังหวะ", "#ไททันทริสต้า"], "posts": [{"user": "@NetaV_Club_Zemuria", "time": "14 นาทีที่แล้ว", "content": "เปิดแอร์เย็นฉ่ำ 24 องศา ดูดตูดมอไซค์สองจังหวะที่ 120 km/h สบายใจจังเลยโนพอน~ ⚡🚗 #NetaVดูดตูด120", "likes": "134.5K"}, {"user": "@Trista_Citizen", "time": "30 นาทีที่แล้ว", "content": "มองจากตัวเมืองทริสต้าเห็นทางหลวงลอยฟ้าไฟท้ายสีแดงยาวเป็นกิโล เปิดเทอมวันแรกบันเทิงแน่นอน!", "likes": "69.1K"}], "wire_headline": "🚗 [วิกฤตจราจร] กองทัพ EV ออร์บัลแออัดทำลายสถิติ ทางเข้าไททันทริสต้าติดขัดทุกช่องทาง", "wire_reports": ["09:45 - รถยนต์ไฟฟ้า Neta V วิ่งดูดท้าย Serpico SS ในระยะกระชั้นชิดสร้างแรงกดดันจิตวิทยา", "10:15 - ชีครีนใช้ทักษะมุดเลนแคบและพลังแรงบิดสองจังหวะแหวกช่องว่างขบวนรถติด", "10:30 - มองเห็นโครงสร้างมหึมาของแผ่นดินไททันทริสต้าและหอระฆังสถาบันทอร์สเด่นตระหง่าน"]}}, "vol1_c1_scene04": {"macro": {"world_clock": "31 มีนาคม S.1204 | 11:15 AM (ปลายสาย)", "active_sector": "loc:titan_trista:hua_lamphong_station_plaza (ลานหน้าสถานีหัวลำโพงทริสต้า)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI / พร้อมรายงานตัว Class VII)"}, "economy": {"septium_price": {"value": "638.99 Mira", "trend": "+0.4%", "status": "Trista Station Close", "up": true}, "rf_stock": {"value": "13,860.00 Mira", "trend": "+0.3%", "status": "Thors Opening Hype", "up": true}, "land_price": {"value": "12,000 ล้าน Mira", "status": "ย่านการค้าสถานีหัวลำโพงทริสต้าและลานหน้าโรงเรียน"}, "cash_flow": {"value": "5 พันล้าน Mira", "status": "พร้อมเปิดบัญชีสมาคม Class VII ประจำปีการศึกษา"}, "active_deal": "- ลงนามปิดฉากมหากาพย์การเดินทาง 300 กิโลเมตรจากยูมีร์สู่ทริสต้า\n- รับการสดุดีกาแฟกระป๋องจากแชมป์โลก Mick Doohan ณ ลานสถานี\n- ครูใหญ่วินซ์ แมคแวนไดค์เตรียมจัดศึกมวยปล้ำกรงเหล็ก Hell in a Cell ต้อนรับนักเรียนใหม่"}, "tension": {"index_percent": 62.5, "level_text": "TENSE / OPENING (เข้าสู่สมรภูมิโรงเรียน)", "noble_status": "นักเรียนห้อง Class I และ Class II ขุนนางเริ่มรวมกลุ่มแสดงแสนยานุภาพหน้าสถานี", "reformist_status": "นักเรียนห้องสามัญชน Class III ถึง V แสดงความไม่พอใจต่อการอภิสิทธิ์ของขุนนาง", "guard_status": "สมาคมมวยปล้ำ TWF และกองกำลังหุ่นยนต์ T-800 ประจำการป้อมค่ายเดียนเบียนฟูพร้อม 100%"}, "social": {"trending_tags": ["#HuaLamphongTrista", "#กระบะRiddaraขวางโลก", "#DoohanCoffeeToast", "#ThorsOpeningS1204"], "posts": [{"user": "@TristaStation_News", "time": "5 นาทีที่แล้ว", "content": "ชีครีน ชวาเซอร์ ควบ Serpico SS สภาพคนขับแทบพังแต่ควยยังตั้ง 7.5\" มาถึงสถานีหัวลำโพงทริสต้าแล้ว! 🏆🏁", "likes": "158.9K"}, {"user": "@TWF_Official_Vince", "time": "18 นาทีที่แล้ว", "content": "WELCOME TO THORS! สังเวียนกรงเหล็ก TitanTron 16K พร้อมเปิดฉากบดขยี้กระดูกพวกเธอแล้วนักเรียนใหม่! 🤼‍♂️💥", "likes": "104.2K"}], "wire_headline": "🏁 [ถึงที่หมายสมบูรณ์] การมาถึงของทายาทตระกูลชวาเซอร์ ณ นครทริสต้า เตรียมเปิดฉากตำนานบทใหม่ใน Thors", "wire_reports": ["11:15 - ชีครีนฝ่าด่านกระบะตู้ทึบ Riddara RD6 และจอดมอเตอร์ไซค์หน้าลานสถานีหัวลำโพง", "11:30 - ไมเคิล ดูฮาน มอบกาแฟกระป๋องออร์บัลยกดื่มฉลองจิตวิญญาณแห่งความเร็วสองจังหวะ", "12:00 - สิ้นสุดบทที่ 1 อย่างสมบูรณ์แบบ ก้าวเข้าสู่ธรณีประตูสถาบันการทหารทอร์ส"]}}, "vol1_prologue_scene01": {"macro": {"world_clock": "30 มีนาคม S.1204 | 08:00 AM (เช้าตรู่)", "active_sector": "Titan Ymir Dubai (ห้องเสวยพระราชวังชวาเซอร์)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI)"}, "economy": {"septium_price": {"value": "640.04 Mira", "trend": "+4.2%", "status": "Bullish Rally", "up": true}, "rf_stock": {"value": "12,480.50 Mira", "trend": "+4.2%", "status": "Zemuria Orbal Index", "up": true}, "land_price": {"value": "5,000 ล้าน Mira", "status": "ที่ดินรีสอร์ตออนเซนทองคำ ยอดจองเต็ม 100%"}, "cash_flow": {"value": "5,000 ล้าน Mira", "status": "เช็คเงินสดส่วนตัวท่านชีคเตโอ เซ็นจ่ายสด"}, "active_deal": "- สัมปทานเหมืองเซปเทียมเหลวยูมีร์ดูไบระยะเวลา 99 ปี\n- ลงนามเช็คเงินสดก้นถุง 5 พันล้านมิราให้รีนเตรียมตัวเข้าทอร์ส\n- จัดซื้อเบนซิน 95 ผสม 2T กลิ่นสตรอว์เบอร์รี 100 แกลลอน"}, "tension": {"index_percent": 42.0, "level_text": "MODERATE (เฝ้าระวังปกติ)", "noble_status": "ดยุคอัลเบเรียจัดประชุมลับขุนนาง ณ มณฑลครอยเซิน จับตาการเคลื่อนไหวของรัฐบาลกลาง", "reformist_status": "นายกฯ ออสบอร์นผลักดันงบประมาณโครงข่ายรถไฟสายข้ามไททัน เร่งรัดการค้าเสรี", "guard_status": "กองกำลังแอนดรอยด์ T-800 ชุบทองคำ 24K ลาดตระเวนรอบพระราชวังยูมีร์ดูไบ 100%"}, "social": {"trending_tags": ["#SheikhReanGold2TPiston", "#YmirDubai850Trillion", "#DenzaD9SnowDrift", "#มื้อเช้าแปดแสนล้าน"], "posts": [{"user": "@NoponTrader_Ymir", "time": "15 นาทีที่แล้ว", "content": "ท่านชีคเตโอเปิดประมูลคาเวียร์วาฬหิมะดองน้ำผึ้งดวงดาว จานละแปดแสนมิรา โนพอนฟินจนหูบินแล้วโมะ! ✨🐟 #YmirDubai850Trillion", "likes": "48.9K"}, {"user": "@SpeedBiker_Erebonia", "time": "42 นาทีที่แล้ว", "content": "ส่องความโหด Serpico SS ของชีครีน! สเตอร์ทองคำฝังเพชร 48 ซี่ กับท่อสูตรแดง บางทราย... เสียงหวีด 2T ปลุกทั้งหุบเขา! 🏍️💨", "likes": "72.4K"}], "wire_headline": "🟢 [รายงานสถิติตลาด] ตระกูลชวาเซอร์เผยงบดุลสภาพคล่อง 8.5 แสนล้านล้านมิรา ดัชนีออร์บัลพุ่งสูงสุดรอบปี", "wire_reports": ["08:00 - ระบบทำความร้อนใต้พิภพออร์บัลไฮดรอลิกถนนหินอ่อนทองคำทำงานคงที่ +24.0°C ทั่วทั้งเมือง", "08:15 - ละอองฟีโรโมนประกายทองคำ (Golden Mist) พวยพุ่งจากมหาไททันวาฬหิมะ สู่ชั้นบรรยากาศ 2,000 ม.", "08:30 - ฝูงรถตู้ไฟฟ้า Denza D9 Gold Edition จำนวน 500 คันเริ่มวิ่งให้บริการสาธารณะฟรีแก่ชาวโนพอน"]}}, "vol1_prologue_scene02": {"macro": {"world_clock": "30 มีนาคม S.1204 | 13:30 น. (บ่ายวัน)", "active_sector": "loc:titan_ymir:burj_orbal_apex (ยอดตึก Burj-Orbal 2,000 ม.)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI)"}, "economy": {"septium_price": {"value": "645.50 Mira", "trend": "+5.9%", "status": "All-Time High", "up": true}, "rf_stock": {"value": "13,850.20 Mira", "trend": "+11.0%", "status": "Thessia & Volus Rally", "up": true}, "land_price": {"value": "6,500 ล้าน Mira", "status": "ตึกระฟ้าและสกายเลานจ์ Burj-Orbal ชั้นพรีเมียม"}, "cash_flow": {"value": "+300,000,000,000 Mira", "status": "สัญญาพลังงานเซปเทียมที่เอลิเซ่กวาดมาจากทูตต่างดาว"}, "active_deal": "- สัญญาพลังงานเซปเทียม 3 แสนล้านมิรากับทูตสหพันธ์ Volus & Citadel\n- ดีลส่งออกเซรั่ม H-Factor ชะลอวัยให้เผ่าพันธุ์ Asari\n- ตรวจรับอะไหล่แต่ง Serpico SS ชุบทองคำ 24K บนยอดตึก 2,000 เมตร"}, "tension": {"index_percent": 46.4, "level_text": "MODERATE (เฝ้าระวังปกติ)", "noble_status": "ดยุคไคเอนส่งสายสืบติดตามการทำสัญญาพลังงาน 3 แสนล้านของตระกูลชวาเซอร์", "reformist_status": "กลุ่มทุนไอแอลไอเอสและ RMP วิเคราะห์ผลกระทบสภาพคล่องมหาศาลต่อระบบการเงินเอเรโบเนีย", "guard_status": "ยานแม่ Ark Hyperion ในวงโคจรล็อกเป้าหมายคุ้มครองครอบครัวชวาเซอร์ 24 ชม."}, "social": {"trending_tags": ["#Elise300BillionDeal", "#BurjOrbal2000M", "#VintageS1150Champagne", "#สะใภ้เอกเบอร์1"], "posts": [{"user": "@ImperialFinancial_Live", "time": "18 นาทีที่แล้ว", "content": "ดีลประวัติศาสตร์ 3 แสนล้านมิรา! คุณหนูเอลิเซ่ปิดจ็อบกับทูต Citadel บนยอดตึก Burj-Orbal หุ้นพุ่งทั้งจักรวาล! 📈🚀", "likes": "125.4K"}, {"user": "@NobleWatch_Erebonia", "time": "50 นาทีที่แล้ว", "content": "เปิดแชมเปญ Grand Cuvée Vintage S.1150 ทองคำขวดละล้านมิราฉลองผลกำไร... นี่มันบารมีระดับมหาเศรษฐีดาราจักร!", "likes": "89.2K"}], "wire_headline": "🟡 [ข่าวด่วนดาราจักร] คุณหนูเอลิเซ่กวาดดีลพลังงาน 300 พันล้านมิรา สภา Citadel รับรองสัมปทาน", "wire_reports": ["13:30 - ลิฟต์แก้วความเร็วสูงทะยานสู่ยอดตึก Burj-Orbal 2,000 ม. ครอบครัวชวาเซอร์พร้อมหน้า", "14:15 - พิธีลงนามสัญญาพลังงานร่วมกับทูตสหพันธ์ Volus และการส่งมอบอะไหล่ทองคำ 24K", "15:00 - สัญญาณยานแม่ Ark Hyperion ยืนยันการคุ้มครองน่านฟ้ายูมีร์ดูไบ 100%"]}}, "vol1_prologue_scene03": {"macro": {"world_clock": "30 มีนาคม S.1204 | 18:30 น. (ช่วงค่ำ)", "active_sector": "loc:titan_ymir:dubai_palace (ท้องพระโรง พระราชวังยูมีร์ดูไบ)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI)"}, "economy": {"septium_price": {"value": "648.20 Mira", "trend": "+1.8%", "status": "Strong Close", "up": true}, "rf_stock": {"value": "13,920.00 Mira", "trend": "+0.5%", "status": "Steady High", "up": true}, "land_price": {"value": "5,000 ล้าน Mira", "status": "พื้นที่อาณาเขตพระราชวังและโรงรถหลวงชวาเซอร์"}, "cash_flow": {"value": "10,000 ล้าน Mira", "status": "เช็คเงินสดคู่ 5 พันล้าน สำหรับรีนและเอลิเซ่"}, "active_deal": "- อนุมัติงบ 5 พันล้านมิราและสิทธิ์บริหารคลัง 3 แสนล้านให้เอลิเซ่ในฐานะสะใภ้เอก\n- สั่งตัดชุดบิชต์ทองคำ 24K และแว่นตาดำชวาเซอร์กันรังสีควอนตัม\n- ซ้อมรบยุทธการ 14 กฎเหล็กสวรรค์สำหรับภารกิจสถาบันทอร์ส"}, "tension": {"index_percent": 48.0, "level_text": "MODERATE (คืนส่งตัว)", "noble_status": "สี่ตระกูลขุนนางใหญ่ประชุมลับใน Bareahard เตรียมประลองอำนาจในภาคการศึกษาใหม่", "reformist_status": "รัฐบาลกลางเสริมกำลังสารวัตรทหารรถไฟ RMP ประจำสถานีใหญ่ทั่วจักรวรรดิ", "guard_status": "กองร้อยหุ่นยนต์ T-800 ถือปืน MAS36 สแตนด์บายรอบท้องพระโรงพร้อมรับคำสั่ง 100%"}, "social": {"trending_tags": ["#24KGoldWagyu", "#14GuardrailsCouncil", "#SchwarzerBlackShades", "#สภาครอบครัวชวาเซอร์"], "posts": [{"user": "@PalaceChef_Ymir", "time": "25 นาทีที่แล้ว", "content": "เสิร์ฟเนื้อวากิวออร์บัลเคลือบทองคำ 24K หนัก 5 กิโลกรัมสำหรับมื้อค่ำสภาส่งตัวชีครีน! พลังงาน 120 PSI แน่นเปรี๊ยะ 🥩✨", "likes": "64.1K"}, {"user": "@StAstraia_Insider", "time": "1 ชั่วโมงที่แล้ว", "content": "ได้ข่าวว่าคุณหนูเอลิเซ่จะเดินทางมาเรียนต่อที่ St. Astraia วันมะรืนนี้ พร้อมบารมีสะใภ้เอกหมื่นล้าน! 👑💙", "likes": "81.0K"}], "wire_headline": "🔴 [สภาความมั่นคงชวาเซอร์] สภาส่งตัวรอบค่ำเคาะ ๑๔ กฎเหล็กพิทักษ์ผู้กล้าและสิทธิบัตรฮาเร็ม", "wire_reports": ["18:30 - เริ่มต้นการเสวยมื้อค่ำเนื้อวากิวทองคำ 24K และการบรีฟยุทธการ 14 กฎเหล็กสวรรค์", "19:45 - ท่านชีคเตโอมอบแว่นตาดำชวาเซอร์และมีดแมเชตเต้คู่ 18 นิ้วอย่างเป็นทางการ", "20:30 - ออกใบรับรองสุขภาพจิตเอลิเซียม ยืนยันสภาวะตรรกะกาวทำลายสมองระดับสมบูรณ์แบบ"]}}, "vol1_prologue_scene04": {"macro": {"world_clock": "30 มีนาคม S.1204 | 21:30 น. (กลางคืน)", "active_sector": "loc:titan_ymir:dubai_palace (ออนเซนกลางแจ้ง ➔ ห้องนอนหลวง)", "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)", "rean_spec": "7.5\" Hardcoded (120 PSI / 25cc Primed)"}, "economy": {"septium_price": {"value": "648.50 Mira", "trend": "+0.1%", "status": "Night Market Stable", "up": true}, "rf_stock": {"value": "13,915.00 Mira", "trend": "-0.04%", "status": "After-Hours Flat", "up": false}, "land_price": {"value": "5,000 ล้าน Mira", "status": "รีสอร์ตน้ำแร่ทองคำส่องดาว ปิดรอบไพรเวท"}, "cash_flow": {"value": "0 Mira (Unconditional Love)", "status": "ความรักบริสุทธิ์และการดูแลสะใภ้เอก"}, "active_deal": "- เปิดใช้งาน Eros-Vault Quantum Encryption Level 7 บน Ark Hyperion Relay\n- โปรโตคอลแช่น้ำแร่ออนเซนทองคำ 42.0°C รักษาความฟิตเตาปฏิกรณ์ 7.5 นิ้ว\n- สัญญาความจำเสื่อมและบทส่งท้ายทลายกำแพงที่สี่"}, "tension": {"index_percent": 44.5, "level_text": "CALM / REST (พักผ่อนสมบูรณ์)", "noble_status": "สมาคมขุนนางสงบนิ่งในยามราตรี เตรียมตัวรับวันเปิดภาคเรียนทอร์ส", "reformist_status": "การคมนาคมรถไฟสายราตรีราบรื่น ไร้เหตุขัดข้องทั่วทั้งภาคตะวันออก", "guard_status": "ระบบตรวจจับฟีโรโมน Ark Hyperion ยืนยันการคุมกำเนิดสวรรค์ 100% สตรีทุกคนปลอดภัย"}, "social": {"trending_tags": ["#CelestialGoldOnsen", "#ป้ายเตือนรพจิตเวช", "#ErosVaultL7", "#GoodnightYmir"], "posts": [{"user": "@NightOwl_Ymir", "time": "30 นาทีที่แล้ว", "content": "ใครมาตั้งป้าย \"ระวังสมองละลายจากความฟิน\" ริมบ่อออนเซนเนี่ย 55555 แช่น้ำแร่ทองคำมองเห็นดาวเต็มฟ้าเลย 🌌♨️", "likes": "52.3K"}, {"user": "@ArcNet_ErosWatcher", "time": "1 ชั่วโมงที่แล้ว", "content": "ช่องสัญญาณควอนตัมของยานแม่ Ark Hyperion ยืนยันการเข้ารหัสบันทึกส่วนตัวระดับ L7 ราตรีสวัสดิ์ชีครีน!", "likes": "67.8K"}], "wire_headline": "🌙 [รายงานราตรีสวรรค์] ปิดท้ายวันสุดท้าย ณ ยูมีร์ดูไบ ชีครีนพร้อมเต็มร้อยมุ่งหน้าทริสต้าพรุ่งนี้เช้า", "wire_reports": ["21:30 - แช่น้ำแร่ทองคำกลางแจ้งอุณหภูมิคงที่ +42.0°C ท่ามกลางหิมะตกโปรยปราย -8.5°C", "22:15 - การพบกันริมระเบียงของสองพี่น้องชวาเซอร์ และคำสัญญาแห่งเกียรติยศสะใภ้เอก", "23:00 - ระบบ Living Engine ยูมีร์ดูไบเข้าสู่ Sleep Mode เตรียมปลุกรุ่งอรุณวันเดินทาง"]}}};
 
     function loadTelemetry(sceneId) {
         const container = document.getElementById('telemetry-content');
         container.style.opacity = 0;
         
         setTimeout(() => {
-            const data = MOCK_DATA[sceneId];
+            const data = REAL_TELEMETRY_DATA[sceneId];
             if (data) {
                 renderTelemetry(data);
                 container.style.opacity = 1;
             } else {
-                container.innerHTML = `<div class="col-span-2 text-center text-red-400 py-10 font-inter">Failed to load telemetry data for ${sceneId}.</div>`;
+                container.innerHTML = `<div class="col-span-2 text-center text-red-400 py-12 font-sarabun bg-white/5 border border-red-500/20 rounded">ไม่พบข้อมูล Telemetry สำหรับฉาก ${sceneId}</div>`;
                 container.style.opacity = 1;
             }
-        }, 300);
+        }, 150);
     }
 
     function renderTelemetry(data) {
@@ -163,19 +102,19 @@
             <div class="col-span-1 lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
                 <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-regular fa-clock mr-1"></i> World Clock</div>
-                    <div class="font-sarabun text-ivory text-sm">${data.macro.world_clock}</div>
+                    <div class="font-sarabun font-semibold text-ivory text-sm">${data.macro.world_clock}</div>
                 </div>
                 <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> Active Sector</div>
-                    <div class="font-sarabun text-cyan-200/90 text-sm">${data.macro.active_sector}</div>
+                    <div class="font-sarabun font-semibold text-cyan-200/90 text-sm">${data.macro.active_sector}</div>
                 </div>
                 <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-solid fa-coins mr-1"></i> Clan Vault</div>
-                    <div class="font-sarabun text-muted-gold text-sm">${data.macro.clan_vault}</div>
+                    <div class="font-sarabun font-semibold text-muted-gold text-sm">${data.macro.clan_vault}</div>
                 </div>
                 <div class="border border-white/5 bg-white/5 p-4 rounded-sm shadow-md">
                     <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-1 tracking-wider"><i class="fa-solid fa-bolt mr-1"></i> Rean Spec / PSI</div>
-                    <div class="font-sarabun text-amber-200/90 text-sm">${data.macro.rean_spec}</div>
+                    <div class="font-sarabun font-semibold text-amber-200/90 text-sm">${data.macro.rean_spec}</div>
                 </div>
             </div>`;
         }
@@ -193,7 +132,7 @@
                         <div class="text-[10px] font-inter ${data.economy.septium_price.up ? 'text-emerald-400' : 'text-red-400'}"><i class="fa-solid ${data.economy.septium_price.up ? 'fa-arrow-trend-up' : 'fa-arrow-trend-down'}"></i> ${data.economy.septium_price.trend} ${data.economy.septium_price.status}</div>
                     </div>
                     <div class="bg-white/5 p-3 rounded border border-white/5">
-                        <div class="text-[10px] font-inter uppercase text-ivory/40">🏢 Reinford (RF) Stock</div>
+                        <div class="text-[10px] font-inter uppercase text-ivory/40">🏢 Reinford / Orbal Index</div>
                         <div class="font-sarabun font-bold text-2xl text-amber-300">${data.economy.rf_stock.value}</div>
                         <div class="text-[10px] font-inter ${data.economy.rf_stock.up ? 'text-emerald-400' : 'text-red-400'}"><i class="fa-solid ${data.economy.rf_stock.up ? 'fa-arrow-trend-up' : 'fa-arrow-trend-down'}"></i> ${data.economy.rf_stock.trend} ${data.economy.rf_stock.status}</div>
                     </div>
@@ -202,8 +141,8 @@
                     <div class="flex justify-between items-center"><span class="text-ivory/50"><i class="fa-solid fa-mountain-sun mr-1"></i> Land Price:</span> <span>${data.economy.land_price.value} <span class="text-xs text-amber-200/70 ml-1">(${data.economy.land_price.status})</span></span></div>
                     <div class="flex justify-between items-center"><span class="text-ivory/50"><i class="fa-solid fa-wallet mr-1"></i> Cash Flow:</span> <span class="text-emerald-400 font-bold">${data.economy.cash_flow.value} <span class="text-xs text-emerald-300/70 ml-1 font-normal">(${data.economy.cash_flow.status})</span></span></div>
                     <div class="mt-4 p-3 bg-white/5 border border-muted-gold/20 rounded-sm">
-                        <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-2">📜 Active Deals</div>
-                        <div class="italic text-amber-100/90 leading-relaxed font-sarabun text-xs">${data.economy.active_deal}</div>
+                        <div class="text-[10px] font-inter uppercase text-muted-gold/60 mb-2">📜 Active Deals & Contracts</div>
+                        <div class="italic text-amber-100/90 leading-relaxed font-sarabun text-xs">${data.economy.active_deal.replace(/\n/g, '<br>')}</div>
                     </div>
                 </div>
             </div>`;
@@ -212,8 +151,8 @@
         // --- TENSION ---
         if (data.tension) {
             let tensionColor = 'bg-emerald-500';
-            if (data.tension.index_percent > 30) tensionColor = 'bg-amber-500';
-            if (data.tension.index_percent > 70) tensionColor = 'bg-red-500';
+            if (data.tension.index_percent > 50) tensionColor = 'bg-amber-500';
+            if (data.tension.index_percent > 60) tensionColor = 'bg-red-500';
 
             html += `
             <div class="border border-muted-gold/20 bg-obsidian p-6 relative shadow-lg">
@@ -243,7 +182,7 @@
                         <div class="text-ivory/80">${data.tension.reformist_status}</div>
                     </div>
                     <div class="p-3 border-l-2 border-emerald-500/50 bg-white/5">
-                        <div class="text-[10px] font-inter uppercase text-emerald-500/80 mb-1 flex items-center"><i class="fa-solid fa-shield-virus mr-1"></i> Ymir Royal Guard</div>
+                        <div class="text-[10px] font-inter uppercase text-emerald-500/80 mb-1 flex items-center"><i class="fa-solid fa-shield-virus mr-1"></i> Security & Guards</div>
                         <div class="text-ivory/80">${data.tension.guard_status}</div>
                     </div>
                 </div>
@@ -258,7 +197,7 @@
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
-                        <div class="text-[10px] font-inter uppercase text-ivory/40 mb-3 tracking-widest"><i class="fa-solid fa-fire mr-1 text-red-400"></i> Trending on ARC-Net</div>
+                        <div class="text-[10px] font-inter uppercase text-ivory/40 mb-3 tracking-widest"><i class="fa-solid fa-fire mr-1 text-red-400"></i> Trending on ARC-Net & SPARC-X</div>
                         <div class="flex flex-wrap gap-2 mb-6">
                             ${data.social.trending_tags.map(t => `<span class="px-2 py-1 bg-[#1F2428] border border-cyan-500/30 text-cyan-300 text-xs font-inter rounded hover:border-cyan-400 cursor-pointer transition-colors shadow-sm">${t}</span>`).join('')}
                         </div>
@@ -300,11 +239,14 @@
         container.innerHTML = html;
     }
 
-    // Auto-load first scene
+    // Auto-load scene from URL parameter or default
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const sceneId = urlParams.get('scene') || 'vol1_prologue_scene01';
-        document.getElementById('mock-scene-selector').value = sceneId;
+        const selector = document.getElementById('scene-selector');
+        if (selector) {
+            selector.value = sceneId;
+        }
         loadTelemetry(sceneId);
     });
 </script>
