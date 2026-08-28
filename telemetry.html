@@ -100,7 +100,7 @@
         setTimeout(() => {
             const data = REAL_TELEMETRY_DATA[sceneId];
             if (data) {
-                renderTelemetry(data);
+                renderTelemetry(data, sceneId);
                 container.style.opacity = 1;
             } else {
                 container.innerHTML = `<div class="col-span-2 text-center text-red-400 py-12 font-sarabun bg-white/5 border border-red-500/20 rounded">ไม่พบข้อมูล Telemetry สำหรับฉาก ${sceneId}</div>`;
@@ -109,7 +109,7 @@
         }, 150);
     }
 
-    function renderTelemetry(data) {
+    function renderTelemetry(data, sceneId) {
         const container = document.getElementById('telemetry-content');
         
         let html = '';
