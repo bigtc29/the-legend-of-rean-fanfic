@@ -1,0 +1,66 @@
+{
+  "macro": {
+    "world_clock": "30 มีนาคม S.1204 (บ่าย)",
+    "active_sector": "Titan Ymir Dubai (Burj-Orbal)",
+    "clan_vault": "8.5E+14 MIRA",
+    "rean_spec": "7.5\" (120 PSI)"
+  },
+  "economy": {
+    "septium_price": {
+      "value": "642.10 Mira",
+      "trend": "+1.5%",
+      "status": "High Demand",
+      "up": true
+    },
+    "rf_stock": {
+      "value": "1,418.20 Mira",
+      "trend": "-0.1%",
+      "status": "Correction",
+      "up": false
+    },
+    "land_price": {
+      "value": "5,500 ล้าน Mira",
+      "status": "ราคาดีดตัวจากข่าวลิฟต์แก้ว"
+    },
+    "cash_flow": {
+      "value": "4,700 ล้าน Mira",
+      "status": "หักค่าอะไหล่ทองคำ 24K"
+    },
+    "active_deal": "- ดีลลับ 3 แสนล้าน Mira กับ IBC\n- สั่งทำแว่นตาดำชวาเซอร์ลอตใหม่"
+  },
+  "tension": {
+    "index_percent": 52.1,
+    "level_text": "ELEVATED",
+    "noble_status": "ดยุคไคเอนจัดงานเลี้ยงรวมพลลับๆ ใน Ordis",
+    "reformist_status": "หน่วยข่าวกรอง RMP ตรวจสอบเส้นทางการเงินกลุ่มทุนปริศนา",
+    "guard_status": "เพิ่มมาตรการ รปภ. ระดับ 5 รอบตึก Burj-Orbal"
+  },
+  "social": {
+    "trending_tags": [
+      "#BurjOrbal",
+      "#ลิฟต์แก้ววิวหลักล้าน",
+      "#ดีลลับ3แสนล้าน",
+      "#YmirDubai"
+    ],
+    "posts": [
+      {
+        "user": "@CrossbellTrader",
+        "time": "2 นาทีที่แล้ว",
+        "content": "ใครพอจะรู้บ้างว่าดีล 3 แสนล้านที่เพิ่งเซ็นกันมันคืออะไร!? กราฟพุ่งแปลกๆ 📈",
+        "likes": "45.2K"
+      },
+      {
+        "user": "@Tourist_099",
+        "time": "1 ชั่วโมงที่แล้ว",
+        "content": "เพิ่งได้ขึ้นลิฟต์แก้วของ Ymir Dubai สวยจนน้ำตาไหล 😭✨ #BurjOrbal",
+        "likes": "120K"
+      }
+    ],
+    "wire_headline": "🟡 [รายงาน] การเคลื่อนไหวของกองทุน IBC ในพื้นที่ Ymir",
+    "wire_reports": [
+      "13:00 - ประธาน IBC เดินทางถึง Ymir Dubai อย่างเป็นทางการ",
+      "13:45 - พบการโอนเซปเทียมเหลวมูลค่ามหาศาลผ่านเครือข่าย Orbal Network",
+      "14:30 - ตลาดหลักทรัพย์ปรับตัวตอบรับกระแสข่าวการลงทุนใหม่"
+    ]
+  }
+}
