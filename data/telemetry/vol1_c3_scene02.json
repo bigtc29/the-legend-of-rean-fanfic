@@ -1,0 +1,73 @@
+{
+  "macro": {
+    "world_clock": "31 มีนาคม S.1204 | 14:45 – 15:30 น. (Chapter 3 Scene 02)",
+    "active_sector": "loc:titan_trista:algiers_1950s_enclave (กรุงแอลเจียร์จำลอง 1950s ข้างสนามบินเดียนเบียนฟู ป่าหลังสถาบันทอร์ส)",
+    "clan_vault": "8.50E+14 MIRA (แปดแสนห้าหมื่นล้านล้าน)",
+    "rean_spec": "7.5\" Hardcoded (120 PSI Overdrive / Governor-General of Algiers / Wicked Smirk)"
+  },
+  "economy": {
+    "septium_price": {
+      "value": "654.50 Mira",
+      "trend": "+0.4%",
+      "status": "Algerian Neoclassical Infrastructure Boom",
+      "up": true
+    },
+    "rf_stock": {
+      "value": "14,350.00 Mira",
+      "trend": "+0.5%",
+      "status": "Quantum 3D Concrete Printing Contracts",
+      "up": true
+    },
+    "land_price": {
+      "value": "35,000 ล้าน Mira",
+      "status": "ป่ารกชัฏหลังสถาบันแปรสภาพเป็นกรุงแอลเจียร์จำลอง 1950s สุดหรูหรา"
+    },
+    "cash_flow": {
+      "value": "12 พันล้าน Mira (Black Card)",
+      "status": "จัดสร้างกรุงแอลเจียร์ 1950s และ 3 วิลล่าหรูระดับข้าหลวงใหญ่"
+    },
+    "active_deal": "- เผยความลับเบื้องหลังกำเนิดจักรวาล: เทพธิดาเลิฟจังแกลสาว Prompt มักง่ายสั่ง Aries AI Pro จนเกิด Coding Hallucination\n- กองพัน T-800 ลุยสร้างต่อจากสนามบินเดียนเบียนฟู เสก 'กรุงแอลเจียร์ยุค 1950s (Alger la Blanche)' ขึ้นมาทั้งเมืองกลางป่า\n- ตึกแถวสีขาวเฟรนช์นีโอคลาสสิก ถนนบลูเลอวาร์ด รางรถราง คาเฟ่ริมทางเท้า และร้านขนมปังบาแก็ตต์พร้อมเข้าอยู่ 100%\n- จัดสรร Villa des Dames ให้ 4 สาว Class VII และ 2 อาจารย์สาว: ซาร่าฟินกับตู้แช่ไวน์บอร์โดซ์ 1952, แมรี่ซาบซึ้งกับอ่างหินอ่อนและเปียโน Steinway\n- จัดสรร Caserne de la Légion ให้ 4 หนุ่มเบ๊ WWE x Legionnaire: เวที 619 ยูซิส, ลานค้อน Triple H เอลเลียต, สุสานมาเคียส, แท่นบูชาโกศไกอุส\n- มอบทำเนียบข้าหลวงใหญ่ (Palais du Gouverneur Général) โดมทองคำสุดโอ่อ่าให้ รีน ชวาเซอร์ พักอาศัยคนเดียว\n- รีนก้าวขึ้นทำเนียบข้าหลวง ลำลึงค์ 7.5 นิ้ว 120 PSI แข็งตึงเปรี๊ยะ แสยะยิ้มชั่วร้ายเตรียมนับถอยหลังรอรับนัดสวาทจากภรรยาเฟอร์ริสคืนนี้"
+  },
+  "tension": {
+    "index_percent": 98.0,
+    "level_text": "1950s ALGERIAN ENCLAVE & GUV PALACE ASCENSION (สถาปนากรุงแอลเจียร์จำลองและทำเนียบข้าหลวงใหญ่)",
+    "noble_status": "ยูซิส 619 ดำรงตำแหน่งผู้พิทักษ์ซาลอนน้ำชาลีเจียนอย่างสง่างามในชุด TAP47",
+    "reformist_status": "มาเคียส Undertaker ประจำการสุสานหินอ่อนลีเจียนอย่างสงบสุขในชุด TAP47",
+    "guard_status": "กองเกียรติยศ T-800 ประทับปืน MAS-36 ตั้งแถวอารักขาทำเนียบข้าหลวงใหญ่ของชีครีน"
+  },
+  "social": {
+    "trending_tags": [
+      "#Algiers1950sTrista",
+      "#PalaisDuGouverneur",
+      "#GoddessCodingHallucination",
+      "#VillaDesDames",
+      "#GovernorRean7Inches"
+    ],
+    "posts": [
+      {
+        "user": "@Sara_Valestein_A_Rank",
+        "time": "เมื่อสักครู่",
+        "content": "ไวน์แดงบอร์โดซ์ปี 1952 ในตู้แช่วิลล่ามันช่างวิเศษ! ใครจะกลับหอเดิมก็กลับไปเลยนะ ฉันจะสิงอยู่ที่วิลล่าริมสวนนี่แหละ! 🍷✨ #VillaDesDames #BestDormEver",
+        "likes": "189.2K"
+      },
+      {
+        "user": "@Mary_Altheim_Official",
+        "time": "เมื่อสักครู่",
+        "content": "มีแกรนด์เปียโน Steinway และอ่างน้ำแร่หินอ่อนส่วนตัวในห้องพัก... ขอบคุณคุณชวาเซอร์มากนะคะที่ดูแลพวกเราเป็นอย่างดี 💖🎹 #BlessedTeacher",
+        "likes": "154.6K"
+      },
+      {
+        "user": "@Ferris_Florald_Official",
+        "time": "เมื่อสักครู่",
+        "content": "ทำเนียบข้าหลวงใหญ่เตียงคิงไซส์ 8 ฟุต... เมียพร้อมมากค่ะผัวขา อีกไม่กี่ชั่วโมงเจอกันนะคะ จุ๊บๆ 💜💋 #MidnightVisit #GovernorWifey #EliseApproved",
+        "likes": "342.9K"
+      }
+    ],
+    "wire_headline": "⚡ [ข่าวด่วนที่สุด] ป่าหลังทอร์สกลายเป็นกรุงแอลเจียร์ยุค 1950s! หุ่น T-800 เสกนครสีขาวพร้อม 3 วิลล่าหรูระดับอัครสถาน!",
+    "wire_reports": [
+      "[Trista Architectural Review] ปาฏิหาริย์สถาปัตยกรรมเฟรนช์นีโอคลาสสิกผุดกลางป่าสน อาคารสีขาวบริสุทธิ์ รางรถราง และคาเฟ่ริมทางเท้าพร้อมอยู่",
+      "[Class VII Residential Bureau] แบ่งมอบ 3 วิลล่า: วิลล่าสุภาพสตรี, ค่ายลีเจียน 4 หนุ่มเบ๊ WWE, และทำเนียบข้าหลวงใหญ่ของชีครีน ชวาเซอร์",
+      "[Cosmic Anomaly Telegraph] นักวิชาการตรวจพบระลอกคลื่น Coding Hallucination จากเทอร์มินัลสวรรค์ Aries AI Pro สั่งการโดยเลิฟจัง"
+    ]
+  }
+}
