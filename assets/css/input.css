@@ -6,10 +6,11 @@
   --color-ivory: #F9F6EE;
   --color-muted-gold: #C5A059;
 
-  --font-cinzel: 'Cinzel', serif;
-  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-cinzel: 'Cinzel', 'Chonburi', serif;
+  --font-cormorant: 'Cormorant Garamond', 'Sarabun', serif;
   --font-chonburi: 'Chonburi', serif;
-  --font-inter: 'Inter', sans-serif;
+  --font-inter: 'Inter', 'Sarabun', sans-serif;
+  --font-sarabun: 'Sarabun', sans-serif;
 }
 
 @layer base {
@@ -204,7 +205,7 @@
   .novel-prose th {
     background: rgba(197, 160, 89, 0.05);
     color: #C5A059;
-    font-family: 'Cinzel', serif;
+    font-family: 'Cinzel', 'Chonburi', serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
