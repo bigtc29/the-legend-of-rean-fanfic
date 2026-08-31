@@ -1,0 +1,105 @@
+{
+  "scene_id": "vol1_c4_scene02",
+  "volume": 1,
+  "chapter": 4,
+  "scene": 2,
+  "title": "วาทศิลป์หน้าไมค์ไฟแลบ, กายกรรม Spinaroonie & จิตวิทยาเก้าอี้เหล็ก Finish the Story",
+  "macro": {
+    "world_clock": "2-3 เมษายน S.1204 (Tue-Wed) | 08:30 - 17:00 น.",
+    "active_sector": "สตูดิโอกระจายเสียง, แอลเจียร์ 1950s & TWF Arena",
+    "clan_vault": "8.5 แสนล้านล้านมิรา (Trillionaire Hegemony)",
+    "rean_spec": "7.5 นิ้ว Hardcoded (120 PSI Winter Sonata Care)"
+  },
+  "economy": {
+    "tickers": [
+      {
+        "symbol": "ZEMURIA-ORBAL",
+        "name": "ดัชนีเศรษฐกิจแอลเจียร์ 1950s & C-130",
+        "value": "15,200.40",
+        "change_percent": 4.5,
+        "is_positive": true
+      },
+      {
+        "symbol": "TWF-ENT",
+        "name": "ยอดพรีออเดอร์ PPV สังเวียนข้ามดวงดาว",
+        "value": "28,400.00",
+        "change_percent": 12.8,
+        "is_positive": true
+      },
+      {
+        "symbol": "CITADEL-CREDIT",
+        "name": "ค่าเงินเครดิตสภา Citadel Volus",
+        "value": "152,400.00",
+        "change_percent": 1.8,
+        "is_positive": true
+      },
+      {
+        "symbol": "REINFORD-M&A",
+        "name": "หุ้นกลุ่มทุน Reinford Group & อุปกรณ์ R&D",
+        "value": "84,600.00",
+        "change_percent": 8.4,
+        "is_positive": true
+      }
+    ],
+    "fx": [
+      {
+        "pair": "MIRA/USD",
+        "rate": "1.0000",
+        "updated": "2 เมษายน S.1204"
+      },
+      {
+        "pair": "MIRA/VOLUS",
+        "rate": "0.1524",
+        "updated": "2 เมษายน S.1204"
+      },
+      {
+        "pair": "MIRA/DUBAI-GOLD",
+        "rate": "0.00085",
+        "updated": "2 เมษายน S.1204"
+      }
+    ]
+  },
+  "tension": {
+    "index_percent": 98.8,
+    "level_text": "MIC SKILLS MASTERY, 120 PSI METRIC PEAK & THE AMERICAN NIGHTMARE EMOTION",
+    "noble_status": "ขุนนาง Class I-II ถูกสารวัตรทหาร T-800 กวาดล้างการชักดาบหนี้จำนำ บังคับเข้าสู่กระบวนการปรับโครงสร้างหนี้ 100%",
+    "reformist_status": "สามัญชน Class III-V ชื่นชมสุนทรพจน์ Finish the Story ของผู้นำชีคหนุ่ม ความเชื่อมั่นต่อ Class VII พุ่งแตะระดับสูงสุด",
+    "guard_status": "T-800 ลาดตระเวนรอบแอลเจียร์ตลอด 24 ชม. ประสานงานระบบกล้องวงจรปิดออร์บัล 8K เฝ้าระวังหนี้สินและความสงบเรียบร้อย"
+  },
+  "social": {
+    "trending_tags": [
+      "#BookerTPromoMastery",
+      "#AlisaCapitalistPromo100",
+      "#SpinaroonieChallenge",
+      "#ReanGentleman120PSI",
+      "#CodyRhodesFinishTheStory",
+      "#T800DebtEnforcement"
+    ],
+    "posts": [
+      {
+        "user": "@Alisa_Reinford_CFO",
+        "time": "เมื่อสักครู่",
+        "content": "การบริหารสินทรัพย์และการทำ Hostile M&A ไม่ใช่เรื่องล้อเล่น! หนี้เสียทางความรู้สึกกับสัญญาผ้าพันคอสีแดงผืนนั้น นายต้องชดใช้ด้วยความทรงจำทั้งหมด... แต่ชุดประคบเย็นแกนกลาง 120 PSI พรุ่งนี้เช้าฉันอนุมัติเบิกจ่ายให้แล้วนะตาบ้า ☕❄️💼 #HostileMA #AssetValuation #WinterSonataContract",
+        "likes": "684.5K"
+      },
+      {
+        "user": "@BookerT_5TimeChamp",
+        "time": "เมื่อสักครู่",
+        "content": "CAN YOU DIG IT, SUCKA?! ยายหนูอลิซ่าระเบิดไมค์ไฟแลบสองนาที ด่าผัวได้สมบูรณ์แบบระดับห้าดาว Shucky Ducky Quack Quack! เอาคะแนนเต็มร้อยไปเลย! 🎙️🔥🐆 #CanYouDigIt #FiveStarPromo #ClassVII",
+        "likes": "890.1K"
+      },
+      {
+        "user": "@CodyRhodes_AmericanNightmare",
+        "time": "เมื่อสักครู่",
+        "content": "คุณชวาเซอร์... คุณทำให้ผมต้องหลั่งน้ำตาบนสังเวียนผ้าใบ สุนทรพจน์ Finish the Story ของคุณคู่ควรกับแชมเปี้ยนไร้พ่าย เก้าอี้เหล็กและหยาดเหงื่อของพวกคุณคือศิลปะบริสุทธิ์! 👑🇺🇸🩸 #FinishTheStory #AmericanNightmare #BabyfaceSelling",
+        "likes": "942.3K"
+      }
+    ],
+    "wire_headline": "📰 [Imperial Broadcasting Authority] เรตติ้งถ่ายทอดสดวิชาวาทศิลป์สังเวียนทอร์สพุ่งแตะสถิติใหม่ สภา Citadel สนใจนำไปประยุกต์ใช้ในเวทีทูตสากล",
+    "wire_reports": [
+      "[Heimdallr Daily Media Desk] [GLOBAL]: การบรรยายวิชาวาทศิลป์ด่าออกไมค์และการแสดงออกทางอารมณ์ของ ศาสตราจารย์ บูเกอร์ ที และนักเรียนห้อง Class VII ได้รับคำชื่นชมอย่างล้นหลามจากคณะทูตานุทูตจักรวรรดิ ว่าเป็นแบบอย่างของยุทธวิธีการเจรจาต่อรองที่มีประสิทธิภาพสูงสุดในการสยบขวัญฝ่ายตรงข้าม",
+      "[Crossbell IBC Financial Telemetry] [GLOBAL]: หุ้นบริษัทเครื่องเสียงออร์บัลและผู้ผลิตเก้าอี้พับเหล็กมาตรฐานสังเวียน พุ่งทะยานขึ้น 14.8% ขานรับยอดสั่งซื้ออุปกรณ์ฝึกซ้อมจากสถาบันการทหารทั่วทวีปเซมูเรีย ยอดจำหน่ายชาเอิร์ลเกรย์ในแคว้นครอยเซนเพิ่มขึ้น 200% หลังทัศนียภาพการหมุนตัวเสิร์ฟชากลางอากาศแพร่สะพัด",
+      "[Citadel Council Communiqué] [GALACTIC]: โฆษกสภา Citadel ประจำสถานีอวกาศวงโคจร แถลงยกย่องสุนทรพจน์ Finish the Story ของ รีน ชวาเซอร์ ผู้นำแห่งยูมีร์ดูไบ ว่าเป็นวิสัยทัศน์ของผู้นำรุ่นใหม่ที่เปี่ยมด้วยความรับผิดชอบและการปกป้องพันธมิตร เตรียมส่งผู้สังเกตการณ์เข้าร่วมชมการฝึกซ้อมภาคสนามในอนาคต"
+    ]
+  }
+}
