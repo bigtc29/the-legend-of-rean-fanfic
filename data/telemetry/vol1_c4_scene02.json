@@ -11,53 +11,27 @@
     "rean_spec": "7.5 นิ้ว Hardcoded (120 PSI Winter Sonata Care)"
   },
   "economy": {
-    "tickers": [
-      {
-        "symbol": "ZEMURIA-ORBAL",
-        "name": "ดัชนีเศรษฐกิจแอลเจียร์ 1950s & C-130",
-        "value": "15,200.40",
-        "change_percent": 4.5,
-        "is_positive": true
-      },
-      {
-        "symbol": "TWF-ENT",
-        "name": "ยอดพรีออเดอร์ PPV สังเวียนข้ามดวงดาว",
-        "value": "28,400.00",
-        "change_percent": 12.8,
-        "is_positive": true
-      },
-      {
-        "symbol": "CITADEL-CREDIT",
-        "name": "ค่าเงินเครดิตสภา Citadel Volus",
-        "value": "152,400.00",
-        "change_percent": 1.8,
-        "is_positive": true
-      },
-      {
-        "symbol": "REINFORD-M&A",
-        "name": "หุ้นกลุ่มทุน Reinford Group & อุปกรณ์ R&D",
-        "value": "84,600.00",
-        "change_percent": 8.4,
-        "is_positive": true
-      }
-    ],
-    "fx": [
-      {
-        "pair": "MIRA/USD",
-        "rate": "1.0000",
-        "updated": "2 เมษายน S.1204"
-      },
-      {
-        "pair": "MIRA/VOLUS",
-        "rate": "0.1524",
-        "updated": "2 เมษายน S.1204"
-      },
-      {
-        "pair": "MIRA/DUBAI-GOLD",
-        "rate": "0.00085",
-        "updated": "2 เมษายน S.1204"
-      }
-    ]
+    "septium_price": {
+      "value": "668.50 Mira",
+      "trend": "+0.6%",
+      "status": "Broadcasting & Soundstage Orbal Amplifier Surge",
+      "up": true
+    },
+    "rf_stock": {
+      "value": "14,680.00 Mira",
+      "trend": "+1.1%",
+      "status": "M&A Strategy & R&D 120 PSI Compressor Contracts",
+      "up": true
+    },
+    "land_price": {
+      "value": "72,000 ล้าน Mira",
+      "status": "มูลค่าที่ดินแอลเจียร์ 1950s และคอมเพล็กซ์สังเวียน TWF ทะยานต่อเนื่อง"
+    },
+    "cash_flow": {
+      "value": "750 ล้าน Mira (500M Noble Relief Fund + 250M Class VII)",
+      "status": "กองทุนฟื้นฟูสภาพคล่องขุนนางรับจำนำแหวนทองคำ และอนุมัติวงเงินชุดประคบเย็นออร์บัล"
+    },
+    "active_deal": "- วาทศิลป์ด่าหน้าไมค์แนวทุนนิยม M&A 2 นาทีไฟแลบ: อลิซ่าแฉงบดุลหนี้เสียบ่อนวิ่งของขุนนาง Class I ขู่ทำ Hostile Takeover ยึดที่ดินและปราสาทหากชักดาบ คว้าคะแนนเต็ม 100 จาก อ.บูเกอร์ ที (5-Time WCW Champion)\n- กายกรรมฟื้นคืนชีพ The Spinaroonie: อ.บูเกอร์ ที สั่ง Class VII หมุนตัวกวาดพื้น 5 รอบ ดีดตัวจ้องกล้อง 4K สีหน้า Deadpan 100% ยูซิส 619 เสิร์ฟชาไม่หก เอลเลียตทุบค้อนพ่นน้ำ Hydro-Spit 45 องศา มาเคียสสปีดเต่า 0.25x ไกอุสกอดโกศร้อง Ooh Yes ชาร์จพลังลึงค์ สี่สาวสะบัดกระโปรงแดงพร้อมเพรียง\n- ราตรีแอลเจียร์ & พันธสัญญา Winter Sonata: T-800 ลาดตระเวนรอบบ่อนวิ่งและโต๊ะรับจำนำ 500 ล้านมิรา อลิซ่าจิบช็อกโกแลตร้อนริมระเบียงคู่รีน ตรวจวัดแรงดันลึงค์ 120 PSI เข้าใจเป็นอาการบาดเจ็บเรื้อรังจากการช่วยชีวิตเธอในวัยเยาว์ อนุมัติฝ่าย R&D ส่งชุดประคบเย็นและเปิดวงเงินสินเชื่อบำรุงแกนกลาง\n- พลศาสตร์ธรรมะ-อธรรม & Finish the Story: อ.โคดี้ โรดส์ สอนจิตวิทยา Babyface vs Heel และเก้าอี้เหล็ก Turn Heel ยูซิสหวดหลังมาเคียสโชว์ Selling สมจริง ก่อนรีนปล่อยสุนทรพจน์ Finish the Story สะเทือนอารมณ์จน อ.โคดี้ ร่ำไห้มอบเกรด A+ ห้าดาว"
   },
   "tension": {
     "index_percent": 98.8,
