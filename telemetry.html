@@ -41,28 +41,46 @@
             <p class="font-sarabun italic text-lg text-ivory/60">ศูนย์ตรวจวัดสภาวะจักรวาลและข่าวกรองสด (Master Deterministic DAG Edition)</p>
         </div>
 
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-3 border-b border-muted-gold/20">
-            <div class="flex items-center space-x-3 w-full md:w-auto">
-                <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/70 shrink-0 hidden sm:inline-block"><i class="fa-solid fa-layer-group mr-1"></i> SELECT SCENE:</span>
-                <div class="relative w-full sm:w-auto flex-grow min-w-0">
-                    <select id="scene-selector" onchange="loadTelemetry(this.value)" class="appearance-none w-full max-w-full truncate sm:w-[420px] bg-obsidian border border-muted-gold/40 text-ivory text-sm py-2 px-4 pr-10 font-sarabun focus:outline-none focus:border-muted-gold rounded cursor-pointer shadow-[0_0_15px_rgba(197,160,89,0.1)] hover:border-muted-gold/70 transition-colors">
-                        <optgroup label="📖 Volume 01: Ashen Genesis (ยุคกำเนิดประวัติศาสตร์)">
-                            <option value="vol1_prologue_scene01" selected>Scene 01: พระราชพิธีสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑ & มหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์</option>
-                        </optgroup>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-muted-gold/70">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
+        <div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4 mb-6 pb-4 border-b border-muted-gold/20">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-4 w-full xl:w-auto">
+                
+                <!-- 1. Chapter Selector -->
+                <div class="flex items-center space-x-2 w-full md:w-auto">
+                    <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/80 shrink-0"><i class="fa-solid fa-book-bookmark mr-1 text-muted-gold"></i> CHAPTER:</span>
+                    <div class="relative w-full md:w-auto min-w-[280px]">
+                        <select id="chapter-selector" onchange="onChapterSelect(this.value)" class="appearance-none w-full bg-obsidian border border-muted-gold/40 text-ivory text-xs py-2 px-3 pr-8 font-sarabun focus:outline-none focus:border-muted-gold rounded cursor-pointer shadow-[0_0_10px_rgba(197,160,89,0.05)] hover:border-muted-gold/70 transition-colors">
+                            <!-- Populated dynamically via JS -->
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-muted-gold/70">
+                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </div>
                     </div>
                 </div>
+
+                <!-- 2. Scene Selector -->
+                <div class="flex items-center space-x-2 w-full md:w-auto">
+                    <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/80 shrink-0"><i class="fa-solid fa-clapperboard mr-1 text-emerald-400"></i> SCENE:</span>
+                    <div class="relative w-full md:w-auto min-w-[340px]">
+                        <select id="scene-selector" onchange="onSceneSelect(this.value)" class="appearance-none w-full bg-obsidian border border-muted-gold/40 text-ivory text-xs py-2 px-3 pr-8 font-sarabun focus:outline-none focus:border-muted-gold rounded cursor-pointer shadow-[0_0_10px_rgba(197,160,89,0.05)] hover:border-muted-gold/70 transition-colors">
+                            <!-- Populated dynamically based on chosen chapter -->
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-muted-gold/70">
+                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             
-            <div class="flex flex-wrap gap-2 w-full md:w-auto mt-4 md:mt-0">
-                <a href="index.html" class="flex-1 md:flex-none px-4 py-2 border border-white/10 bg-white/5 rounded text-ivory/80 text-xs font-cinzel tracking-widest uppercase hover:bg-white/10 transition-colors text-center shadow-sm whitespace-nowrap"><i class="fa-solid fa-home mr-1"></i> หน้าแรก</a>
-                <a id="backToStoryBtnTop" href="toc.html" class="flex-1 md:flex-none px-4 py-2 bg-muted-gold/10 border border-muted-gold/50 rounded text-muted-gold text-xs font-cinzel tracking-widest uppercase hover:bg-muted-gold/20 transition-colors shadow-[0_0_10px_rgba(197,160,89,0.1)] text-center whitespace-nowrap"><i class="fa-solid fa-book-open mr-1"></i> กลับเนื้อเรื่อง</a>
-            </div>
-            <div class="text-xs font-inter text-emerald-400/80 uppercase tracking-widest flex items-center self-end sm:self-center mt-4 md:mt-0">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span>
-                <span>Active Telemetry Matrix</span>
+            <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto mt-2 xl:mt-0 justify-between xl:justify-end">
+                <div class="flex gap-2">
+                    <a href="index.html" class="px-4 py-2 border border-white/10 bg-white/5 rounded text-ivory/80 text-xs font-cinzel tracking-widest uppercase hover:bg-white/10 transition-colors text-center shadow-sm whitespace-nowrap"><i class="fa-solid fa-home mr-1"></i> หน้าแรก</a>
+                    <a id="backToStoryBtnTop" href="toc.html" class="px-4 py-2 bg-muted-gold/10 border border-muted-gold/50 rounded text-muted-gold text-xs font-cinzel tracking-widest uppercase hover:bg-muted-gold/20 transition-colors shadow-[0_0_10px_rgba(197,160,89,0.1)] text-center whitespace-nowrap"><i class="fa-solid fa-book-open mr-1"></i> อ่านตอนนี้</a>
+                </div>
+                <div class="text-xs font-inter text-emerald-400/80 uppercase tracking-widest flex items-center whitespace-nowrap">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-2"></span>
+                    <span>Active Telemetry Matrix</span>
+                </div>
             </div>
         </div>
 
@@ -73,8 +91,93 @@
 </main>
 
 <script>
-    // 🌌 Real Telemetry Data (Compiled statically from /data/telemetry/*.json)
+    // 🌌 Real Telemetry & Volumes Hierarchy Data
+    const VOLUMES_DATA = [{"title": "Volume 01: Ashen Genesis (กำเนิดมหาบุรุษอัศวินสีชาด)", "subtitle": "พระราชพิธีสมโภช ๑ ล้านปี และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์สยบจอมมารเซ็นเซอร์", "chapters": [{"title": "Prologue: The 1,000,000-Year Founding Banquet (พระราชพิธีสมโภช ๑ ล้านปีแห่งการสถาปนาจักรวรรดิ)", "scenes": [{"id": "vol1_prologue_scene01", "title": "Scene 01: King Uga-Uga I, The Cannes Buffet Heist & The 100,000 Maidens Prophecy (งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์)"}]}]}];
     const REAL_TELEMETRY_DATA = {"vol1_prologue_scene01": {"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "macro": {"world_clock": "ยุคกำเนิดประวัติศาสตร์ (Genesis Era | S.1184 ~ S.1186) — พระราชพิธีสมโภช ๑ ล้านปี", "active_sector": "มหาท้องพระโรงหลวง พระราชวังบัลปาเลซ (โบราณสถานถ้ำแวลดเฟลม)", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "Fetus Stage (7 Months) | สเปกทำนายเมื่อโตเต็มวัย: 7.5\" Hardcoded / 120 PSI"}, "economy": {"septium_price": {"value": "1,000,000,000 Mira", "trend": "+125%", "status": "UFA-Ero-88 Recoup", "up": true}, "rf_stock": {"value": "▲ 850 Trillion", "trend": "+5.8%", "status": "Schwarzer Oil Dubai", "up": true}, "land_price": {"value": "Valflame Cave Sanctuary (Sacred)", "status": "ถ้ำแวลดเฟลมดั้งเดิมแห่งองค์อุกะอุกะที่ ๑"}, "cash_flow": {"value": "+1,000,000,000 MIRA", "status": "กู้ชีพพระคลังหลวงสำเร็จ"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Cosmic Panic / Anti-Mosaic Threat", "index_percent": 68, "noble_status": "ขุนนาง ๔ ตระกูลใหญ่ & ดยุคเลโต ตื่นตระหนกกลัวภัยคุกคามจอมมารเซ็นเซอร์ ทุ่มเงินซื้อหน่วยลงทุนกู้โลก", "reformist_status": "จักรพรรดิ Eugene III ส่งสัญญาณขยิบตากอบกู้พระคลังหลวงร่วมกับมหาโหราจารย์บัลทาซาร์สำเร็จ", "guard_status": "กองทหารองครักษ์หลวงซาร์ดอคาร์ (Imperial Sardaukar) ขับร้องคอหอย Tuvan ถวายชัยและคุ้มกันเสบียงครัวหลวง"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SardaukarTuvanChoir", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "5m ago", "content": "🔴 ด่วนที่สุด! หน้าจอ Solaris 11 ยืนยันคำทำนายสวรรค์! ผู้กล้า รีน ชวาเซอร์ จะต้องเปิดซิงสาวบริสุทธิ์ ๑๐๐,๐๐๐ คน เพื่อสลายหมอกควันและแถบพิกเซลดำของจอมมารเซ็นเซอร์! สแกน QR Code เข้า UFA-Ero-88 ด่วน!", "likes": "12,450,000"}, {"user": "Duke_Leto_Atreides_Pure", "time": "12m ago", "content": "ความฟุ่มเฟือยของบุฟเฟต์พรมแดงคือตัณหาเสื่อมทราม! ข้าพเจ้าสั่งทหารประจำตระกูลอาเทรดีสเข้ายึดกุ้งมังกรและไวน์ทองคำล้านปีเพื่อชำระล้างศีลธรรมจักรวาลเรียบร้อยแล้ว!", "likes": "450"}, {"user": "Baron_Vladimir_Harkonnen", "time": "18m ago", "content": "โฮ่! โฮ่! โฮ่! ลอยตัวแจกเบียร์ยักษ์ ๓ ลิตรและเนื้อวากิวย่างทองคำให้ทุกคน! ชนแก้วฉลองล้านปีแด่องค์อุกะอุกะที่ ๑ กันเถอะพี่น้อง!", "likes": "8,920,000"}, {"user": "Prince_Olivert_Bard", "time": "25m ago", "content": "ข้าขอดีดพิณลูทและให้สัตย์ปฏิญาณว่าจะไม่จีบสาวคนใดในจักรวรรดิเอเรโบเนีย เพื่อเปิดทางให้ว่าที่น้องชายผู้กล้าสร้างกองทัพแสนคนกู้โลก!", "likes": "6,780,000"}], "wire_headline": "🔴 WIRE: สภาจักรวรรดิเอเรโบเนียประกาศรับรองมหาคำทำนายผู้กล้า ๑๐๐,๐๐๐ พรหมจรรย์ ปราบจอมมารโมเสกอย่างเป็นทางการ", "wire_reports": ["[WIRE-01] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งองค์อุกะอุกะที่ ๑ ณ ถ้ำแวลดเฟลม ปฐมกษัตริย์โฮโมอิเล็กตรัส ผู้ค้นพบไม้พลองมานาศักดิ์สิทธิ์", "[WIRE-02] ยาน Ark Hyperion สแกนชีวฟิสิกส์ 8K ยืนยันสเปกทารก ๗ เดือน พยากรณ์เมื่อโตเต็มวัยจะมีแกนกาย 7.5 นิ้ว 120 PSI ใหญ่กว่าค่าเฉลี่ยโลก 4-5 นิ้ว", "[WIRE-03] กองทุนรวมเซปเทียมต้านโมเสก UFA-Ero-88 ระดมทุนจากขุนนางทะลุ ๑,๐๐๐,๐๐๐,๐๐๐ มิรา กู้ชีพพระคลังหลวงสำเร็จ 100%"]}}};
+
+    // Flatten chapters for easy lookup
+    let CHAPTERS_LIST = [];
+    VOLUMES_DATA.forEach((vol, vIdx) => {
+        (vol.chapters || []).forEach((chap, cIdx) => {
+            CHAPTERS_LIST.push({
+                id: `chap_${vIdx}_${cIdx}`,
+                title: chap.title,
+                volTitle: vol.title,
+                scenes: chap.scenes || []
+            });
+        });
+    });
+
+    function initDropdowns(targetSceneId) {
+        const chapSelector = document.getElementById('chapter-selector');
+        if (!chapSelector) return;
+
+        chapSelector.innerHTML = '';
+        
+        // Find which chapter contains targetSceneId
+        let foundChapId = CHAPTERS_LIST[0] ? CHAPTERS_LIST[0].id : null;
+        let selectedScene = targetSceneId;
+
+        if (targetSceneId) {
+            for (const chap of CHAPTERS_LIST) {
+                if (chap.scenes.some(s => s.id === targetSceneId)) {
+                    foundChapId = chap.id;
+                    break;
+                }
+            }
+        }
+
+        // Populate Chapter dropdown
+        CHAPTERS_LIST.forEach(chap => {
+            const opt = document.createElement('option');
+            opt.value = chap.id;
+            opt.textContent = chap.title;
+            if (chap.id === foundChapId) opt.selected = true;
+            chapSelector.appendChild(opt);
+        });
+
+        // Populate Scene dropdown for found chapter
+        populateScenes(foundChapId, selectedScene);
+    }
+
+    function populateScenes(chapId, targetSceneId) {
+        const sceneSelector = document.getElementById('scene-selector');
+        if (!sceneSelector) return;
+        sceneSelector.innerHTML = '';
+
+        const chapter = CHAPTERS_LIST.find(c => c.id === chapId) || CHAPTERS_LIST[0];
+        if (!chapter || !chapter.scenes.length) {
+            const opt = document.createElement('option');
+            opt.value = '';
+            opt.textContent = '(ไม่มีฉากที่พร้อมให้อ่าน)';
+            sceneSelector.appendChild(opt);
+            return;
+        }
+
+        let activeSceneId = targetSceneId;
+        if (!chapter.scenes.some(s => s.id === activeSceneId)) {
+            activeSceneId = chapter.scenes[0].id;
+        }
+
+        chapter.scenes.forEach(scene => {
+            const opt = document.createElement('option');
+            opt.value = scene.id;
+            opt.textContent = scene.title;
+            if (scene.id === activeSceneId) opt.selected = true;
+            sceneSelector.appendChild(opt);
+        });
+
+        loadTelemetry(activeSceneId);
+    }
+
+    function onChapterSelect(chapId) {
+        populateScenes(chapId, null);
+    }
+
+    function onSceneSelect(sceneId) {
+        if (!sceneId) return;
+        loadTelemetry(sceneId);
+    }
 
     function loadTelemetry(sceneId) {
         const container = document.getElementById('telemetry-content');
@@ -84,7 +187,6 @@
         
         container.style.opacity = 0;
 
-        
         setTimeout(() => {
             const data = REAL_TELEMETRY_DATA[sceneId];
             if (data) {
@@ -263,13 +365,8 @@
     // Auto-load scene from URL parameter or default
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const selector = document.getElementById('scene-selector');
-        const defaultScene = (selector && selector.value) ? selector.value : 'vol1_prologue_scene01';
-        const sceneId = urlParams.get('scene') || defaultScene;
-        if (selector) {
-            selector.value = sceneId;
-        }
-        loadTelemetry(sceneId);
+        const sceneId = urlParams.get('scene') || 'vol1_prologue_scene01';
+        initDropdowns(sceneId);
     });
 </script>
 
