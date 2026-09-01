@@ -27,7 +27,6 @@
     </div>
     <div class="font-inter text-[10px] text-ivory/50 flex gap-4 uppercase tracking-widest">
         <a href="telemetry.html" class="text-muted-gold transition-colors"><i class="fa-solid fa-satellite-dish mr-1"></i> Universe Stat</a>
-        <a href="dynamic_living.html" class="erebonian-link hover:text-muted-gold transition-colors"><i class="fa-solid fa-users mr-1"></i> Dynamic Living</a>
         <a href="archive.html" class="hover:text-muted-gold transition-colors"><i class="fa-solid fa-scroll mr-1"></i> Imperial Archive</a>
         <a href="toc.html" class="hover:text-muted-gold transition-colors"><i class="fa-solid fa-book mr-1"></i> Chapters</a>
     </div>
@@ -46,34 +45,9 @@
             <div class="flex items-center space-x-3 w-full md:w-auto">
                 <span class="text-xs font-inter uppercase tracking-widest text-muted-gold/70 shrink-0 hidden sm:inline-block"><i class="fa-solid fa-layer-group mr-1"></i> SELECT SCENE:</span>
                 <div class="relative w-full sm:w-auto flex-grow min-w-0">
-                    <select id="scene-selector" onchange="loadTelemetry(this.value)" class="appearance-none w-full max-w-full truncate sm:w-[350px] bg-obsidian border border-muted-gold/40 text-ivory text-sm py-2 px-4 pr-10 font-sarabun focus:outline-none focus:border-muted-gold rounded cursor-pointer shadow-[0_0_15px_rgba(197,160,89,0.1)] hover:border-muted-gold/70 transition-colors">
-                        <optgroup label="📖 Volume I: Prologue (30 มี.ค. S.1204 - ยูมีร์ดูไบ)">
-                            <option value="vol1_prologue_scene01">Scene 01: เช้าตรู่ — สภาอาหารเช้าทองคำแปดแสนล้าน</option>
-                            <option value="vol1_prologue_scene02">Scene 02: บ่ายวัน — ลิฟต์แก้วสู่ตึก Burj-Orbal & ดีล 3 แสนล้าน</option>
-                            <option value="vol1_prologue_scene03">Scene 03: ค่ำ — สภาส่งตัวรอบค่ำ, วากิวทองคำ & 14 กฎเหล็ก</option>
-                            <option value="vol1_prologue_scene04">Scene 04: กลางคืน — ออนเซนทองคำส่องดาว & บทส่งท้าย</option>
-                        </optgroup>
-                        <optgroup label="🏛️ Volume I: Chapter 01 (31 มี.ค. S.1204 - สู่ทริสต้า)">
-                            <option value="vol1_c1_scene01">Scene 01: เช้าตรู่ — บิดหมดปลอก ลั่นมิดไมล์ สู่ซูเปอร์ไฮเวย์</option>
-                            <option value="vol1_c1_scene02">Scene 02: สายๆ — พญาเหยี่ยว Hayabusa & แชมป์โลก 500cc</option>
-                            <option value="vol1_c1_scene03">Scene 03: สายโด่ง — กองทัพ EV ขวางเลน & เงาไททันทริสต้า</option>
-                            <option value="vol1_c1_scene04">Scene 04: เที่ยง — ปะทะคารมขุนนาง & จุดสิ้นสุดบทที่ 1</option>
-                        </optgroup>
-                        <optgroup label="⚔️ Volume I: Chapter 02 (31 มี.ค. S.1204 - สถาบันทอร์ส)">
-                            <option value="vol1_c2_scene01">Scene 01: เที่ยงวัน — พบเฟอร์ริส, ศึกม่านรูด 45 นาที & สูทแดงปฐมนิเทศ</option>
-                            <option value="vol1_c2_scene02">Scene 02: เที่ยงวัน — โซฟา VIP หลุดมิติ, กลิ่นสาวซิง & พลุไฟ TitanTron 16K</option>
-                            <option value="vol1_c2_scene03">Scene 03: บ่าย — วินซ์เปิดสังเวียน, กลิ่นสาวซิงตกไข่ & DM นู้ดยั่วผัว</option>
-                            <option value="vol1_c2_scene04">Scene 04: บ่าย — วินซ์จัดห้องเรียน, มหากาพย์ถางป่า & สาส์นรักเฟอร์ริส</option>
-                        </optgroup>
-                        <optgroup label="🌲 Volume I: Chapter 03 (31 มี.ค. S.1204 - ป่าหลังสถาบัน, เดียนเบียนฟู & แอลเจียร์)">
-                            <option value="vol1_c3_scene01">Scene 01: บ่าย — ผู้นำสายอัลฟ่า, T-800 โดดร่ม & ค่ายกลเดียนเบียนฟู</option>
-                            <option value="vol1_c3_scene02">Scene 02: บ่าย — กำเนิดแอลเจียร์ 1950s, โค้ดหลอนเลิฟจัง & ทำเนียบข้าหลวง</option>
-                            <option value="vol1_c3_scene03">Scene 03: บ่าย — ระดมพล T-800, เช็กบิลกบฏ FLN & สถาปนาพลเมืองแอลเจียร์</option>
-                            <option value="vol1_c3_scene04">Scene 04: ค่ำ — ราตรีแอลเจียร์, ศึกมินิรอยัลรัมเบิล & สาส์นรักใต้ผ้าห่มเฟอร์ริส (Finale)</option>
-                        </optgroup>
-                        <optgroup label="📚 Volume I: Chapter 04 (1-3 เม.ย. S.1204 - สัปดาห์แรกแห่งการศึกษาบนหลังไททันทริสต้า)">
-                            <option value="vol1_c4_scene01">Scene 01: รุ่งอรุณวันจันทร์ — คาบเรียนสองอาจารย์สาว & สัญชาตญาณสัตว์ร้ายใต้หน้ากากผู้นำ</option>
-                            <option value="vol1_c4_scene02" selected>Scene 02: อังคาร-พุธ — วาทศิลป์ด่าหน้าไมค์ไฟแลบ, กายกรรม Spinaroonie & จิตวิทยาเก้าอี้เหล็ก Finish the Story</option>
+                    <select id="scene-selector" onchange="loadTelemetry(this.value)" class="appearance-none w-full max-w-full truncate sm:w-[420px] bg-obsidian border border-muted-gold/40 text-ivory text-sm py-2 px-4 pr-10 font-sarabun focus:outline-none focus:border-muted-gold rounded cursor-pointer shadow-[0_0_15px_rgba(197,160,89,0.1)] hover:border-muted-gold/70 transition-colors">
+                        <optgroup label="📖 Volume 01: Ashen Genesis (ยุคกำเนิดประวัติศาสตร์)">
+                            <option value="vol1_prologue_scene01" selected>Scene 01: พระราชพิธีสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑ & มหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์</option>
                         </optgroup>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-muted-gold/70">
@@ -100,7 +74,7 @@
 
 <script>
     // 🌌 Real Telemetry Data (Compiled statically from /data/telemetry/*.json)
-    const REAL_TELEMETRY_DATA = {};
+    const REAL_TELEMETRY_DATA = {"vol1_prologue_scene01": {"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "macro": {"world_clock": "ยุคกำเนิดประวัติศาสตร์ (Genesis Era | S.1184 ~ S.1186) — พระราชพิธีสมโภช ๑ ล้านปี", "active_sector": "มหาท้องพระโรงหลวง พระราชวังบัลปาเลซ (โบราณสถานถ้ำแวลดเฟลม)", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "Fetus Stage (7 Months) | สเปกทำนายเมื่อโตเต็มวัย: 7.5\" Hardcoded / 120 PSI"}, "economy": {"septium_price": {"value": "1,000,000,000 Mira", "trend": "+125%", "status": "UFA-Ero-88 Recoup", "up": true}, "rf_stock": {"value": "▲ 850 Trillion", "trend": "+5.8%", "status": "Schwarzer Oil Dubai", "up": true}, "land_price": {"value": "Valflame Cave Sanctuary (Sacred)", "status": "ถ้ำแวลดเฟลมดั้งเดิมแห่งองค์อุกะอุกะที่ ๑"}, "cash_flow": {"value": "+1,000,000,000 MIRA", "status": "กู้ชีพพระคลังหลวงสำเร็จ"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Cosmic Panic / Anti-Mosaic Threat", "index_percent": 68, "noble_status": "ขุนนาง ๔ ตระกูลใหญ่ & ดยุคเลโต ตื่นตระหนกกลัวภัยคุกคามจอมมารเซ็นเซอร์ ทุ่มเงินซื้อหน่วยลงทุนกู้โลก", "reformist_status": "จักรพรรดิ Eugene III ส่งสัญญาณขยิบตากอบกู้พระคลังหลวงร่วมกับมหาโหราจารย์บัลทาซาร์สำเร็จ", "guard_status": "กองทหารองครักษ์หลวงซาร์ดอคาร์ (Imperial Sardaukar) ขับร้องคอหอย Tuvan ถวายชัยและคุ้มกันเสบียงครัวหลวง"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SardaukarTuvanChoir", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "5m ago", "content": "🔴 ด่วนที่สุด! หน้าจอ Solaris 11 ยืนยันคำทำนายสวรรค์! ผู้กล้า รีน ชวาเซอร์ จะต้องเปิดซิงสาวบริสุทธิ์ ๑๐๐,๐๐๐ คน เพื่อสลายหมอกควันและแถบพิกเซลดำของจอมมารเซ็นเซอร์! สแกน QR Code เข้า UFA-Ero-88 ด่วน!", "likes": "12,450,000"}, {"user": "Duke_Leto_Atreides_Pure", "time": "12m ago", "content": "ความฟุ่มเฟือยของบุฟเฟต์พรมแดงคือตัณหาเสื่อมทราม! ข้าพเจ้าสั่งทหารประจำตระกูลอาเทรดีสเข้ายึดกุ้งมังกรและไวน์ทองคำล้านปีเพื่อชำระล้างศีลธรรมจักรวาลเรียบร้อยแล้ว!", "likes": "450"}, {"user": "Baron_Vladimir_Harkonnen", "time": "18m ago", "content": "โฮ่! โฮ่! โฮ่! ลอยตัวแจกเบียร์ยักษ์ ๓ ลิตรและเนื้อวากิวย่างทองคำให้ทุกคน! ชนแก้วฉลองล้านปีแด่องค์อุกะอุกะที่ ๑ กันเถอะพี่น้อง!", "likes": "8,920,000"}, {"user": "Prince_Olivert_Bard", "time": "25m ago", "content": "ข้าขอดีดพิณลูทและให้สัตย์ปฏิญาณว่าจะไม่จีบสาวคนใดในจักรวรรดิเอเรโบเนีย เพื่อเปิดทางให้ว่าที่น้องชายผู้กล้าสร้างกองทัพแสนคนกู้โลก!", "likes": "6,780,000"}], "wire_headline": "🔴 WIRE: สภาจักรวรรดิเอเรโบเนียประกาศรับรองมหาคำทำนายผู้กล้า ๑๐๐,๐๐๐ พรหมจรรย์ ปราบจอมมารโมเสกอย่างเป็นทางการ", "wire_reports": ["[WIRE-01] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งองค์อุกะอุกะที่ ๑ ณ ถ้ำแวลดเฟลม ปฐมกษัตริย์โฮโมอิเล็กตรัส ผู้ค้นพบไม้พลองมานาศักดิ์สิทธิ์", "[WIRE-02] ยาน Ark Hyperion สแกนชีวฟิสิกส์ 8K ยืนยันสเปกทารก ๗ เดือน พยากรณ์เมื่อโตเต็มวัยจะมีแกนกาย 7.5 นิ้ว 120 PSI ใหญ่กว่าค่าเฉลี่ยโลก 4-5 นิ้ว", "[WIRE-03] กองทุนรวมเซปเทียมต้านโมเสก UFA-Ero-88 ระดมทุนจากขุนนางทะลุ ๑,๐๐๐,๐๐๐,๐๐๐ มิรา กู้ชีพพระคลังหลวงสำเร็จ 100%"]}}};
 
     function loadTelemetry(sceneId) {
         const container = document.getElementById('telemetry-content');
@@ -290,7 +264,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const selector = document.getElementById('scene-selector');
-        const defaultScene = (selector && selector.value) ? selector.value : 'vol1_c3_scene01';
+        const defaultScene = (selector && selector.value) ? selector.value : 'vol1_prologue_scene01';
         const sceneId = urlParams.get('scene') || defaultScene;
         if (selector) {
             selector.value = sceneId;
