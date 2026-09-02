@@ -65,17 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- 3. Tick Selector -->
-                <div class="flex items-center space-x-2 w-full md:w-auto" id="tick-selector-wrap">
-                    <span class="text-xs font-inter uppercase tracking-widest text-cyan-300/80 shrink-0"><i class="fa-solid fa-clock mr-1 text-cyan-400"></i> TICK:</span>
-                    <div class="relative w-full md:w-auto min-w-[200px]">
-                        <select id="tick-selector" onchange="onTickSelect(this.value)" class="appearance-none w-full bg-obsidian border border-cyan-500/40 text-ivory text-xs py-2 px-3 pr-8 font-sarabun focus:outline-none focus:border-cyan-500 rounded cursor-pointer shadow-[0_0_10px_rgba(6,182,212,0.05)] hover:border-cyan-500/70 transition-colors">
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-cyan-400/70">
-                            <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="flex gap-2">
                 <a href="index.html" class="px-4 py-2 border border-white/10 bg-white/5 rounded text-ivory/80 text-xs font-cinzel tracking-widest uppercase hover:bg-white/10 transition-colors text-center whitespace-nowrap"><i class="fa-solid fa-home mr-1"></i> หน้าแรก</a>
@@ -117,8 +107,8 @@
 </main>
 
 <script>
-    const VOLUMES_DATA = [{"title": "Volume 01: Ashen Genesis (กำเนิดมหาบุรุษอัศวินสีชาด)", "subtitle": "พระราชพิธีสมโภช ๑ ล้านปี และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์สยบจอมมารเซ็นเซอร์", "chapters": [{"title": "Prologue: The 1,000,000-Year Founding Banquet (พระราชพิธีสมโภช ๑ ล้านปีแห่งการสถาปนาจักรวรรดิ)", "scenes": [{"id": "vol1_prologue_scene01", "title": "📖 **VOLUME 01: ASHEN SHEIKH & THE THORS AWAKENING**", "ticks": [{"tick": 0, "label": "Tick 0 | ยุคกำเนิดประวัติศาสตร์ (Genesis Era | S."}, {"tick": 6, "label": "Tick 6 | TICK-0000000006 | Day 2 Afternoon Spring"}, {"tick": 7, "label": "Tick 7 | TICK-0000000007 | Day 2 Evening Spring |"}, {"tick": 8, "label": "Tick 8 | TICK-0000000008 | Day 2 Night Spring | V"}]}]}]}];
-    const REAL_TELEMETRY_DATA = {"vol1_prologue_scene01": {"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "ticks": [{"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "macro": {"world_clock": "ยุคกำเนิดประวัติศาสตร์ (Genesis Era | S.1184 ~ S.1186) — พระราชพิธีสมโภช ๑ ล้านปี", "active_sector": "มหาท้องพระโรงหลวง พระราชวังบัลปาเลซ (โบราณสถานถ้ำแวลดเฟลม)", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "Fetus Stage (7 Months) | สเปกทำนายเมื่อโตเต็มวัย: 7.5\" Hardcoded / 120 PSI"}, "economy": {"septium_price": {"value": "1,000,000,000 Mira", "trend": "+125%", "status": "UFA-Ero-88 Recoup", "up": true}, "rf_stock": {"value": "▲ 850 Trillion", "trend": "+5.8%", "status": "Schwarzer Oil Dubai", "up": true}, "land_price": {"value": "Valflame Cave Sanctuary (Sacred)", "status": "ถ้ำแวลดเฟลมดั้งเดิมแห่งองค์อุกะอุกะที่ ๑"}, "cash_flow": {"value": "+1,000,000,000 MIRA", "status": "กู้ชีพพระคลังหลวงสำเร็จ"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Cosmic Panic / Anti-Mosaic Threat", "index_percent": 68, "noble_status": "ขุนนาง ๔ ตระกูลใหญ่ & ดยุคเลโต ตื่นตระหนกกลัวภัยคุกคามจอมมารเซ็นเซอร์ ทุ่มเงินซื้อหน่วยลงทุนกู้โลก", "reformist_status": "จักรพรรดิ Eugene III ส่งสัญญาณขยิบตากอบกู้พระคลังหลวงร่วมกับมหาโหราจารย์บัลทาซาร์สำเร็จ", "guard_status": "กองทหารองครักษ์หลวงซาร์ดอคาร์ (Imperial Sardaukar) ขับร้องคอหอย Tuvan ถวายชัยและคุ้มกันเสบียงครัวหลวง"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SardaukarTuvanChoir", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "5m ago", "content": "🔴 ด่วนที่สุด! หน้าจอ Solaris 11 ยืนยันคำทำนายสวรรค์! ผู้กล้า รีน ชวาเซอร์ จะต้องเปิดซิงสาวบริสุทธิ์ ๑๐๐,๐๐๐ คน เพื่อสลายหมอกควันและแถบพิกเซลดำของจอมมารเซ็นเซอร์! สแกน QR Code เข้า UFA-Ero-88 ด่วน!", "likes": "12,450,000"}, {"user": "Duke_Leto_Atreides_Pure", "time": "12m ago", "content": "ความฟุ่มเฟือยของบุฟเฟต์พรมแดงคือตัณหาเสื่อมทราม! ข้าพเจ้าสั่งทหารประจำตระกูลอาเทรดีสเข้ายึดกุ้งมังกรและไวน์ทองคำล้านปีเพื่อชำระล้างศีลธรรมจักรวาลเรียบร้อยแล้ว!", "likes": "450"}, {"user": "Baron_Vladimir_Harkonnen", "time": "18m ago", "content": "โฮ่! โฮ่! โฮ่! ลอยตัวแจกเบียร์ยักษ์ ๓ ลิตรและเนื้อวากิวย่างทองคำให้ทุกคน! ชนแก้วฉลองล้านปีแด่องค์อุกะอุกะที่ ๑ กันเถอะพี่น้อง!", "likes": "8,920,000"}, {"user": "Prince_Olivert_Bard", "time": "25m ago", "content": "ข้าขอดีดพิณลูทและให้สัตย์ปฏิญาณว่าจะไม่จีบสาวคนใดในจักรวรรดิเอเรโบเนีย เพื่อเปิดทางให้ว่าที่น้องชายผู้กล้าสร้างกองทัพแสนคนกู้โลก!", "likes": "6,780,000"}], "wire_headline": "🔴 WIRE: สภาจักรวรรดิเอเรโบเนียประกาศรับรองมหาคำทำนายผู้กล้า ๑๐๐,๐๐๐ พรหมจรรย์ ปราบจอมมารโมเสกอย่างเป็นทางการ", "wire_reports": ["[WIRE-01] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งองค์อุกะอุกะที่ ๑ ณ ถ้ำแวลดเฟลม ปฐมกษัตริย์โฮโมอิเล็กตรัส ผู้ค้นพบไม้พลองมานาศักดิ์สิทธิ์", "[WIRE-02] ยาน Ark Hyperion สแกนชีวฟิสิกส์ 8K ยืนยันสเปกทารก ๗ เดือน พยากรณ์เมื่อโตเต็มวัยจะมีแกนกาย 7.5 นิ้ว 120 PSI ใหญ่กว่าค่าเฉลี่ยโลก 4-5 นิ้ว", "[WIRE-03] กองทุนรวมเซปเทียมต้านโมเสก UFA-Ero-88 ระดมทุนจากขุนนางทะลุ ๑,๐๐๐,๐๐๐,๐๐๐ มิรา กู้ชีพพระคลังหลวงสำเร็จ 100%"]}, "tick": 0}, {"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "tick": 6, "macro": {"world_clock": "TICK-0000000006 | Day 2 Afternoon Spring | Vol 1 Ch 0 Sc 2", "active_sector": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "ชีคหนุ่มผู้กล้านักเย็ดกอบกู้โลก (REAN SCHWARZER) | เครื่องแบบสูทแดง Class VII | 7.5\" 120 PSI | loc:titan_heimdallr:valflame_palace:grand_ballroom"}, "economy": {"septium_price": {"value": "511.08 Mira", "trend": "+2.2%", "status": "Tick 6 Heimdallr", "up": true, "raw_price": 511.08, "base_price": 500.0}, "rf_stock": {"value": "149.51 Mira", "trend": "-0.3%", "status": "Orbal Parts Proxy", "up": false, "raw_price": 149.51}, "land_price": {"value": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "status": "Current Sector"}, "cash_flow": {"value": "1,022,160,000 MIRA", "status": "Derived from Septium"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Elevated / Watchful", "index_percent": 45, "noble_status": "Readiness 89% — Elevated / Watchful", "reformist_status": "Readiness 92% — Imperial Reform", "guard_status": "EOF 800k troops 95-99% — Tension 0.450"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "Tick 6", "content": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "likes": "12,450,000"}], "wire_headline": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "wire_reports": ["OrbalTube 8K Global Broadcast การถ่ายทอดสดพระราชพิธีสมโภช ๑ ล้านปีผ่านเครือข่าย SPARC-X มียอดผู้ชมข้ามดวงดาวทะลุ 500 ล้านคน กองทหารเกียรติยศซาร์ดอคาร์ขับร้องคอหอย Tuvan ถวายชัยกึกก้องมหาท้องพระโรงหลวง", "Ark Hyperion Quantum Telemetry ผลสแกนชีวฟิสิกส์ยืนยันแกนมานาสรีระของทายาท รีน ชวาเซอร์ มีศักยภาพรองรับมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์ เพื่อปลดปล่อยจักรวาลจากหมอกควันและพิกเซลดำของจอมมารเซ็นเซอร์", "Heimdallr Imperial Treasury Dispatch หลังวิกฤตปล้นบุฟเฟต์พรมแดงเมืองคานส์ มหาโหราจารย์บัลทาซาร์เปิดจำหน่ายหน่วยลงทุน UFA-Ero-88 ให้แก่บรรดาขุนนางและผู้นำจักรวาล สามารถกู้ชีพสภาพคล่องคืนพระคลังหลวงสำเร็จ 100%"]}}, {"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "tick": 7, "macro": {"world_clock": "TICK-0000000007 | Day 2 Evening Spring | Vol 1 Ch 0 Sc 3", "active_sector": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "ชีคหนุ่มผู้กล้านักเย็ดกอบกู้โลก (REAN SCHWARZER) | เครื่องแบบสูทแดง Class VII | 7.5\" 120 PSI | loc:titan_heimdallr:valflame_palace:grand_ballroom"}, "economy": {"septium_price": {"value": "474.47 Mira", "trend": "-5.1%", "status": "Tick 7 Heimdallr", "up": false, "raw_price": 474.47, "base_price": 500.0}, "rf_stock": {"value": "147.04 Mira", "trend": "-2.0%", "status": "Orbal Parts Proxy", "up": false, "raw_price": 147.04}, "land_price": {"value": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "status": "Current Sector"}, "cash_flow": {"value": "948,940,000 MIRA", "status": "Derived from Septium"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Elevated / Watchful", "index_percent": 46, "noble_status": "Readiness 89% — Elevated / Watchful", "reformist_status": "Readiness 92% — Imperial Reform", "guard_status": "EOF 800k troops 95-99% — Tension 0.464"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "Tick 7", "content": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "likes": "12,450,000"}], "wire_headline": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "wire_reports": ["OrbalTube 8K Global Broadcast การถ่ายทอดสดพระราชพิธีสมโภช ๑ ล้านปีผ่านเครือข่าย SPARC-X มียอดผู้ชมข้ามดวงดาวทะลุ 500 ล้านคน กองทหารเกียรติยศซาร์ดอคาร์ขับร้องคอหอย Tuvan ถวายชัยกึกก้องมหาท้องพระโรงหลวง", "Ark Hyperion Quantum Telemetry ผลสแกนชีวฟิสิกส์ยืนยันแกนมานาสรีระของทายาท รีน ชวาเซอร์ มีศักยภาพรองรับมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์ เพื่อปลดปล่อยจักรวาลจากหมอกควันและพิกเซลดำของจอมมารเซ็นเซอร์", "Heimdallr Imperial Treasury Dispatch หลังวิกฤตปล้นบุฟเฟต์พรมแดงเมืองคานส์ มหาโหราจารย์บัลทาซาร์เปิดจำหน่ายหน่วยลงทุน UFA-Ero-88 ให้แก่บรรดาขุนนางและผู้นำจักรวาล สามารถกู้ชีพสภาพคล่องคืนพระคลังหลวงสำเร็จ 100%"]}}, {"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "tick": 8, "macro": {"world_clock": "TICK-0000000008 | Day 2 Night Spring | Vol 1 Ch 0 Sc 4", "active_sector": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "ชีคหนุ่มผู้กล้านักเย็ดกอบกู้โลก (REAN SCHWARZER) | เครื่องแบบสูทแดง Class VII | 7.5\" 120 PSI | loc:titan_heimdallr:valflame_palace:grand_ballroom"}, "economy": {"septium_price": {"value": "484.17 Mira", "trend": "-3.2%", "status": "Tick 8 Heimdallr", "up": false, "raw_price": 484.17, "base_price": 500.0, "cause": {"event_id": "EVT-000010", "headline": "Celdic Success", "relation": "DEFLOWS", "weight": 0.08}}, "rf_stock": {"value": "147.04 Mira", "trend": "-2.0%", "status": "Orbal Parts Proxy", "up": false, "raw_price": 147.04}, "land_price": {"value": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "status": "Current Sector"}, "cash_flow": {"value": "968,340,000 MIRA", "status": "Derived from Septium"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Elevated / Watchful", "index_percent": 45, "noble_status": "Readiness 89% — Elevated / Watchful", "reformist_status": "Readiness 92% — Imperial Reform", "guard_status": "EOF 800k troops 95-99% — Tension 0.450"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "Tick 8", "content": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "likes": "12,450,000"}], "wire_headline": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "wire_reports": ["OrbalTube 8K Global Broadcast การถ่ายทอดสดพระราชพิธีสมโภช ๑ ล้านปีผ่านเครือข่าย SPARC-X มียอดผู้ชมข้ามดวงดาวทะลุ 500 ล้านคน กองทหารเกียรติยศซาร์ดอคาร์ขับร้องคอหอย Tuvan ถวายชัยกึกก้องมหาท้องพระโรงหลวง", "Ark Hyperion Quantum Telemetry ผลสแกนชีวฟิสิกส์ยืนยันแกนมานาสรีระของทายาท รีน ชวาเซอร์ มีศักยภาพรองรับมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์ เพื่อปลดปล่อยจักรวาลจากหมอกควันและพิกเซลดำของจอมมารเซ็นเซอร์", "Heimdallr Imperial Treasury Dispatch หลังวิกฤตปล้นบุฟเฟต์พรมแดงเมืองคานส์ มหาโหราจารย์บัลทาซาร์เปิดจำหน่ายหน่วยลงทุน UFA-Ero-88 ให้แก่บรรดาขุนนางและผู้นำจักรวาล สามารถกู้ชีพสภาพคล่องคืนพระคลังหลวงสำเร็จ 100%"]}}], "macro": {"world_clock": "TICK-0000000008 | Day 2 Night Spring | Vol 1 Ch 0 Sc 4", "active_sector": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "ชีคหนุ่มผู้กล้านักเย็ดกอบกู้โลก (REAN SCHWARZER) | เครื่องแบบสูทแดง Class VII | 7.5\" 120 PSI | loc:titan_heimdallr:valflame_palace:grand_ballroom"}, "economy": {"septium_price": {"value": "484.17 Mira", "trend": "-3.2%", "status": "Tick 8 Heimdallr", "up": false, "raw_price": 484.17, "base_price": 500.0, "cause": {"event_id": "EVT-000010", "headline": "Celdic Success", "relation": "DEFLOWS", "weight": 0.08}}, "rf_stock": {"value": "147.04 Mira", "trend": "-2.0%", "status": "Orbal Parts Proxy", "up": false, "raw_price": 147.04}, "land_price": {"value": "loc:titan_heimdallr:valflame_palace:grand_ballroom", "status": "Current Sector"}, "cash_flow": {"value": "968,340,000 MIRA", "status": "Derived from Septium"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Elevated / Watchful", "index_percent": 45, "noble_status": "Readiness 89% — Elevated / Watchful", "reformist_status": "Readiness 92% — Imperial Reform", "guard_status": "EOF 800k troops 95-99% — Tension 0.450"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "Tick 8", "content": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "likes": "12,450,000"}], "wire_headline": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม", "wire_reports": ["OrbalTube 8K Global Broadcast การถ่ายทอดสดพระราชพิธีสมโภช ๑ ล้านปีผ่านเครือข่าย SPARC-X มียอดผู้ชมข้ามดวงดาวทะลุ 500 ล้านคน กองทหารเกียรติยศซาร์ดอคาร์ขับร้องคอหอย Tuvan ถวายชัยกึกก้องมหาท้องพระโรงหลวง", "Ark Hyperion Quantum Telemetry ผลสแกนชีวฟิสิกส์ยืนยันแกนมานาสรีระของทายาท รีน ชวาเซอร์ มีศักยภาพรองรับมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์ เพื่อปลดปล่อยจักรวาลจากหมอกควันและพิกเซลดำของจอมมารเซ็นเซอร์", "Heimdallr Imperial Treasury Dispatch หลังวิกฤตปล้นบุฟเฟต์พรมแดงเมืองคานส์ มหาโหราจารย์บัลทาซาร์เปิดจำหน่ายหน่วยลงทุน UFA-Ero-88 ให้แก่บรรดาขุนนางและผู้นำจักรวาล สามารถกู้ชีพสภาพคล่องคืนพระคลังหลวงสำเร็จ 100%"]}, "tick": 8}};
+    const VOLUMES_DATA = [{"title": "Volume 01: Ashen Genesis (กำเนิดมหาบุรุษอัศวินสีชาด)", "subtitle": "พระราชพิธีสมโภช ๑ ล้านปี และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์สยบจอมมารเซ็นเซอร์", "chapters": [{"title": "Prologue: The 1,000,000-Year Founding Banquet (พระราชพิธีสมโภช ๑ ล้านปีแห่งการสถาปนาจักรวรรดิ)", "scenes": [{"id": "vol1_prologue_scene01", "title": "📖 **VOLUME 01: ASHEN SHEIKH & THE THORS AWAKENING**"}]}]}];
+    const REAL_TELEMETRY_DATA = {"vol1_prologue_scene01": {"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "ticks": [{"scene_id": "vol1_prologue_scene01", "chapter_id": "vol1_prologue", "volume_id": "vol1", "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์", "macro": {"world_clock": "ยุคกำเนิดประวัติศาสตร์ (Genesis Era | S.1184 ~ S.1186) — พระราชพิธีสมโภช ๑ ล้านปี", "active_sector": "มหาท้องพระโรงหลวง พระราชวังบัลปาเลซ (โบราณสถานถ้ำแวลดเฟลม)", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "Fetus Stage (7 Months) | สเปกทำนายเมื่อโตเต็มวัย: 7.5\" Hardcoded / 120 PSI"}, "economy": {"septium_price": {"value": "1,000,000,000 Mira", "trend": "+125%", "status": "UFA-Ero-88 Recoup", "up": true}, "rf_stock": {"value": "▲ 850 Trillion", "trend": "+5.8%", "status": "Schwarzer Oil Dubai", "up": true}, "land_price": {"value": "Valflame Cave Sanctuary (Sacred)", "status": "ถ้ำแวลดเฟลมดั้งเดิมแห่งองค์อุกะอุกะที่ ๑"}, "cash_flow": {"value": "+1,000,000,000 MIRA", "status": "กู้ชีพพระคลังหลวงสำเร็จ"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Cosmic Panic / Anti-Mosaic Threat", "index_percent": 68, "noble_status": "ขุนนาง ๔ ตระกูลใหญ่ & ดยุคเลโต ตื่นตระหนกกลัวภัยคุกคามจอมมารเซ็นเซอร์ ทุ่มเงินซื้อหน่วยลงทุนกู้โลก", "reformist_status": "จักรพรรดิ Eugene III ส่งสัญญาณขยิบตากอบกู้พระคลังหลวงร่วมกับมหาโหราจารย์บัลทาซาร์สำเร็จ", "guard_status": "กองทหารองครักษ์หลวงซาร์ดอคาร์ (Imperial Sardaukar) ขับร้องคอหอย Tuvan ถวายชัยและคุ้มกันเสบียงครัวหลวง"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SardaukarTuvanChoir", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "5m ago", "content": "🔴 ด่วนที่สุด! หน้าจอ Solaris 11 ยืนยันคำทำนายสวรรค์! ผู้กล้า รีน ชวาเซอร์ จะต้องเปิดซิงสาวบริสุทธิ์ ๑๐๐,๐๐๐ คน เพื่อสลายหมอกควันและแถบพิกเซลดำของจอมมารเซ็นเซอร์! สแกน QR Code เข้า UFA-Ero-88 ด่วน!", "likes": "12,450,000"}, {"user": "Duke_Leto_Atreides_Pure", "time": "12m ago", "content": "ความฟุ่มเฟือยของบุฟเฟต์พรมแดงคือตัณหาเสื่อมทราม! ข้าพเจ้าสั่งทหารประจำตระกูลอาเทรดีสเข้ายึดกุ้งมังกรและไวน์ทองคำล้านปีเพื่อชำระล้างศีลธรรมจักรวาลเรียบร้อยแล้ว!", "likes": "450"}, {"user": "Baron_Vladimir_Harkonnen", "time": "18m ago", "content": "โฮ่! โฮ่! โฮ่! ลอยตัวแจกเบียร์ยักษ์ ๓ ลิตรและเนื้อวากิวย่างทองคำให้ทุกคน! ชนแก้วฉลองล้านปีแด่องค์อุกะอุกะที่ ๑ กันเถอะพี่น้อง!", "likes": "8,920,000"}, {"user": "Prince_Olivert_Bard", "time": "25m ago", "content": "ข้าขอดีดพิณลูทและให้สัตย์ปฏิญาณว่าจะไม่จีบสาวคนใดในจักรวรรดิเอเรโบเนีย เพื่อเปิดทางให้ว่าที่น้องชายผู้กล้าสร้างกองทัพแสนคนกู้โลก!", "likes": "6,780,000"}], "wire_headline": "🔴 WIRE: สภาจักรวรรดิเอเรโบเนียประกาศรับรองมหาคำทำนายผู้กล้า ๑๐๐,๐๐๐ พรหมจรรย์ ปราบจอมมารโมเสกอย่างเป็นทางการ", "wire_reports": ["[WIRE-01] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งองค์อุกะอุกะที่ ๑ ณ ถ้ำแวลดเฟลม ปฐมกษัตริย์โฮโมอิเล็กตรัส ผู้ค้นพบไม้พลองมานาศักดิ์สิทธิ์", "[WIRE-02] ยาน Ark Hyperion สแกนชีวฟิสิกส์ 8K ยืนยันสเปกทารก ๗ เดือน พยากรณ์เมื่อโตเต็มวัยจะมีแกนกาย 7.5 นิ้ว 120 PSI ใหญ่กว่าค่าเฉลี่ยโลก 4-5 นิ้ว", "[WIRE-03] กองทุนรวมเซปเทียมต้านโมเสก UFA-Ero-88 ระดมทุนจากขุนนางทะลุ ๑,๐๐๐,๐๐๐,๐๐๐ มิรา กู้ชีพพระคลังหลวงสำเร็จ 100%"]}, "tick": 0}], "tick": 0, "macro": {"world_clock": "ยุคกำเนิดประวัติศาสตร์ (Genesis Era | S.1184 ~ S.1186) — พระราชพิธีสมโภช ๑ ล้านปี", "active_sector": "มหาท้องพระโรงหลวง พระราชวังบัลปาเลซ (โบราณสถานถ้ำแวลดเฟลม)", "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน", "rean_spec": "Fetus Stage (7 Months) | สเปกทำนายเมื่อโตเต็มวัย: 7.5\" Hardcoded / 120 PSI"}, "economy": {"septium_price": {"value": "1,000,000,000 Mira", "trend": "+125%", "status": "UFA-Ero-88 Recoup", "up": true}, "rf_stock": {"value": "▲ 850 Trillion", "trend": "+5.8%", "status": "Schwarzer Oil Dubai", "up": true}, "land_price": {"value": "Valflame Cave Sanctuary (Sacred)", "status": "ถ้ำแวลดเฟลมดั้งเดิมแห่งองค์อุกะอุกะที่ ๑"}, "cash_flow": {"value": "+1,000,000,000 MIRA", "status": "กู้ชีพพระคลังหลวงสำเร็จ"}, "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"}, "tension": {"level_text": "Cosmic Panic / Anti-Mosaic Threat", "index_percent": 68, "noble_status": "ขุนนาง ๔ ตระกูลใหญ่ & ดยุคเลโต ตื่นตระหนกกลัวภัยคุกคามจอมมารเซ็นเซอร์ ทุ่มเงินซื้อหน่วยลงทุนกู้โลก", "reformist_status": "จักรพรรดิ Eugene III ส่งสัญญาณขยิบตากอบกู้พระคลังหลวงร่วมกับมหาโหราจารย์บัลทาซาร์สำเร็จ", "guard_status": "กองทหารองครักษ์หลวงซาร์ดอคาร์ (Imperial Sardaukar) ขับร้องคอหอย Tuvan ถวายชัยและคุ้มกันเสบียงครัวหลวง"}, "social": {"trending_tags": ["#KingUgaUga1000000th", "#MosaicDemonLordThreat", "#100000MaidensProphecy", "#UFAEro88Fund", "#SardaukarTuvanChoir", "#SchwarzerOilDynasty"], "posts": [{"user": "Grand_Astrologer_Balthazar", "time": "5m ago", "content": "🔴 ด่วนที่สุด! หน้าจอ Solaris 11 ยืนยันคำทำนายสวรรค์! ผู้กล้า รีน ชวาเซอร์ จะต้องเปิดซิงสาวบริสุทธิ์ ๑๐๐,๐๐๐ คน เพื่อสลายหมอกควันและแถบพิกเซลดำของจอมมารเซ็นเซอร์! สแกน QR Code เข้า UFA-Ero-88 ด่วน!", "likes": "12,450,000"}, {"user": "Duke_Leto_Atreides_Pure", "time": "12m ago", "content": "ความฟุ่มเฟือยของบุฟเฟต์พรมแดงคือตัณหาเสื่อมทราม! ข้าพเจ้าสั่งทหารประจำตระกูลอาเทรดีสเข้ายึดกุ้งมังกรและไวน์ทองคำล้านปีเพื่อชำระล้างศีลธรรมจักรวาลเรียบร้อยแล้ว!", "likes": "450"}, {"user": "Baron_Vladimir_Harkonnen", "time": "18m ago", "content": "โฮ่! โฮ่! โฮ่! ลอยตัวแจกเบียร์ยักษ์ ๓ ลิตรและเนื้อวากิวย่างทองคำให้ทุกคน! ชนแก้วฉลองล้านปีแด่องค์อุกะอุกะที่ ๑ กันเถอะพี่น้อง!", "likes": "8,920,000"}, {"user": "Prince_Olivert_Bard", "time": "25m ago", "content": "ข้าขอดีดพิณลูทและให้สัตย์ปฏิญาณว่าจะไม่จีบสาวคนใดในจักรวรรดิเอเรโบเนีย เพื่อเปิดทางให้ว่าที่น้องชายผู้กล้าสร้างกองทัพแสนคนกู้โลก!", "likes": "6,780,000"}], "wire_headline": "🔴 WIRE: สภาจักรวรรดิเอเรโบเนียประกาศรับรองมหาคำทำนายผู้กล้า ๑๐๐,๐๐๐ พรหมจรรย์ ปราบจอมมารโมเสกอย่างเป็นทางการ", "wire_reports": ["[WIRE-01] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งองค์อุกะอุกะที่ ๑ ณ ถ้ำแวลดเฟลม ปฐมกษัตริย์โฮโมอิเล็กตรัส ผู้ค้นพบไม้พลองมานาศักดิ์สิทธิ์", "[WIRE-02] ยาน Ark Hyperion สแกนชีวฟิสิกส์ 8K ยืนยันสเปกทารก ๗ เดือน พยากรณ์เมื่อโตเต็มวัยจะมีแกนกาย 7.5 นิ้ว 120 PSI ใหญ่กว่าค่าเฉลี่ยโลก 4-5 นิ้ว", "[WIRE-03] กองทุนรวมเซปเทียมต้านโมเสก UFA-Ero-88 ระดมทุนจากขุนนางทะลุ ๑,๐๐๐,๐๐๐,๐๐๐ มิรา กู้ชีพพระคลังหลวงสำเร็จ 100%"]}}};
     const REAL_SOCIAL_DATA = {"all_posts": [{"post_id": "POST-EVT-000011", "persona_id": "alisa_reinford", "platform": "SPARC-X", "content": "Alisa blushed after Rean catch", "likes": 81502, "hashtag": "#ทซึนแตก", "tick_id": 8, "event_id": "EVT-000011", "relation_type": "GOSSIPS", "created_at": "2026-09-02 08:16:05", "handle": "@Alisa_Reinford", "emoji": "💳👜", "voice": " tsundere but serious report", "hashtag_default": "#ReinfordBlack"}, {"post_id": "SYNTH-TICK0-0", "persona_id": "balthazar", "platform": "SPARC-X", "content": "🔴 ด่วนที่สุด! หน้าจอ Solaris 11 ยืนยันคำทำนายสวรรค์! ผู้กล้า รีน ชวาเซอร์ จะต้องเปิดซิงสาวบริสุทธิ์ ๑๐๐,๐๐๐ คน เพื่อสลายหมอกควันและแถบพิกเซลดำของจอมมารเซ็นเซอร์! สแกน QR Code เข้า UFA-Ero-88 ด่วน!", "likes": 12450000, "hashtag": "#KingUgaUga1000000th", "tick_id": 0, "event_id": "SYNTH-0-0", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Grand_Astrologer_Balthazar", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}, {"post_id": "SYNTH-TICK0-1", "persona_id": "alisa_reinford", "platform": "SPARC-X", "content": "ความฟุ่มเฟือยของบุฟเฟต์พรมแดงคือตัณหาเสื่อมทราม! ข้าพเจ้าสั่งทหารประจำตระกูลอาเทรดีสเข้ายึดกุ้งมังกรและไวน์ทองคำล้านปีเพื่อชำระล้างศีลธรรมจักรวาลเรียบร้อยแล้ว!", "likes": 450, "hashtag": "#MosaicDemonLordThreat", "tick_id": 0, "event_id": "SYNTH-0-1", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Duke_Leto_Atreides_Pure", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}, {"post_id": "SYNTH-TICK0-2", "persona_id": "ellie", "platform": "SPARC-X", "content": "โฮ่! โฮ่! โฮ่! ลอยตัวแจกเบียร์ยักษ์ ๓ ลิตรและเนื้อวากิวย่างทองคำให้ทุกคน! ชนแก้วฉลองล้านปีแด่องค์อุกะอุกะที่ ๑ กันเถอะพี่น้อง!", "likes": 8920000, "hashtag": "#100000MaidensProphecy", "tick_id": 0, "event_id": "SYNTH-0-2", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Baron_Vladimir_Harkonnen", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}, {"post_id": "SYNTH-TICK0-3", "persona_id": "olivert", "platform": "SPARC-X", "content": "ข้าขอดีดพิณลูทและให้สัตย์ปฏิญาณว่าจะไม่จีบสาวคนใดในจักรวรรดิเอเรโบเนีย เพื่อเปิดทางให้ว่าที่น้องชายผู้กล้าสร้างกองทัพแสนคนกู้โลก!", "likes": 6780000, "hashtag": "#UFAEro88Fund", "tick_id": 0, "event_id": "SYNTH-0-3", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Prince_Olivert_Bard", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}], "by_tick": {"8": [{"post_id": "POST-EVT-000011", "persona_id": "alisa_reinford", "platform": "SPARC-X", "content": "Alisa blushed after Rean catch", "likes": 81502, "hashtag": "#ทซึนแตก", "tick_id": 8, "event_id": "EVT-000011", "relation_type": "GOSSIPS", "created_at": "2026-09-02 08:16:05", "handle": "@Alisa_Reinford", "emoji": "💳👜", "voice": " tsundere but serious report", "hashtag_default": "#ReinfordBlack"}], "0": [{"post_id": "SYNTH-TICK0-0", "persona_id": "balthazar", "platform": "SPARC-X", "content": "🔴 ด่วนที่สุด! หน้าจอ Solaris 11 ยืนยันคำทำนายสวรรค์! ผู้กล้า รีน ชวาเซอร์ จะต้องเปิดซิงสาวบริสุทธิ์ ๑๐๐,๐๐๐ คน เพื่อสลายหมอกควันและแถบพิกเซลดำของจอมมารเซ็นเซอร์! สแกน QR Code เข้า UFA-Ero-88 ด่วน!", "likes": 12450000, "hashtag": "#KingUgaUga1000000th", "tick_id": 0, "event_id": "SYNTH-0-0", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Grand_Astrologer_Balthazar", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}, {"post_id": "SYNTH-TICK0-1", "persona_id": "alisa_reinford", "platform": "SPARC-X", "content": "ความฟุ่มเฟือยของบุฟเฟต์พรมแดงคือตัณหาเสื่อมทราม! ข้าพเจ้าสั่งทหารประจำตระกูลอาเทรดีสเข้ายึดกุ้งมังกรและไวน์ทองคำล้านปีเพื่อชำระล้างศีลธรรมจักรวาลเรียบร้อยแล้ว!", "likes": 450, "hashtag": "#MosaicDemonLordThreat", "tick_id": 0, "event_id": "SYNTH-0-1", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Duke_Leto_Atreides_Pure", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}, {"post_id": "SYNTH-TICK0-2", "persona_id": "ellie", "platform": "SPARC-X", "content": "โฮ่! โฮ่! โฮ่! ลอยตัวแจกเบียร์ยักษ์ ๓ ลิตรและเนื้อวากิวย่างทองคำให้ทุกคน! ชนแก้วฉลองล้านปีแด่องค์อุกะอุกะที่ ๑ กันเถอะพี่น้อง!", "likes": 8920000, "hashtag": "#100000MaidensProphecy", "tick_id": 0, "event_id": "SYNTH-0-2", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Baron_Vladimir_Harkonnen", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}, {"post_id": "SYNTH-TICK0-3", "persona_id": "olivert", "platform": "SPARC-X", "content": "ข้าขอดีดพิณลูทและให้สัตย์ปฏิญาณว่าจะไม่จีบสาวคนใดในจักรวรรดิเอเรโบเนีย เพื่อเปิดทางให้ว่าที่น้องชายผู้กล้าสร้างกองทัพแสนคนกู้โลก!", "likes": 6780000, "hashtag": "#UFAEro88Fund", "tick_id": 0, "event_id": "SYNTH-0-3", "relation_type": "GOSSIPS", "created_at": "2026-09-02 00:00:00", "handle": "@Prince_Olivert_Bard", "emoji": "🎭", "voice": "synthetic genesis archive", "hashtag_default": ""}]}, "trending_global": [{"hashtag": "#KingUgaUga1000000th", "likes_sum": 12450000, "cnt": 1, "badge": "🔥 Trending #1"}, {"hashtag": "#100000MaidensProphecy", "likes_sum": 8920000, "cnt": 1, "badge": "🔥 Trending #1"}, {"hashtag": "#UFAEro88Fund", "likes_sum": 6780000, "cnt": 1, "badge": "🔥 Trending #1"}, {"hashtag": "#ทซึนแตก", "likes_sum": 81502, "cnt": 1, "badge": "📈 Trending"}], "trending_by_tick": {"8": [{"hashtag": "#ทซึนแตก", "likes_sum": 81502, "badge": "📈 Trending"}], "0": [{"hashtag": "#KingUgaUga1000000th", "likes_sum": 12450000, "badge": "🔥 Trending #1"}, {"hashtag": "#100000MaidensProphecy", "likes_sum": 8920000, "badge": "🔥 Trending #1"}, {"hashtag": "#UFAEro88Fund", "likes_sum": 6780000, "badge": "🔥 Trending #1"}]}, "wires": [{"scene_id": "vol1_prologue_scene01", "agency": "Heimdallr Imperial Treasury Dispatch", "content": "หลังวิกฤตปล้นบุฟเฟต์พรมแดงเมืองคานส์ มหาโหราจารย์บัลทาซาร์เปิดจำหน่ายหน่วยลงทุน UFA-Ero-88 ให้แก่บรรดาขุนนางและผู้นำจักรวาล สามารถกู้ชีพสภาพคล่องคืนพระคลังหลวงสำเร็จ 100%", "headline": "📰 [Imperial Treasury & UFA-Ero-88] พระคลังหลวงรอดพ้นภาวะล้มละลาย! กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนทะลุ ๑,๐๐๐,๐๐๐,๐๐๐ มิรา"}, {"scene_id": "vol1_prologue_scene01", "agency": "Ark Hyperion Quantum Telemetry", "content": "ผลสแกนชีวฟิสิกส์ยืนยันแกนมานาสรีระของทายาท รีน ชวาเซอร์ มีศักยภาพรองรับมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์ เพื่อปลดปล่อยจักรวาลจากหมอกควันและพิกเซลดำของจอมมารเซ็นเซอร์", "headline": "📰 [Ark Hyperion Biometrics] มาเตรยาร์กไอล่า สแกนควอนตัม 8K ยืนยันทารกครรภ์ ๗ เดือนในร่างคุณแม่ลูเซีย พยากรณ์เมื่อโตเต็มวัยจะมีแกนกาย 7.5 นิ้ว 120 PSI"}, {"scene_id": "vol1_prologue_scene01", "agency": "OrbalTube 8K Global Broadcast", "content": "การถ่ายทอดสดพระราชพิธีสมโภช ๑ ล้านปีผ่านเครือข่าย SPARC-X มียอดผู้ชมข้ามดวงดาวทะลุ 500 ล้านคน กองทหารเกียรติยศซาร์ดอคาร์ขับร้องคอหอย Tuvan ถวายชัยกึกก้องมหาท้องพระโรงหลวง", "headline": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม"}]};
 
     let CHAPTERS_LIST = [];
@@ -134,7 +124,6 @@
     });
 
     let currentSceneId = null;
-    let currentTick = null;
     let currentTab = 'sparcx';
     let currentHashtag = '';
     let paginationOffset = 0;
@@ -164,7 +153,6 @@
         if (['TitanGram','OrbalTok','OrbalTube'].includes(platform)) return 'visual';
         if (platform === 'Eros-Vault') return 'eros';
         if (platform === 'Global Wire') return 'wire';
-        // OrbalBook, OnlyH-Factor → fallback to sparcx
         return 'sparcx';
     }
     function tabToPlatforms(tab) {
@@ -175,7 +163,7 @@
         return [];
     }
 
-    function initDropdowns(targetSceneId, targetTick) {
+    function initDropdowns(targetSceneId) {
         const chapSelector = document.getElementById('chapter-selector');
         if (!chapSelector) return;
         chapSelector.innerHTML = '';
@@ -196,10 +184,10 @@
             if (chap.id === foundChapId) opt.selected = true;
             chapSelector.appendChild(opt);
         });
-        populateScenes(foundChapId, selectedScene, targetTick);
+        populateScenes(foundChapId, selectedScene);
     }
 
-    function populateScenes(chapId, targetSceneId, targetTick) {
+    function populateScenes(chapId, targetSceneId) {
         const sceneSelector = document.getElementById('scene-selector');
         if (!sceneSelector) return;
         sceneSelector.innerHTML = '';
@@ -222,104 +210,23 @@
             if (scene.id === activeSceneId) opt.selected = true;
             sceneSelector.appendChild(opt);
         });
-        populateTicks(activeSceneId, targetTick);
-    }
-
-    function populateTicks(sceneId, targetTick) {
-        const tickWrap = document.getElementById('tick-selector-wrap');
-        const tickSelector = document.getElementById('tick-selector');
-        if (!tickWrap || !tickSelector) {
-            loadSocial(sceneId, targetTick);
-            return;
-        }
-        const sceneData = REAL_TELEMETRY_DATA[sceneId];
-        const ticks = sceneData && sceneData.ticks ? sceneData.ticks : [];
-        // merge social by_tick keys (e.g. 8) even if not in telemetry ticks[]
-        const socialTicks = REAL_SOCIAL_DATA && REAL_SOCIAL_DATA.by_tick ? Object.keys(REAL_SOCIAL_DATA.by_tick).map(t=>parseInt(t)) : [];
-        // Also include ticks from telemetry_dataset that may have 0 vs 8 divergence
-        const telemetryTickSet = new Set(ticks.map(t=>t.tick));
-        const extraSocialTicks = socialTicks.filter(t=> !telemetryTickSet.has(t)).map(t=> ({tick: t, macro: {world_clock: `Tick ${t} (Live Feed)`}}));
-        let merged = [...ticks, ...extraSocialTicks];
-        // Deduplicate and sort
-        const seen = new Set();
-        merged = merged.filter(t => { if (seen.has(t.tick)) return false; seen.add(t.tick); return true; }).sort((a,b)=>a.tick-b.tick);
-        // If still <=1, hide dropdown but still load
-        if (merged.length <= 1) {
-            // Still show dropdown for social feed (Genesis vs Live distinction)
-            // keep visible if social has extra
-            if (socialTicks.length > 0 && ticks.length === 1) {
-                // keep visible to allow Genesis vs Live
-            } else {
-                tickWrap.style.display = 'none';
-                loadSocial(sceneId, merged.length ? merged[merged.length-1].tick : targetTick);
-                return;
-            }
-        }
-        tickWrap.style.display = 'flex';
-        tickSelector.innerHTML = '';
-        // Add "All ticks" option last? Actually we want All at top or bottom — keep as special
-        const allOpt = document.createElement('option');
-        allOpt.value = 'all';
-        allOpt.textContent = 'All ticks';
-        tickSelector.appendChild(allOpt);
-        // Show newest first (reverse)
-        [...merged].reverse().forEach(t => {
-            const opt = document.createElement('option');
-            opt.value = t.tick;
-            const label = t.macro && t.macro.world_clock ? t.macro.world_clock.substring(0,40) : `Tick ${t.tick}`;
-            // Add suffix for Genesis vs Live per prototype
-            let suffix = '';
-            if (t.tick === 0) suffix = ' (Genesis Archive)';
-            else if (t.tick === 8) suffix = ' (Live)';
-            opt.textContent = `Tick ${t.tick} | ${label}${suffix}`;
-            tickSelector.appendChild(opt);
-        });
-        // Select targetTick if provided, else latest (first after All is newest)
-        if (targetTick !== null && targetTick !== undefined && targetTick !== 'all') {
-            const valStr = String(targetTick);
-            for (let i=0;i<tickSelector.options.length;i++) {
-                if (tickSelector.options[i].value === valStr) { tickSelector.selectedIndex = i; break; }
-            }
-        } else if (targetTick === 'all') {
-            tickSelector.selectedIndex = 0;
-        } else {
-            // Default to latest tick (index 1 is newest since 0 is All)
-            tickSelector.selectedIndex = 1;
-        }
-        const selVal = tickSelector.value === 'all' ? 'all' : parseInt(tickSelector.value);
-        loadSocial(sceneId, selVal);
+        loadSocial(activeSceneId);
     }
 
     function onChapterSelect(chapId) {
-        populateScenes(chapId, null, null);
-        // update URL without reload? keep scene param
+        populateScenes(chapId, null);
     }
     function onSceneSelect(sceneId) {
         if (!sceneId) return;
         const url = new URL(window.location.href);
         url.searchParams.set('scene', sceneId);
-        url.searchParams.delete('tick');
         history.replaceState({}, '', url.toString());
         currentHashtag = '';
         paginationOffset = 0;
-        populateTicks(sceneId, null);
-    }
-    function onTickSelect(tickVal) {
-        const sceneSelector = document.getElementById('scene-selector');
-        const sceneId = sceneSelector ? sceneSelector.value : null;
-        if (!sceneId) return;
-        const url = new URL(window.location.href);
-        url.searchParams.set('scene', sceneId);
-        if (tickVal === 'all') url.searchParams.set('tick', 'all');
-        else url.searchParams.set('tick', String(tickVal));
-        history.replaceState({}, '', url.toString());
-        currentHashtag = '';
-        paginationOffset = 0;
-        loadSocial(sceneId, tickVal === 'all' ? 'all' : parseInt(tickVal));
+        loadSocial(sceneId);
     }
     function onTabSelect(tab) {
         currentTab = tab;
-        // update active styling
         document.querySelectorAll('.tab-btn').forEach(btn => {
             if (btn.dataset.tab === tab) {
                 btn.className = 'tab-btn active px-3 py-1.5 text-xs font-inter rounded border bg-cyan-500/20 border-cyan-500/30 text-cyan-300 transition-colors whitespace-nowrap';
@@ -332,67 +239,46 @@
         renderFeed();
     }
 
-    function getFilteredPosts(allFilteredByTick) {
-        // Tab filter
-        let posts = allFilteredByTick;
+    function getFilteredPosts(posts) {
+        let filtered = posts;
         if (currentTab !== 'wire') {
             const plats = tabToPlatforms(currentTab);
-            posts = posts.filter(p => plats.includes(p.platform));
+            filtered = filtered.filter(p => plats.includes(p.platform));
         } else {
-            // wire tab shows wire_reports handled separately — posts filtered to Global Wire only
-            posts = posts.filter(p => p.platform === 'Global Wire');
+            filtered = filtered.filter(p => p.platform === 'Global Wire');
         }
-        // Hashtag filter
         if (currentHashtag) {
-            posts = posts.filter(p => p.hashtag === currentHashtag);
+            filtered = filtered.filter(p => p.hashtag === currentHashtag);
         }
-        return posts;
+        return filtered;
     }
 
-    function loadSocial(sceneId, tickVal) {
+    function loadSocial(sceneId) {
         currentSceneId = sceneId;
-        currentTick = tickVal;
         currentHashtag = '';
         paginationOffset = 0;
-        // update back buttons
         const backBtn = document.getElementById('backToTelemetryBtn');
         const backBtnBottom = document.getElementById('backToTelemetryBottom');
-        const tickParam = (tickVal === 'all' || tickVal === null || tickVal === undefined) ? '' : `&tick=${tickVal}`;
-        const href = `telemetry.html?scene=${sceneId}${tickParam}`;
+        const href = `telemetry.html?scene=${sceneId}`;
         if (backBtn) backBtn.href = href;
         if (backBtnBottom) backBtnBottom.href = href;
-
-        // update counts per tab
         updateTabCounts();
-
         renderTrending();
         renderFeed();
     }
 
     function updateTabCounts() {
-        let postsByTick = [];
-        if (currentTick === 'all' || currentTick === null || currentTick === undefined) {
-            postsByTick = (REAL_SOCIAL_DATA.all_posts || []);
-        } else {
-            postsByTick = (REAL_SOCIAL_DATA.by_tick && REAL_SOCIAL_DATA.by_tick[String(currentTick)]) || [];
-            // fallback to all_posts filtered by tick_id
-            if (!postsByTick.length && REAL_SOCIAL_DATA.all_posts) {
-                postsByTick = REAL_SOCIAL_DATA.all_posts.filter(p => p.tick_id == currentTick);
-            }
-        }
+        const posts = (REAL_SOCIAL_DATA.all_posts || []);
         const counts = {sparcx:0, visual:0, eros:0, wire:0};
-        postsByTick.forEach(p => {
+        posts.forEach(p => {
             const tab = platformToTab(p.platform);
             counts[tab] = (counts[tab]||0)+1;
         });
-        // wire also counts wire_reports per scene
         let wireCount = 0;
         if (REAL_SOCIAL_DATA.wires) {
             wireCount = REAL_SOCIAL_DATA.wires.filter(w => !currentSceneId || w.scene_id === currentSceneId || w.scene_id.includes(currentSceneId)).length;
-            // at least show wire reports existence even if not per scene match
             if (wireCount === 0 && REAL_SOCIAL_DATA.wires.length) wireCount = Math.min(3, REAL_SOCIAL_DATA.wires.length);
         }
-        // For wire tab, show wireCount + Global Wire posts
         counts.wire = (counts.wire||0) + wireCount;
         document.getElementById('count-sparcx').textContent = counts.sparcx;
         document.getElementById('count-visual').textContent = counts.visual;
@@ -403,20 +289,11 @@
     function renderTrending() {
         const container = document.getElementById('trending-pills');
         if (!container) return;
-        let trendingList = [];
-        if (currentTick === 'all' || currentTick === null || currentTick === undefined) {
-            trendingList = REAL_SOCIAL_DATA.trending_global || [];
-        } else {
-            const byTick = REAL_SOCIAL_DATA.trending_by_tick || {};
-            trendingList = byTick[String(currentTick)] || REAL_SOCIAL_DATA.trending_global || [];
-        }
-        // fallback: compute from filtered posts if trending empty but posts exist (e.g. Genesis synthetic)
+        let trendingList = REAL_SOCIAL_DATA.trending_global || [];
         if (!trendingList.length) {
-            let postsByTick = [];
-            if (currentTick === 'all') postsByTick = REAL_SOCIAL_DATA.all_posts || [];
-            else postsByTick = (REAL_SOCIAL_DATA.by_tick && REAL_SOCIAL_DATA.by_tick[String(currentTick)]) || REAL_SOCIAL_DATA.all_posts?.filter(p=>p.tick_id==currentTick) || [];
+            const posts = REAL_SOCIAL_DATA.all_posts || [];
             const agg = {};
-            postsByTick.forEach(p => { if (p.hashtag) agg[p.hashtag]=(agg[p.hashtag]||0)+p.likes; });
+            posts.forEach(p => { if (p.hashtag) agg[p.hashtag]=(agg[p.hashtag]||0)+p.likes; });
             trendingList = Object.entries(agg).filter(([h,s])=> s>=50000).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([h,s])=>({hashtag:h, likes_sum:s, badge: hashtagTrendingTag(s)}));
         }
         if (!trendingList.length) {
@@ -442,15 +319,8 @@
         renderFeed();
     }
 
-    function getCurrentPostsByTick() {
-        if (currentTick === 'all' || currentTick === null || currentTick === undefined) {
-            return REAL_SOCIAL_DATA.all_posts || [];
-        }
-        let posts = (REAL_SOCIAL_DATA.by_tick && REAL_SOCIAL_DATA.by_tick[String(currentTick)]) || [];
-        if (!posts.length && REAL_SOCIAL_DATA.all_posts) {
-            posts = REAL_SOCIAL_DATA.all_posts.filter(p => String(p.tick_id) === String(currentTick));
-        }
-        return posts;
+    function getCurrentPosts() {
+        return REAL_SOCIAL_DATA.all_posts || [];
     }
 
     function renderFeed() {
@@ -458,36 +328,24 @@
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         const feedEnd = document.getElementById('feed-end');
         if (!container) return;
-
-        // Wire tab special rendering
         if (currentTab === 'wire') {
             renderWireFeed();
             if (loadMoreBtn) loadMoreBtn.style.display = 'none';
             if (feedEnd) feedEnd.style.display = 'none';
             return;
         }
-
-        const postsByTick = getCurrentPostsByTick();
-        const filtered = getFilteredPosts(postsByTick);
-        // Sort: newest tick desc, likes desc (already sorted but ensure)
+        const posts = getCurrentPosts();
+        const filtered = getFilteredPosts(posts);
         filtered.sort((a,b)=> (b.tick_id - a.tick_id) || (b.likes - a.likes));
         const total = filtered.length;
         const slice = filtered.slice(paginationOffset, paginationOffset + PAGE_SIZE);
-
         if (total === 0) {
-            container.innerHTML = `<div class="text-center text-ivory/50 py-12 font-sarabun">— ไม่มีโพสต์ในตัวกรองนี้ (tick=${currentTick}, tab=${currentTab}, hashtag=${currentHashtag||'—'}) —</div>`;
+            container.innerHTML = `<div class="text-center text-ivory/50 py-12 font-sarabun">— ไม่มีโพสต์ในตัวกรองนี้ (tab=${currentTab}, hashtag=${currentHashtag||'—'}) —</div>`;
             if (loadMoreBtn) loadMoreBtn.style.display = 'none';
             if (feedEnd) feedEnd.style.display = 'none';
             return;
         }
-
-        // If first page, replace; else append
         if (paginationOffset === 0) container.innerHTML = '';
-        // Genesis banner if tick 0
-        if (paginationOffset === 0 && String(currentTick) === '0') {
-            container.innerHTML += `<div class="mb-3 p-3 bg-amber-500/10 border border-amber-500/30 rounded text-[11px] font-sarabun text-amber-200/90"><i class="fa-solid fa-scroll mr-1"></i> Archive — Tick 0 Genesis hand-crafted 4 posts (Balthazar 12.45M / Luto 450 / Harkonnen 8.92M / Olivert 6.78M) — preserved for lore. 12.45M exceeds Queens max 375K (festival spectacle, not viral-capped).</div>`;
-        }
-
         slice.forEach(p => {
             const isViews = ['OrbalTok','OrbalTube'].includes(p.platform);
             const likesStr = isViews ? `${(p.likes||0).toLocaleString('en-US')} Views` : `${(p.likes||0).toLocaleString('en-US')}`;
@@ -506,7 +364,7 @@
                     <span class="font-inter font-bold text-[11px] text-cyan-300 flex items-center gap-1.5 flex-wrap">
                         <span class="w-5 h-5 rounded-full bg-cyan-950 flex items-center justify-center"><i class="fa-solid fa-user text-[8px]"></i></span>
                         ${handle} <span class="text-[10px]">${emoji}</span> <i class="fa-solid fa-circle-check text-cyan-400 text-[10px]"></i>
-                        ${platformBadge} ${hashtag ? `<span class=\"px-1.5 py-0.5 bg-[#1F2428] border border-cyan-500/30 text-cyan-300 text-[10px] rounded cursor-pointer\" onclick=\"onHashtagClick('${hashtag}')\">${hashtag}</span>` : ''}
+                        ${platformBadge} ${hashtag ? `<span class="px-1.5 py-0.5 bg-[#1F2428] border border-cyan-500/30 text-cyan-300 text-[10px] rounded cursor-pointer" onclick="onHashtagClick('${hashtag}')">${hashtag}</span>` : ''}
                     </span>
                     <span class="font-inter text-[10px] text-slate-400 whitespace-nowrap flex items-center gap-1">${tickLabel} · ${timeLabel} ${causeBadge(cause)}</span>
                 </div>
@@ -517,7 +375,6 @@
                 </div>
             </div>`;
         });
-
         if (paginationOffset + PAGE_SIZE < total) {
             if (loadMoreBtn) loadMoreBtn.style.display = 'inline-block';
             if (feedEnd) feedEnd.style.display = 'none';
@@ -530,20 +387,17 @@
     function renderWireFeed() {
         const container = document.getElementById('social-feed');
         let wires = REAL_SOCIAL_DATA.wires || [];
-        // Filter by scene if needed
         if (currentSceneId) {
             const filtered = wires.filter(w => w.scene_id === currentSceneId || (w.scene_id && w.scene_id.includes(currentSceneId)));
             if (filtered.length) wires = filtered;
         }
-        // Also include Global Wire posts
-        let globalPosts = getCurrentPostsByTick().filter(p=> p.platform==='Global Wire' && (!currentHashtag || p.hashtag===currentHashtag));
+        let globalPosts = getCurrentPosts().filter(p=> p.platform==='Global Wire' && (!currentHashtag || p.hashtag===currentHashtag));
         let html = '';
         if (!wires.length && !globalPosts.length) {
             container.innerHTML = `<div class="text-center text-ivory/50 py-12 font-sarabun">— ไม่มี Wire Reports สำหรับ scene นี้ —</div>`;
             return;
         }
         if (wires.length) {
-            // First wire as hero headline
             const hero = wires[0];
             html += `<div class="font-sarabun text-amber-100/90 text-sm mb-4 bg-[#14171A] p-3 border-l-2 border-amber-500 rounded-r-lg shadow-sm">${escapeHTML(hero.headline || hero.content)}</div>`;
             html += `<div class="space-y-2 font-sarabun text-ivory/70 text-sm bg-obsidian border border-white/5 rounded-lg p-2">`;
@@ -570,15 +424,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const sceneId = urlParams.get('scene') || 'vol1_prologue_scene01';
-        const tickParamRaw = urlParams.get('tick');
-        let tickParam = null;
-        if (tickParamRaw === 'all') tickParam = 'all';
-        else if (tickParamRaw !== null) {
-            const parsed = parseInt(tickParamRaw);
-            if (!isNaN(parsed)) tickParam = parsed;
-        }
-        initDropdowns(sceneId, tickParam);
-        // ensure default tab active
+        initDropdowns(sceneId);
         onTabSelect('sparcx');
     });
 </script>
