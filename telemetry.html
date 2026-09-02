@@ -257,6 +257,13 @@
         const container = document.getElementById('telemetry-content');
         
         let html = '';
+        const causeBadge = (cause) => {
+            if (!cause) return '';
+            const colorMap = {INFLATES:'bg-amber-500/20 text-amber-300 border-amber-500/30', DEFLOWS:'bg-blue-500/20 text-blue-300 border-blue-500/30', TENSES:'bg-red-500/20 text-red-300 border-red-500/30', GOSSIPS:'bg-purple-500/20 text-purple-300 border-purple-500/30', TRIGGERS:'bg-cyan-500/20 text-cyan-300 border-cyan-500/30'};
+            const cls = colorMap[cause.relation] || 'bg-white/10 text-ivory/60 border-white/10';
+            const hw = cause.headline || cause.event_id || 'Cause';
+            return `<span class="ml-2 px-2 py-0.5 text-[10px] font-inter ${cls} border rounded" title="${cause.event_id} weight ${cause.weight} sal ${cause.salience || ''}">${hw}</span>`;
+        };
         
         // --- BIO / ROSTER STRIP (compact, from 04-bio-and-roster-panel A) ---
         if (data.macro) {
@@ -310,13 +317,6 @@
             const landPrice = data.economy.land_price || { value: "-", status: "-" };
             const cashFlow = data.economy.cash_flow || { value: "-", status: "-" };
             const activeDeal = data.economy.active_deal || "-";
-            const causeBadge = (cause) => {
-                if (!cause) return '';
-                const colorMap = {INFLATES:'bg-amber-500/20 text-amber-300 border-amber-500/30', DEFLOWS:'bg-blue-500/20 text-blue-300 border-blue-500/30', TENSES:'bg-red-500/20 text-red-300 border-red-500/30', GOSSIPS:'bg-purple-500/20 text-purple-300 border-purple-500/30', TRIGGERS:'bg-cyan-500/20 text-cyan-300 border-cyan-500/30'};
-                const cls = colorMap[cause.relation] || 'bg-white/10 text-ivory/60 border-white/10';
-                const hw = cause.headline || cause.event_id || 'Cause';
-                return `<span class="ml-2 px-2 py-0.5 text-[10px] font-inter ${cls} border rounded" title="${cause.event_id} weight ${cause.weight} sal ${cause.salience || ''}">${hw}</span>`;
-            };
 
             html += `
             <div class="border border-muted-gold/20 bg-obsidian p-6 relative shadow-lg">
