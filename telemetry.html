@@ -27,6 +27,7 @@
     </div>
     <div class="font-inter text-[10px] text-ivory/50 flex gap-4 uppercase tracking-widest">
         <a href="telemetry.html" class="text-muted-gold transition-colors"><i class="fa-solid fa-satellite-dish mr-1"></i> Universe Stat</a>
+        <a href="social.html" class="hover:text-muted-gold transition-colors"><i class="fa-solid fa-hashtag mr-1"></i> Social Feed</a>
         <a href="archive.html" class="hover:text-muted-gold transition-colors"><i class="fa-solid fa-scroll mr-1"></i> Imperial Archive</a>
         <a href="toc.html" class="hover:text-muted-gold transition-colors"><i class="fa-solid fa-book mr-1"></i> Chapters</a>
     </div>
@@ -428,6 +429,9 @@
                             </div>
                             `).join('')}
                         </div>
+                        <div class="mt-4 text-center">
+                            <a href="social.html?scene=${sceneId || data.scene_id || 'vol1_prologue_scene01'}" class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded text-cyan-300 text-xs font-cinzel tracking-widest uppercase hover:bg-cyan-500/20 transition-colors"><i class="fa-solid fa-hashtag"></i> ดูฟีดเต็ม (Social Feed เต็ม)</a>
+                        </div>
                     </div>
                     
                     <div>
@@ -460,11 +464,42 @@
 
     }
 
-    // Auto-load scene from URL parameter or default
+    // Auto-load scene from URL parameter or default (supports ?scene=&tick= per social-web-ui 06 A)
     document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const sceneId = urlParams.get('scene') || 'vol1_prologue_scene01';
-        initDropdowns(sceneId);
+        const tickParamRaw = urlParams.get('tick');
+        let tickParam = null;
+        if (tickParamRaw !== null && tickParamRaw !== 'all') {
+            const parsed = parseInt(tickParamRaw);
+            if (!isNaN(parsed)) tickParam = parsed;
+        } else if (tickParamRaw === 'all') {
+            tickParam = 'all';
+        }
+        // Pass tick param through initDropdowns → populateTicks will select it
+        if (tickParam !== null) {
+            // Wrap init to handle tick after population
+            const origPopulateTicks = populateTicks;
+            let tickHandled = false;
+            // Monkey-patch single call: initDropdowns will call populateTicks which handles loadTelemetry with tick
+            // So just call initDropdowns with extra handling via URLSearchParams inside load path
+            initDropdowns(sceneId);
+            // After init, directly apply tick if ticks dropdown exists
+            setTimeout(() => {
+                const tickSel = document.getElementById('tick-selector');
+                if (tickSel && tickParam !== null) {
+                    for (let i=0;i<tickSel.options.length;i++) {
+                        if (tickSel.options[i].value === String(tickParam)) {
+                            tickSel.selectedIndex = i;
+                            onTickSelect(tickParam);
+                            break;
+                        }
+                    }
+                }
+            }, 200);
+        } else {
+            initDropdowns(sceneId);
+        }
     });
 </script>
 
