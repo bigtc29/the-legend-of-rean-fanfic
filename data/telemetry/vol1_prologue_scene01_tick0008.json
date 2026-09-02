@@ -1,0 +1,75 @@
+{
+  "scene_id": "vol1_prologue_scene01",
+  "chapter_id": "vol1_prologue",
+  "volume_id": "vol1",
+  "title": "Scene 01: งานสมโภช ๑ ล้านปีแห่งองค์อุกะอุกะที่ ๑, มหากาพย์ปล้นบุฟเฟต์พรมแดง และมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์",
+  "tick": 8,
+  "macro": {
+    "world_clock": "TICK-0000000008 | Day 2 Night Spring | Vol 1 Ch 0 Sc 4",
+    "active_sector": "loc:titan_heimdallr:valflame_palace:grand_ballroom",
+    "clan_vault": "850,420,199,854,210 MIRA (สินทรัพย์ตระกูลชวาเซอร์) / พระคลังหลวงฟื้นคืน +1 พันล้าน",
+    "rean_spec": "ชีคหนุ่มผู้กล้านักเย็ดกอบกู้โลก (REAN SCHWARZER) | เครื่องแบบสูทแดง Class VII | 7.5\" 120 PSI | loc:titan_heimdallr:valflame_palace:grand_ballroom"
+  },
+  "economy": {
+    "septium_price": {
+      "value": "484.17 Mira",
+      "trend": "-3.2%",
+      "status": "Tick 8 Heimdallr",
+      "up": false,
+      "raw_price": 484.17,
+      "base_price": 500.0,
+      "cause": {
+        "event_id": "EVT-000010",
+        "headline": "Celdic Success",
+        "relation": "DEFLOWS",
+        "weight": 0.08
+      }
+    },
+    "rf_stock": {
+      "value": "147.04 Mira",
+      "trend": "-2.0%",
+      "status": "Orbal Parts Proxy",
+      "up": false,
+      "raw_price": 147.04
+    },
+    "land_price": {
+      "value": "loc:titan_heimdallr:valflame_palace:grand_ballroom",
+      "status": "Current Sector"
+    },
+    "cash_flow": {
+      "value": "968,340,000 MIRA",
+      "status": "Derived from Septium"
+    },
+    "active_deal": "• พระราชพิธีสมโภชเฉลิมฉลองครบรอบ ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย\n• กองทุนรวมเซปเทียมต้านโมเสก บัลทาซาร์ 888 ระดมทุนคืนค่าบุฟเฟต์หลวง ๑,๐๐๐,๐๐๐,๐๐๐ มิรา\n• แพลตฟอร์ม UFA-Ero-88 เปิดโควตากองทุนสนับสนุนเตียงนอนและโภชนาการผู้กล้าหนึ่งแสนคน"
+  },
+  "tension": {
+    "level_text": "Elevated / Watchful",
+    "index_percent": 45,
+    "noble_status": "Readiness 89% — Elevated / Watchful",
+    "reformist_status": "Readiness 92% — Imperial Reform",
+    "guard_status": "EOF 800k troops 95-99% — Tension 0.450"
+  },
+  "social": {
+    "trending_tags": [
+      "#KingUgaUga1000000th",
+      "#MosaicDemonLordThreat",
+      "#100000MaidensProphecy",
+      "#UFAEro88Fund",
+      "#SchwarzerOilDynasty"
+    ],
+    "posts": [
+      {
+        "user": "Grand_Astrologer_Balthazar",
+        "time": "Tick 8",
+        "content": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม",
+        "likes": "12,450,000"
+      }
+    ],
+    "wire_headline": "📰 [Imperial State Wire] พระราชพิธีสมโภช ๑,๐๐๐,๐๐๐ ปีแห่งการสถาปนาจักรวรรดิเอเรโบเนีย น้อมรำลึกปฐมกษัตริย์โฮโมอิเล็กตรัส สมเด็จพระราชาธิบดีอุกะอุกะที่ ๑ ณ โบราณสถานถ้ำแวลดเฟลม",
+    "wire_reports": [
+      "OrbalTube 8K Global Broadcast การถ่ายทอดสดพระราชพิธีสมโภช ๑ ล้านปีผ่านเครือข่าย SPARC-X มียอดผู้ชมข้ามดวงดาวทะลุ 500 ล้านคน กองทหารเกียรติยศซาร์ดอคาร์ขับร้องคอหอย Tuvan ถวายชัยกึกก้องมหาท้องพระโรงหลวง",
+      "Ark Hyperion Quantum Telemetry ผลสแกนชีวฟิสิกส์ยืนยันแกนมานาสรีระของทายาท รีน ชวาเซอร์ มีศักยภาพรองรับมหาคำทำนาย ๑๐๐,๐๐๐ พรหมจรรย์ เพื่อปลดปล่อยจักรวาลจากหมอกควันและพิกเซลดำของจอมมารเซ็นเซอร์",
+      "Heimdallr Imperial Treasury Dispatch หลังวิกฤตปล้นบุฟเฟต์พรมแดงเมืองคานส์ มหาโหราจารย์บัลทาซาร์เปิดจำหน่ายหน่วยลงทุน UFA-Ero-88 ให้แก่บรรดาขุนนางและผู้นำจักรวาล สามารถกู้ชีพสภาพคล่องคืนพระคลังหลวงสำเร็จ 100%"
+    ]
+  }
+}
